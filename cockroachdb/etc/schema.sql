@@ -1,0 +1,6 @@
+CREATE DATABASE lily;
+set DATABASE = lily;
+CREATE TABLE IF NOT EXISTS storage (
+    key STRING(20) PRIMARY KEY,
+    value STRING(20)
+);

@@ -1,0 +1,8 @@
+etcd/node_modules
+etcd/deployment
+etcd/etcd-v3.1.0
+
+cockroachdb/node_modules
+
+gryadka/node_modules
+gryadka/deployment

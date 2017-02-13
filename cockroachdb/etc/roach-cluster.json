@@ -1,0 +1,5 @@
+{
+    "roach1": { "host": "10.0.0.4", "pgPort": 26257, "adminPort": 8080, "main": true },
+    "roach2": { "host": "10.0.0.5", "pgPort": 26257, "adminPort": 8080 },
+    "roach3": { "host": "10.0.0.6", "pgPort": 26257, "adminPort": 8080 }
+}
