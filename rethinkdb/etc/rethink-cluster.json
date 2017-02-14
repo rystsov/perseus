@@ -1,0 +1,23 @@
+{
+    "rethink1": { 
+        "host": "10.0.0.4", 
+        "clusterPort": 29016, 
+        "driverPort": 28016, 
+        "httpPort": 8086, 
+        "main": true 
+    },
+    "rethink2": { 
+        "host": "10.0.0.5", 
+        "clusterPort": 29017, 
+        "driverPort": 28017, 
+        "httpPort": 8087, 
+        "main": false
+    },
+    "rethink3": { 
+        "host": "10.0.0.6", 
+        "clusterPort": 29018,
+        "driverPort": 28018, 
+        "httpPort": 8088, 
+        "main": false
+    }
+}
