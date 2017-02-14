@@ -16,6 +16,7 @@ class ResettablePool {
                     if (err) {
                         reject(err);
                     } else {
+                        conn.on("error", () => this.reset());
                         this.conn = conn;
                         respond(this.conn);
                     }
