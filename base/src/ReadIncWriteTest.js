@@ -1,10 +1,11 @@
 const {SlidingWindow} = require('./SlidingWindow');
 
 class ReadIncWriteTest {
-    constructor(nodes) {
+    constructor(nodes, period) {
         this.nodes = nodes;
         this.cps = new SlidingWindow();
         this.isActive = false;
+        this.period = period;
         this.hostPorts = nodes.map(node => node.hostPort);
     }
     async run() {
@@ -24,13 +25,13 @@ class ReadIncWriteTest {
         const started = time_us();
         while (this.isActive) {
             await new Promise((resolve, reject) => {
-                setTimeout(() => resolve(true), 1000);
+                setTimeout(() => resolve(true), this.period);
             });
             const time = time_us()
-            this.cps.forgetBefore(time - 1000*1000)
+            this.cps.forgetBefore(time - this.period*1000)
             
             console.info(
-                "" + Math.floor((time - started) / (1000 * 1000)) + "\t" + 
+                "" + Math.floor((time - started) / (this.period * 1000)) + "\t" + 
                 this.cps.getStat(this.hostPorts)
             );
         }
