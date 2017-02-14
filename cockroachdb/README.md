@@ -78,10 +78,11 @@ Prerequisites: [jq](https://stedolan.github.io/jq/) and [node-nightly](https://w
 3. commit 'n' push
 4. on each of the nodes:
   1. clone your repo
-  2. run `./bin/get-cockroach.sh` to download CockroachDB
-  3. run `./bin/run-cockroach.sh roach1` (if you're on a node with an address corresponding to roach1 in your etc/roach-cluster.json)
-5. run `./bin/init-lily.sh roach1` on the roach1 node to initialize a db
-6. clone your repo on your client node, run `npm install` and then `./bin/test.sh` to start the test
+  2. execute `./bin/get-cockroach.sh` to download CockroachDB
+  3. execute `./bin/run-cockroach.sh roach1` (if you're on a node with an address corresponding to roach1 in your etc/roach-cluster.json)
+5. clone your repo on the client and execute:
+  1. `./bin/init-lily.sh roach1` to initialize the db
+  2. `./bin/test.sh` to start the test
 
 ### How to kill a node
 

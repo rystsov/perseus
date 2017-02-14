@@ -1,6 +1,6 @@
-Perseus is a set of scripts to test how Etcd behaves when a leader is separated from the peer but maintain connection to the clients. It consists of scripts:
+Perseus is a set of scripts to test how RethinkDB behaves when a leader is separated from the peer but maintain connection to the clients. It consists of scripts:
 
-  * to download Etcd
+  * to download RethinkDB
   * to run it
   * to generate load and measure a number of successful operations per second per node and per whole cluster
 
@@ -24,59 +24,78 @@ A user is expected to mess with the cluster and observe its effect of the metric
 The first column is the number of second since the begining of the experiment, the second column is the number of successful iterations per cluster, the last three columns represent the number of successful iterations per each node of the cluster.
 
 <pre>
-1	330	140	115	75
-2	424	181	149	94
-3	433	187	152	94
-4	429	183	150	96
-5	445	191	157	97
-6	429	185	150	94
-7	430	187	150	93</pre>
+1	673	209	198	266
+2	739	226	224	289
+3	728	217	217	294
+4	761	237	219	305
+5	714	214	211	289
+6	758	232	219	307
+7	745	224	221	300</pre>
 
-When I killed a leader the whole cluster became unavailable for 2 seconds more a less:
-
-<pre>
-117	442	157	184	101
-118	454	158	191	105
-119	373	131	155	87 #kill -9
-120	0	0	0	0
-121	33	21	0	12
-122	230	149	0	81
-123	247	159	0	88</pre>
-
-Since I didn't restart the second node (the former leader) it continued generating zero metrics. Let's repeat experiment with 10x precision (each tick represents 100 ms now):
+1 second precision isn't enough to measure how death of the leader affects the cluster:
 
 <pre>
-265	49	15	16	18
-266	39	13	12	14  #kill -9
-267	4	1	1	2
-268	0	0	0	0
-...
-286	0	0	0	0
-287	23	13	10	0
-288	28	15	13	0</pre>
+13	711	214	211	286
+14	748	222	222	304
+15	544	165	167	212 # kill -9
+16	278	158	120	0
+17	448	248	200	0
+18	445	247	198	0</pre>
 
-As you can see the unavailability interval is indeed 2 seconds (20 * 100 ms).
-
-Let's partition the leader with the iptables rules. The unavailability window is around 2 seconds too:
+Let's repeat it with 10x precision (each tick represents 100 ms now):
 
 <pre>
-22	394	169	138	87 #iptables
-23	0	0	0	0
-24	5	0	3	2
-25	253	0	161	92</pre>
+179	68	21	21	26
+180	61	20	19	22  # kill -9
+181	0	0	0	0
+182	0	0	0	0
+183	0	0	0	0
+184	0	0	0	0
+185	0	0	0	0
+186	0	0	0	0
+187	41	23	18	0
+188	42	23	19	0</pre>
+
+As you can see the unavailability window is 600 ms.
+
+Let's partition the leader with the iptables rules. The unavailability window is 15 seconds:
+
+<pre>
+90	725	217	226	282
+91	763	227	229	307
+92	57	16	17	24  # iptables
+93	0	0	0	0
+94	0	0	0	0
+95	0	0	0	0
+96	0	0	0	0
+97	0	0	0	0
+98	0	0	0	0
+99	0	0	0	0
+100	0	0	0	0
+101	0	0	0	0
+102	0	0	0	0
+103	0	0	0	0
+104	0	0	0	0
+105	0	0	0	0
+106	0	0	0	0
+107	0	0	0	0
+108	386	223	163	0
+109	458	259	199	0</pre>
 
 ## How to reproduce the test
 
 Prerequisites: [jq](https://stedolan.github.io/jq/) and [node-nightly](https://www.npmjs.com/package/node-nightly).
 
 1. clone this repo
-2. update etc/etcd-cluster.json with the ip addresses of your set of nodes
+2. update etc/rethink-cluster.json with the ip addresses of your set of nodes
 3. commit 'n' push
 4. on each of the nodes:
   1. clone your repo
-  2. execute `./bin/get-etcd-linux.sh` to download Etcd
-  3. execute `./bin/run-etcd.sh ectd1` (if you're on the ectd1 node, use use ectd2 or ectd3 on others)
-5. clone your repo on your client node 'n' execute `./bin/test.sh` to start the test
+  2. execute `./bin/get-rethink-ubuntu.sh` to download Etcd
+  3. execute `./bin/run-rethink.sh rethink1` (if you're on the ectd1 node, use use rethink2 or rethink3 on others)
+5. clone your repo on the client and execute:
+  1. `./bin/init-lily.sh rethink1` to init the db
+  2. `./bin/test.sh` to start the test
 
 ### How to kill a node
 
