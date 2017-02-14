@@ -1,3 +1,3 @@
 #!/bin/bash
 
-node-nightly --harmony src/test.js
+node-nightly --harmony src/test.js $@

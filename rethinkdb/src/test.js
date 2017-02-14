@@ -10,20 +10,21 @@ if (process.argv.length == 3) {
     period = parseInt(process.argv[2]);
 }
 
-const nodes = [];
+// const nodes = [];
 
-for (const nodeId of Object.keys(cluster)) {
-    const {host, driverPort} = cluster[nodeId];
-    nodes.push(new RethinkKV(new ResettablePool({host: host, port: driverPort, db: "test"}), "lily"));
-}
+// for (const nodeId of Object.keys(cluster)) {
+//     const {host, driverPort} = cluster[nodeId];
+//     nodes.push(new RethinkKV(new ResettablePool({host: host, port: driverPort, db: "test"}), "lily"));
+// }
 
-const test = new ReadIncWriteTest(nodes, period);
+console.info(period);
+// const test = new ReadIncWriteTest(nodes, period);
 
-(async () => {
-    try {
-        await test.run();
-    } catch(e) {
-        console.info("WAT?!");
-        console.info(e);
-    }
-})();
+// (async () => {
+//     try {
+//         await test.run();
+//     } catch(e) {
+//         console.info("WAT?!");
+//         console.info(e);
+//     }
+// })();
