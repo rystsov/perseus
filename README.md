@@ -5,6 +5,7 @@ Perseus is a set of scripts to test how distributed databases behaves when a lea
 | [CockroachDB](https://github.com/rystsov/perseus/tree/master/cockroachdb) | 10 seconds | - |
 | [Etcd](https://github.com/rystsov/perseus/tree/master/etcd) | 2 seconds | 2 seconds |
 | [RethinkDB](https://github.com/rystsov/perseus/tree/master/rethinkdb) | 0.6 seconds | 15 seconds |
+| [Gryadka](https://github.com/rystsov/perseus/tree/master/gryadka) | 0 seconds | 0 seconds |
 
 **Crashed leader:** duration of an unavailability window caused by a crashed leader (kill -9)
 
