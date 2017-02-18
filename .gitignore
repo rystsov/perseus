@@ -11,3 +11,5 @@ gryadka/deployment
 
 rethinkdb/node_modules
 rethinkdb/deployment
+
+tikv/node_modules
