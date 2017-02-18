@@ -1,7 +1,7 @@
 {
-  "name": "perseus-tikv",
+  "name": "perseus-tidb",
   "version": "1.0.0",
-  "description": "Perseus is a set of scripts to test how Tidb behaves when a leader is separated from the peer but maintain connection to the clients",
+  "description": "Perseus is a set of scripts to test how TiDB behaves when a leader is separated from the peer but maintain connection to the clients",
   "main": "index.js",
   "dependencies": {
     "mysql": "2.13.0",
