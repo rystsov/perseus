@@ -2,8 +2,8 @@ Perseus is a set of scripts to test how distributed databases behaves when a lea
 
 | Database | Crashed leader | Isolated leader |
 | --- | --- | --- |
-| [CockroachDB](https://github.com/rystsov/perseus/tree/master/cockroachdb) | 10s | - |
-| [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) | 18s | 2m 40s |
+| [CockroachDB](https://github.com/rystsov/perseus/tree/master/cockroachdb) | 10s | 15m, [BUG](https://github.com/cockroachdb/cockroach/issues/13541) |
+| [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) | 18s | 2m 40s, [BUG](https://github.com/pingcap/tidb/issues/2676) |
 | [Etcd](https://github.com/rystsov/perseus/tree/master/etcd) | 2s | 2s |
 | [RethinkDB](https://github.com/rystsov/perseus/tree/master/rethinkdb) | 0.6s | 15s |
 | [Gryadka](https://github.com/rystsov/perseus/tree/master/gryadka) | 0s | 0s |
