@@ -1,6 +1,6 @@
-Perseus is a set of scripts to test how RethinkDB behaves when a leader is separated from the peer but maintain connection to the clients. It consists of scripts:
+Perseus is a set of scripts to test how TiDB behaves when a leader is separated from the peer but maintain connection to the clients. It consists of scripts:
 
-  * to download RethinkDB
+  * to download TiDB
   * to run it
   * to generate load and measure a number of successful operations per second per node and per whole cluster
 
@@ -24,77 +24,69 @@ A user is expected to mess with the cluster and observe its effect of the metric
 The first column is the number of second since the begining of the experiment, the second column is the number of successful iterations per cluster, the last three columns represent the number of successful iterations per each node of the cluster.
 
 <pre>
-1	673	209	198	266
-2	739	226	224	289
-3	728	217	217	294
-4	761	237	219	305
-5	714	214	211	289
-6	758	232	219	307
-7	745	224	221	300</pre>
+1	351	152	105	94
+2	435	189	123	123
+3	464	209	133	122
+4	467	210	131	126
+5	524	231	147	146
+6	490	216	140	134
+7	475	207	135	133</pre>
 
-1 second precision isn't enough to measure how death of the leader affects the cluster:
-
-<pre>
-13	711	214	211	286
-14	748	222	222	304
-15	544	165	167	212 # kill -9
-16	278	158	120	0
-17	448	248	200	0
-18	445	247	198	0</pre>
-
-Let's repeat it with 10x precision (each tick represents 100 ms now):
+You can see that everything looks normal. The next fragment represents a moment when I killed a leader node. The cluster became unavailable for **18 seconds**, when it recovered all the nodes but the killed one continued serving requests:
 
 <pre>
-179	68	21	21	26
-180	61	20	19	22  # kill -9
-181	0	0	0	0
-182	0	0	0	0
-183	0	0	0	0
-184	0	0	0	0
-185	0	0	0	0
-186	0	0	0	0
-187	41	23	18	0
-188	42	23	19	0</pre>
+500	501	142	198	161
+501	476	134	192	150 #kill -9
+502	133	37	54	42
+503	0	0	0	0
+504	0	0	0	0
+...
+516	0	0	0	0
+517	0	0	0	0
+518	57	56	0	1
+519	211	146	0	65
+520	294	163	0	131</pre>
 
-As you can see the unavailability window is 600 ms.
-
-Let's partition the leader with the iptables rules. The unavailability window is 15 seconds:
+After I started the killed node it started serving requests as well:
 
 <pre>
-90	725	217	226	282
-91	763	227	229	307
-92	57	16	17	24  # iptables
-93	0	0	0	0
-94	0	0	0	0
-95	0	0	0	0
-96	0	0	0	0
-97	0	0	0	0
-98	0	0	0	0
-99	0	0	0	0
-100	0	0	0	0
-101	0	0	0	0
-102	0	0	0	0
-103	0	0	0	0
-104	0	0	0	0
-105	0	0	0	0
-106	0	0	0	0
-107	0	0	0	0
-108	386	223	163	0
-109	458	259	199	0</pre>
+548	314	171	0	143
+549	325	177	0	148
+550	312	173	0	139
+551	344	175	25	144
+552	484	186	138	160
+553	489	188	140	161
+554	452	175	128	149</pre>
+
+After I isolated the leader from the peers with iptables the unavailability window lasted **2 minutes 40 seconds**:
+
+<pre>
+86	445	195	126	124
+87	474	214	132	128 # iptables down
+88	19	8	5	6
+89	0	0	0	0
+...
+247	0	0	0	0
+248	29	0	0	29
+249	237	0	138	99
+250	289	0	179	110
+251	314	0	197	117</pre>
 
 ## How to reproduce the test
 
-Prerequisites: [jq](https://stedolan.github.io/jq/) and [node-nightly](https://www.npmjs.com/package/node-nightly).
+Prerequisites: [jq](https://stedolan.github.io/jq/), [node-nightly](https://www.npmjs.com/package/node-nightly) and mysql-client.
 
 1. clone this repo
-2. update etc/rethink-cluster.json with the ip addresses of your set of nodes
+2. update etc/tidb-cluster.json with the ip addresses of your set of nodes
 3. commit 'n' push
-4. on each of the nodes:
+4. on each of the nodes (tidb1, tidb2 or tidb3):
   1. clone your repo
-  2. execute `./bin/get-rethink-ubuntu.sh` to download RethinkDB
-  3. execute `./bin/run-rethink.sh rethink1` (if you're on the rethink1 node, use use rethink2 or rethink3 on others)
+  2. execute `./bin/get-tidb.sh` to download TiDB
+  3. execute `./bin/run-pd.sh tidb1` (if you're on the tidb1 node, use use tidb2 or tidb3 on others)
+  4. execute `./bin/run-kv.sh tidb1`
+  5. execute `./bin/run-db.sh tidb1`
 5. clone your repo on the client and execute:
-  1. `./bin/init-lily.sh rethink1` to init the db
+  1. `./bin/init-lily.sh tidb1` to init the db
   2. `./bin/test.sh` to start the test
 
 ### How to kill a node
