@@ -24,50 +24,42 @@ A user is expected to mess with the cluster and observe its effect of the metric
 The first column is the number of second since the begining of the experiment, the second column is the number of successful iterations per cluster, the last three columns represent the number of successful iterations per each node of the cluster.
 
 <pre>
-1	452	220	139	93
-2	510	246	154	110
-3	491	233	153	105
-4	502	240	156	106
-5	491	237	153	101
-6	485	234	148	103
-7	485	230	148	107</pre>
+1 360  99  94 167
+2 458 129 120 209
+3 493 139 128 226
+4 469 136 120 213
+5 486 136 130 220
+6 478 136 130 212
+7 488 142 124 222</pre>
 
-You can see that everything looks normal. The next fragment represents a moment when I killed a random node. It seems that it was a follower so nothing bad happed. As a expected the number of successful iterations per that node dropped to zero:
-
-<pre>
-147	482	148	237	97
-148	481	146	237	98
-149	434	105	234	95
-150	281	0	192	89
-151	289	0	203	86
-152	287	0	197	90</pre>
-
-After I restarted that node the metrics come back to normal:
+You can see that everything looks normal. The next fragment represents a moment when I killed a leader the whole cluster became unavailable for 12 seconds until a new leader was elected:
 
 <pre>
-162	295	0	205	90
-163	291	0	201	90
-164	299	5	204	90
-165	395	54	243	98
-166	387	54	236	97
-167	384	53	238	93</pre>
-
-When I killed a leader the whole cluster became unavailable for 10 seconds until a new leader was elected:
-
-<pre>
-178	381	51	236	94
-179	377	51	232	94
-180	208	50	72	86
-181	0	0	0	0
-182	0	0	0	0
-...
-189	0	0	0	0
-190	0	0	0	0
-191	38	33	0	5
-192	141	43	0	98
-193	142	43	0	99</pre>
+150 549 250 143 156
+151 410 186 109 115 # kill -9
+152   0   0   0   0
+...                    
+161   0   0   0   0
+162 106   0 106   0
+163 221   0 167  54
+164 310   0 188 122</pre>
 
 Since I didn't restart the second node (the former leader) it continued generating zero metrics.
+
+Let's see what happens when the leader is isolated from the peers:
+
+<pre>
+70 474 140 122 212
+71 484 137 135 212
+72 284  81  78 125 #iptables down
+73   0   0   0   0
+...                 
+80   0   0   0   0
+81 182 130  52   0
+82 309 195 114   0
+83 342 216 126   0</pre>
+
+The unavailability window is around 10 seconds.
 
 ## How to reproduce the test
 
