@@ -9,6 +9,7 @@ peers=$(cat etc/tidb-cluster.json | jq -r 'to_entries | map ("\(.value.pd.name)=
 ./tidb-latest-linux-amd64/bin/pd-server \
     --name=$name \
     --data-dir=$name \
+    --log-file=$1.pd.log \
     --client-urls="http://$host:$clientPort" \
     --peer-urls="http://$host:$peerPort" \
     --initial-cluster=$peers
