@@ -1,0 +1,329 @@
+2017/12/19 06:43:01.291 util.go:54: [info] Welcome to Placement Driver (PD).
+2017/12/19 06:43:01.291 util.go:55: [info] Release Version: v1.1.0-alpha-50-gbc538fe
+2017/12/19 06:43:01.291 util.go:56: [info] Git Commit Hash: bc538fe75a60a03264c8d6898e75e66d407d1c80
+2017/12/19 06:43:01.291 util.go:57: [info] Git Branch: master
+2017/12/19 06:43:01.291 util.go:58: [info] UTC Build Time:  2017-12-15 08:29:28
+2017/12/19 06:43:01.291 metricutil.go:83: [info] disable Prometheus push client
+2017/12/19 06:43:01.291 server.go:94: [info] PD config - Config({FlagSet:0xc420250840 Version:false ClientUrls:http://10.0.0.10:2579 PeerUrls:http://10.0.0.10:2580 AdvertiseClientUrls:http://10.0.0.10:2579 AdvertisePeerUrls:http://10.0.0.10:2580 Name:pd3 DataDir:pd3 InitialCluster:pd1=http://10.0.0.8:2380,pd2=http://10.0.0.9:2480,pd3=http://10.0.0.10:2580 InitialClusterState:new Join: LeaderLease:3 Log:{Level: Format:text DisableTimestamp:false File:{Filename:tidb3.pd.log LogRotate:true MaxSize:300 MaxDays:0 MaxBackups:0}} LogFileDeprecated: LogLevelDeprecated: TsoSaveInterval:3s Metric:{PushJob:pd3 PushAddress: PushInterval:0s} Schedule:{MaxSnapshotCount:3 MaxPendingPeerCount:16 MaxStoreDownTime:1h0m0s LeaderScheduleLimit:64 RegionScheduleLimit:12 ReplicaScheduleLimit:16 TolerantSizeRatio:2.5 Schedulers:[{Type:balance-region Args:[]} {Type:balance-leader Args:[]} {Type:hot-region Args:[]}]} Replication:{MaxReplicas:3 LocationLabels:[]} Namespace:map[] QuotaBackendBytes:0 AutoCompactionRetention:1 TickInterval:500ms ElectionInterval:3s Security:{CAPath: CertPath: KeyPath:} configFile: WarningMsgs:[] NamespaceClassifier:default nextRetryDelay:1000000000 disableStrictReconfigCheck:false})
+2017/12/19 06:43:01.293 server.go:121: [info] start embed etcd
+2017/12/19 06:43:01.293 log.go:85: [info] embed: [listening for peers on  http://10.0.0.10:2580]
+2017/12/19 06:43:01.293 log.go:85: [info] embed: [pprof is enabled under /debug/pprof]
+2017/12/19 06:43:01.293 log.go:85: [info] embed: [listening for client requests on  10.0.0.10:2579]
+2017/12/19 06:43:01.293 systime_mon.go:24: [info] start system time monitor
+2017/12/19 06:43:01.296 log.go:85: [info] etcdserver: [name = pd3]
+2017/12/19 06:43:01.296 log.go:85: [info] etcdserver: [data dir = pd3]
+2017/12/19 06:43:01.296 log.go:85: [info] etcdserver: [member dir = pd3/member]
+2017/12/19 06:43:01.296 log.go:85: [info] etcdserver: [heartbeat = 500ms]
+2017/12/19 06:43:01.296 log.go:85: [info] etcdserver: [election = 3000ms]
+2017/12/19 06:43:01.296 log.go:85: [info] etcdserver: [snapshot count = 100000]
+2017/12/19 06:43:01.296 log.go:85: [info] etcdserver: [advertise client URLs = http://10.0.0.10:2579]
+2017/12/19 06:43:01.296 log.go:85: [info] etcdserver: [initial advertise peer URLs = http://10.0.0.10:2580]
+2017/12/19 06:43:01.296 log.go:85: [info] etcdserver: [initial cluster = pd1=http://10.0.0.8:2380,pd2=http://10.0.0.9:2480,pd3=http://10.0.0.10:2580]
+2017/12/19 06:43:01.298 log.go:85: [info] etcdserver: [starting member 2946b859ec75fb6a in cluster a8f4a449d994c027]
+2017/12/19 06:43:01.299 log.go:85: [info] raft: [2946b859ec75fb6a became follower at term 0]
+2017/12/19 06:43:01.299 log.go:85: [info] raft: [newRaft 2946b859ec75fb6a [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]]
+2017/12/19 06:43:01.299 log.go:85: [info] raft: [2946b859ec75fb6a became follower at term 1]
+2017/12/19 06:43:01.302 log.go:81: [warning] auth: [simple token is not cryptographically signed]
+2017/12/19 06:43:01.304 log.go:85: [info] rafthttp: [starting peer 2d46bf62043d6e80...]
+2017/12/19 06:43:01.304 log.go:85: [info] rafthttp: [started HTTP pipelining with peer 2d46bf62043d6e80]
+2017/12/19 06:43:01.305 log.go:85: [info] rafthttp: [started streaming with peer 2d46bf62043d6e80 (writer)]
+2017/12/19 06:43:01.305 log.go:85: [info] rafthttp: [started streaming with peer 2d46bf62043d6e80 (writer)]
+2017/12/19 06:43:01.307 log.go:85: [info] rafthttp: [started peer 2d46bf62043d6e80]
+2017/12/19 06:43:01.307 log.go:85: [info] rafthttp: [added peer 2d46bf62043d6e80]
+2017/12/19 06:43:01.307 log.go:85: [info] rafthttp: [starting peer 9dea63d24f4518fd...]
+2017/12/19 06:43:01.307 log.go:85: [info] rafthttp: [started HTTP pipelining with peer 9dea63d24f4518fd]
+2017/12/19 06:43:01.308 log.go:85: [info] rafthttp: [started streaming with peer 2d46bf62043d6e80 (stream Message reader)]
+2017/12/19 06:43:01.308 log.go:85: [info] rafthttp: [started streaming with peer 2d46bf62043d6e80 (stream MsgApp v2 reader)]
+2017/12/19 06:43:01.308 log.go:85: [info] rafthttp: [started streaming with peer 9dea63d24f4518fd (writer)]
+2017/12/19 06:43:01.308 log.go:85: [info] rafthttp: [started streaming with peer 9dea63d24f4518fd (writer)]
+2017/12/19 06:43:01.309 log.go:85: [info] rafthttp: [started peer 9dea63d24f4518fd]
+2017/12/19 06:43:01.309 log.go:85: [info] rafthttp: [added peer 9dea63d24f4518fd]
+2017/12/19 06:43:01.309 log.go:85: [info] rafthttp: [started streaming with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:43:01.309 log.go:85: [info] rafthttp: [peer 2d46bf62043d6e80 became active]
+2017/12/19 06:43:01.309 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2d46bf62043d6e80 (stream Message reader)]
+2017/12/19 06:43:01.309 log.go:85: [info] rafthttp: [started streaming with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:43:01.310 log.go:85: [info] etcdserver: [starting server... [version: 3.2.6, cluster version: to_be_decided]]
+2017/12/19 06:43:01.310 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2d46bf62043d6e80 (stream MsgApp v2 reader)]
+2017/12/19 06:43:01.311 log.go:85: [info] rafthttp: [peer 9dea63d24f4518fd became active]
+2017/12/19 06:43:01.311 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:43:01.311 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:43:01.311 log.go:85: [info] etcdserver/membership: [added member 2946b859ec75fb6a [http://10.0.0.10:2580] to cluster a8f4a449d994c027]
+2017/12/19 06:43:01.311 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream Message writer)]
+2017/12/19 06:43:01.312 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2d46bf62043d6e80 (stream Message writer)]
+2017/12/19 06:43:01.312 log.go:85: [info] etcdserver/membership: [added member 2d46bf62043d6e80 [http://10.0.0.8:2380] to cluster a8f4a449d994c027]
+2017/12/19 06:43:01.312 log.go:85: [info] etcdserver/membership: [added member 9dea63d24f4518fd [http://10.0.0.9:2480] to cluster a8f4a449d994c027]
+2017/12/19 06:43:01.312 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2d46bf62043d6e80 (stream MsgApp v2 writer)]
+2017/12/19 06:43:01.312 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 writer)]
+2017/12/19 06:43:01.417 log.go:85: [info] raft: [2946b859ec75fb6a [term: 1] received a MsgHeartbeat message with higher term from 2d46bf62043d6e80 [term: 3]]
+2017/12/19 06:43:01.417 log.go:85: [info] raft: [2946b859ec75fb6a became follower at term 3]
+2017/12/19 06:43:01.417 log.go:85: [info] raft: [raft.node: 2946b859ec75fb6a elected leader 2d46bf62043d6e80 at term 3]
+2017/12/19 06:43:01.419 log.go:83: [info] etcdserver/membership: [set the initial cluster version to 3.0]
+2017/12/19 06:43:01.419 log.go:85: [info] etcdserver/api: [enabled capabilities for version 3.0]
+2017/12/19 06:43:01.420 log.go:85: [info] etcdserver: [published {Name:pd3 ClientURLs:[http://10.0.0.10:2579]} to cluster a8f4a449d994c027]
+2017/12/19 06:43:01.420 server.go:155: [info] create etcd v3 client with endpoints [http://10.0.0.10:2579]
+2017/12/19 06:43:01.420 log.go:85: [info] embed: [ready to serve client requests]
+2017/12/19 06:43:01.420 log.go:83: [info] embed: [serving insecure client requests on 10.0.0.10:2579, this is strongly discouraged!]
+2017/12/19 06:43:01.423 server.go:194: [info] init cluster id 6501145025206059015
+2017/12/19 06:43:01.425 leader.go:86: [info] leader is name:"pd1" member_id:3262505407775338112 peer_urls:"http://10.0.0.8:2380" client_urls:"http://10.0.0.8:2379" , watch it
+2017/12/19 06:43:04.928 log.go:83: [info] etcdserver/membership: [updated the cluster version from 3.0 to 3.2]
+2017/12/19 06:43:04.928 log.go:85: [info] etcdserver/api: [enabled capabilities for version 3.2]
+2017/12/19 06:45:34.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 3]
+2017/12/19 06:45:34.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 4]
+2017/12/19 06:45:34.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 4]
+2017/12/19 06:45:34.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 4]
+2017/12/19 06:45:34.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 4]
+2017/12/19 06:45:34.299 log.go:85: [info] raft: [raft.node: 2946b859ec75fb6a lost leader 2d46bf62043d6e80 at term 4]
+2017/12/19 06:45:35.345 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:45:35.345 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:45:35.345 log.go:79: [error] rafthttp: [failed to read 9dea63d24f4518fd on stream Message (read tcp 10.0.0.10:32874->10.0.0.9:2480: i/o timeout)]
+2017/12/19 06:45:35.345 log.go:85: [info] rafthttp: [peer 9dea63d24f4518fd became inactive]
+2017/12/19 06:45:35.422 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2d46bf62043d6e80 (stream MsgApp v2 reader)]
+2017/12/19 06:45:35.422 log.go:79: [error] rafthttp: [failed to read 2d46bf62043d6e80 on stream MsgApp v2 (read tcp 10.0.0.10:44412->10.0.0.8:2380: i/o timeout)]
+2017/12/19 06:45:35.422 log.go:85: [info] rafthttp: [peer 2d46bf62043d6e80 became inactive]
+2017/12/19 06:45:35.423 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2d46bf62043d6e80 (stream Message reader)]
+2017/12/19 06:45:37.799 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 4]
+2017/12/19 06:45:37.799 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 5]
+2017/12/19 06:45:37.799 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 5]
+2017/12/19 06:45:37.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 5]
+2017/12/19 06:45:37.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 5]
+2017/12/19 06:45:43.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 5]
+2017/12/19 06:45:43.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 6]
+2017/12/19 06:45:43.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 6]
+2017/12/19 06:45:43.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 6]
+2017/12/19 06:45:43.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 6]
+2017/12/19 06:45:43.725 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:45:43.725 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000269065s err context deadline exceeded
+2017/12/19 06:45:44.725 log.go:81: [warning] etcdserver: [timed out waiting for read index response]
+2017/12/19 06:45:46.726 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:45:46.726 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000228958s err context deadline exceeded
+2017/12/19 06:45:46.726 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:45:47.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 6]
+2017/12/19 06:45:47.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 7]
+2017/12/19 06:45:47.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 7]
+2017/12/19 06:45:47.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 7]
+2017/12/19 06:45:47.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 7]
+2017/12/19 06:45:49.726 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:45:49.727 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000252152s err context deadline exceeded
+2017/12/19 06:45:49.727 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:45:50.252 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:45:50.252 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:45:50.252 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.00033625s err context deadline exceeded
+2017/12/19 06:45:51.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 7]
+2017/12/19 06:45:51.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 8]
+2017/12/19 06:45:51.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 8]
+2017/12/19 06:45:51.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 8]
+2017/12/19 06:45:51.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 8]
+2017/12/19 06:45:52.046 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:45:52.727 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:45:52.727 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000346645s err context deadline exceeded
+2017/12/19 06:45:52.727 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:45:54.799 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 8]
+2017/12/19 06:45:54.799 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 9]
+2017/12/19 06:45:54.799 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 9]
+2017/12/19 06:45:54.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 9]
+2017/12/19 06:45:54.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 9]
+2017/12/19 06:45:55.726 log.go:81: [warning] etcdserver: [timed out waiting for read index response]
+2017/12/19 06:45:55.728 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:45:55.728 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:45:55.728 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000517838s err context deadline exceeded
+2017/12/19 06:45:57.241 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:45:57.241 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:45:57.241 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000321634s err context deadline exceeded
+2017/12/19 06:45:58.047 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:45:58.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 9]
+2017/12/19 06:45:58.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 10]
+2017/12/19 06:45:58.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 10]
+2017/12/19 06:45:58.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 10]
+2017/12/19 06:45:58.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 10]
+2017/12/19 06:45:58.729 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:45:58.729 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000240431s err context deadline exceeded
+2017/12/19 06:46:01.730 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:01.730 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:01.730 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000305524s err context deadline exceeded
+2017/12/19 06:46:03.799 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 10]
+2017/12/19 06:46:03.799 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 11]
+2017/12/19 06:46:03.799 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 11]
+2017/12/19 06:46:03.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 11]
+2017/12/19 06:46:03.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 11]
+2017/12/19 06:46:04.240 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:04.240 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:04.240 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000271218s err context deadline exceeded
+2017/12/19 06:46:04.731 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:04.731 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000266616s err context deadline exceeded
+2017/12/19 06:46:06.726 log.go:81: [warning] etcdserver: [timed out waiting for read index response]
+2017/12/19 06:46:07.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 11]
+2017/12/19 06:46:07.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 12]
+2017/12/19 06:46:07.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 12]
+2017/12/19 06:46:07.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 12]
+2017/12/19 06:46:07.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 12]
+2017/12/19 06:46:07.732 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:07.732 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000277609s err context deadline exceeded
+2017/12/19 06:46:10.048 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:10.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 12]
+2017/12/19 06:46:10.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 13]
+2017/12/19 06:46:10.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 13]
+2017/12/19 06:46:10.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 13]
+2017/12/19 06:46:10.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 13]
+2017/12/19 06:46:10.732 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:10.733 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:10.733 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000297502s err context deadline exceeded
+2017/12/19 06:46:11.241 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:11.241 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:11.241 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000775202s err context deadline exceeded
+2017/12/19 06:46:13.733 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:13.733 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:13.733 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000275695s err context deadline exceeded
+2017/12/19 06:46:13.799 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 13]
+2017/12/19 06:46:13.799 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 14]
+2017/12/19 06:46:13.799 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 14]
+2017/12/19 06:46:13.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 14]
+2017/12/19 06:46:13.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 14]
+2017/12/19 06:46:16.048 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:16.734 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:16.734 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000267989s err context deadline exceeded
+2017/12/19 06:46:17.243 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:17.243 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:17.244 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000343188s err context deadline exceeded
+2017/12/19 06:46:17.726 log.go:81: [warning] etcdserver: [timed out waiting for read index response]
+2017/12/19 06:46:18.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 14]
+2017/12/19 06:46:18.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 15]
+2017/12/19 06:46:18.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 15]
+2017/12/19 06:46:18.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 15]
+2017/12/19 06:46:18.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 15]
+2017/12/19 06:46:19.735 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:19.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000301283s err context deadline exceeded
+2017/12/19 06:46:21.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 15]
+2017/12/19 06:46:21.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 16]
+2017/12/19 06:46:21.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 16]
+2017/12/19 06:46:21.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 16]
+2017/12/19 06:46:21.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 16]
+2017/12/19 06:46:22.049 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:22.735 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:22.735 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:22.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000262576s err context deadline exceeded
+2017/12/19 06:46:23.247 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:23.247 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000299975s err context deadline exceeded
+2017/12/19 06:46:24.799 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 16]
+2017/12/19 06:46:24.799 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 17]
+2017/12/19 06:46:24.799 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 17]
+2017/12/19 06:46:24.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 17]
+2017/12/19 06:46:24.799 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 17]
+2017/12/19 06:46:25.731 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:25.731 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000323969s err context deadline exceeded
+2017/12/19 06:46:27.456 log.go:85: [info] rafthttp: [peer 2d46bf62043d6e80 became active]
+2017/12/19 06:46:27.456 log.go:81: [warning] rafthttp: [closed an existing TCP streaming connection with peer 2d46bf62043d6e80 (stream MsgApp v2 writer)]
+2017/12/19 06:46:27.456 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2d46bf62043d6e80 (stream MsgApp v2 writer)]
+2017/12/19 06:46:27.462 log.go:85: [info] rafthttp: [peer 9dea63d24f4518fd became active]
+2017/12/19 06:46:27.462 log.go:81: [warning] rafthttp: [closed an existing TCP streaming connection with peer 9dea63d24f4518fd (stream Message writer)]
+2017/12/19 06:46:27.462 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream Message writer)]
+2017/12/19 06:46:27.462 log.go:81: [warning] rafthttp: [closed an existing TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 writer)]
+2017/12/19 06:46:27.462 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 writer)]
+2017/12/19 06:46:27.476 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:46:27.480 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:46:27.541 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2d46bf62043d6e80 (stream Message reader)]
+2017/12/19 06:46:27.541 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2d46bf62043d6e80 (stream MsgApp v2 reader)]
+2017/12/19 06:46:27.550 log.go:81: [warning] rafthttp: [closed an existing TCP streaming connection with peer 2d46bf62043d6e80 (stream Message writer)]
+2017/12/19 06:46:27.550 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2d46bf62043d6e80 (stream Message writer)]
+2017/12/19 06:46:28.727 log.go:81: [warning] etcdserver: [timed out waiting for read index response]
+2017/12/19 06:46:28.732 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:28.732 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000285562s err context deadline exceeded
+2017/12/19 06:46:29.249 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:29.249 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.00023846s err context deadline exceeded
+2017/12/19 06:46:30.299 log.go:85: [info] raft: [2946b859ec75fb6a is starting a new election at term 17]
+2017/12/19 06:46:30.299 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 18]
+2017/12/19 06:46:30.299 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 18]
+2017/12/19 06:46:30.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 2d46bf62043d6e80 at term 18]
+2017/12/19 06:46:30.299 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202] sent MsgVote request to 9dea63d24f4518fd at term 18]
+2017/12/19 06:46:30.917 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 3, index: 202, vote: 2946b859ec75fb6a] rejected MsgVote from 2d46bf62043d6e80 [logterm: 3, index: 221] at term 18]
+2017/12/19 06:46:30.918 log.go:85: [info] raft: [2946b859ec75fb6a became follower at term 18]
+2017/12/19 06:46:30.919 log.go:85: [info] raft: [raft.node: 2946b859ec75fb6a elected leader 2d46bf62043d6e80 at term 18]
+2017/12/19 06:46:31.733 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:31.733 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000187655s err context deadline exceeded
+2017/12/19 06:46:31.733 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:34.733 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:34.734 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000277049s err context deadline exceeded
+2017/12/19 06:46:34.733 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:35.253 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:35.253 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000357348s err context deadline exceeded
+2017/12/19 06:46:37.734 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:37.734 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.734 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000227142s err context deadline exceeded
+2017/12/19 06:46:38.276 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:38.276 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000351141s err context deadline exceeded
+2017/12/19 06:46:38.276 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:38.738 leader.go:290: [info] leader is deleted
+2017/12/19 06:46:38.738 leader.go:88: [info] leader changed, try to campaign leader
+2017/12/19 06:46:39.727 log.go:81: [warning] etcdserver: [timed out waiting for read index response]
+2017/12/19 06:46:39.729 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 8.994610033s err <nil>
+2017/12/19 06:46:39.729 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 3.744124788s err <nil>
+2017/12/19 06:46:39.729 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 3.74487379s err <nil>
+2017/12/19 06:46:39.729 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 5.99451965s err <nil>
+2017/12/19 06:46:39.730 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 6.745134872s err <nil>
+2017/12/19 06:46:39.730 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 8.340611094s err <nil>
+2017/12/19 06:46:39.730 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 6.746259374s err <nil>
+2017/12/19 06:46:39.730 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 1.090838465s err <nil>
+2017/12/19 06:46:39.730 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 8.474557348s err <nil>
+2017/12/19 06:46:39.730 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 2.471861479s err <nil>
+2017/12/19 06:46:39.730 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 2.994276268s err <nil>
+2017/12/19 06:46:39.735 leader.go:107: [error] campaign leader err github.com/pingcap/pd/server/leader.go:214: campaign leader failed, other server may campaign ok
+2017/12/19 06:46:39.737 leader.go:86: [info] leader is name:"pd1" member_id:3262505407775338112 peer_urls:"http://10.0.0.8:2380" client_urls:"http://10.0.0.8:2379" , watch it
+2017/12/19 06:48:05.564 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = Canceled desc = "context canceled"]
+2017/12/19 06:48:05.564 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: connection error: desc = "transport: write tcp 10.0.0.10:2579->10.0.0.10:40800: use of closed network connection"]
+2017/12/19 06:48:29.430 log.go:85: [info] raft: [2946b859ec75fb6a [term: 18] received a MsgVote message with higher term from 9dea63d24f4518fd [term: 19]]
+2017/12/19 06:48:29.430 log.go:85: [info] raft: [2946b859ec75fb6a became follower at term 19]
+2017/12/19 06:48:29.430 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 18, index: 283, vote: 0] cast MsgVote for 9dea63d24f4518fd [logterm: 18, index: 283] at term 19]
+2017/12/19 06:48:29.430 log.go:85: [info] raft: [raft.node: 2946b859ec75fb6a lost leader 2d46bf62043d6e80 at term 19]
+2017/12/19 06:48:29.431 log.go:85: [info] raft: [raft.node: 2946b859ec75fb6a elected leader 9dea63d24f4518fd at term 19]
+2017/12/19 06:48:29.929 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2d46bf62043d6e80 (stream MsgApp v2 reader)]
+2017/12/19 06:48:29.930 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2d46bf62043d6e80 (stream Message reader)]
+2017/12/19 06:48:30.030 log.go:79: [error] rafthttp: [failed to dial 2d46bf62043d6e80 on stream MsgApp v2 (dial tcp 10.0.0.8:2380: getsockopt: connection refused)]
+2017/12/19 06:48:30.030 log.go:85: [info] rafthttp: [peer 2d46bf62043d6e80 became inactive]
+2017/12/19 06:48:34.083 log.go:85: [info] raft: [2946b859ec75fb6a [term 19] received MsgTimeoutNow from 9dea63d24f4518fd and starts an election to get leadership.]
+2017/12/19 06:48:34.083 log.go:85: [info] raft: [2946b859ec75fb6a became candidate at term 20]
+2017/12/19 06:48:34.083 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 2946b859ec75fb6a at term 20]
+2017/12/19 06:48:34.083 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 19, index: 284] sent MsgVote request to 2d46bf62043d6e80 at term 20]
+2017/12/19 06:48:34.083 log.go:85: [info] raft: [2946b859ec75fb6a [logterm: 19, index: 284] sent MsgVote request to 9dea63d24f4518fd at term 20]
+2017/12/19 06:48:34.083 log.go:85: [info] raft: [raft.node: 2946b859ec75fb6a lost leader 9dea63d24f4518fd at term 20]
+2017/12/19 06:48:34.085 log.go:85: [info] raft: [2946b859ec75fb6a received MsgVoteResp from 9dea63d24f4518fd at term 20]
+2017/12/19 06:48:34.085 log.go:85: [info] raft: [2946b859ec75fb6a [quorum:2] has received 2 MsgVoteResp votes and 0 vote rejections]
+2017/12/19 06:48:34.085 log.go:85: [info] raft: [2946b859ec75fb6a became leader at term 20]
+2017/12/19 06:48:34.085 log.go:85: [info] raft: [raft.node: 2946b859ec75fb6a elected leader 2946b859ec75fb6a at term 20]
+2017/12/19 06:48:34.087 log.go:81: [warning] etcdserver: [failed to reach the peerURL(http://10.0.0.8:2380) of member 2d46bf62043d6e80 (Get http://10.0.0.8:2380/version: dial tcp 10.0.0.8:2380: getsockopt: connection refused)]
+2017/12/19 06:48:34.087 log.go:81: [warning] etcdserver: [cannot get the version of member 2d46bf62043d6e80 (Get http://10.0.0.8:2380/version: dial tcp 10.0.0.8:2380: getsockopt: connection refused)]
+2017/12/19 06:48:34.300 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2d46bf62043d6e80 (stream Message writer)]
+2017/12/19 06:48:34.583 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:48:34.584 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:48:34.639 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2d46bf62043d6e80 (stream MsgApp v2 writer)]
+2017/12/19 06:48:34.684 log.go:79: [error] rafthttp: [failed to dial 9dea63d24f4518fd on stream MsgApp v2 (dial tcp 10.0.0.9:2480: getsockopt: connection refused)]
+2017/12/19 06:48:34.684 log.go:85: [info] rafthttp: [peer 9dea63d24f4518fd became inactive]
+2017/12/19 06:48:35.800 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 9dea63d24f4518fd (stream Message writer)]
+2017/12/19 06:48:36.309 log.go:81: [warning] rafthttp: [health check for peer 2d46bf62043d6e80 could not connect: dial tcp 10.0.0.8:2380: getsockopt: connection refused]
+2017/12/19 06:48:38.090 log.go:81: [warning] etcdserver: [failed to reach the peerURL(http://10.0.0.8:2380) of member 2d46bf62043d6e80 (Get http://10.0.0.8:2380/version: dial tcp 10.0.0.8:2380: getsockopt: connection refused)]
+2017/12/19 06:48:38.090 log.go:81: [warning] etcdserver: [cannot get the version of member 2d46bf62043d6e80 (Get http://10.0.0.8:2380/version: dial tcp 10.0.0.8:2380: getsockopt: connection refused)]
+2017/12/19 06:48:38.091 log.go:81: [warning] etcdserver: [failed to reach the peerURL(http://10.0.0.9:2480) of member 9dea63d24f4518fd (Get http://10.0.0.9:2480/version: dial tcp 10.0.0.9:2480: getsockopt: connection refused)]
+2017/12/19 06:48:38.091 log.go:81: [warning] etcdserver: [cannot get the version of member 9dea63d24f4518fd (Get http://10.0.0.9:2480/version: dial tcp 10.0.0.9:2480: getsockopt: connection refused)]
+2017/12/19 06:48:38.858 main.go:90: [info] Got signal [2] to exit.
+2017/12/19 06:48:38.858 server.go:252: [info] closing server
+2017/12/19 06:48:38.859 leader.go:88: [info] leader changed, try to campaign leader
+2017/12/19 06:48:38.859 etcd_kv.go:103: [error] load from etcd error: context canceled
+2017/12/19 06:48:38.859 log.go:85: [info] etcdserver/api/v3rpc: [grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: Error while dialing dial tcp 10.0.0.10:2579: getsockopt: connection refused"; Reconnecting to {10.0.0.10:2579 <nil>}]
+2017/12/19 06:48:38.859 leader.go:95: [error] check next leader failed: context canceled
+2017/12/19 06:48:38.859 log.go:81: [warning] etcdserver: [2946b859ec75fb6a failed to transfer leadership (etcdserver: unhealthy cluster)]
+2017/12/19 06:48:38.859 log.go:85: [info] etcdserver/api/v3rpc: [Failed to dial 10.0.0.10:2579: context canceled; please retry.]
+2017/12/19 06:48:38.859 log.go:85: [info] rafthttp: [stopping peer 2d46bf62043d6e80...]
+2017/12/19 06:48:38.859 log.go:85: [info] rafthttp: [stopped streaming with peer 2d46bf62043d6e80 (writer)]
+2017/12/19 06:48:38.859 log.go:85: [info] rafthttp: [stopped streaming with peer 2d46bf62043d6e80 (writer)]
+2017/12/19 06:48:38.859 log.go:85: [info] rafthttp: [stopped HTTP pipelining with peer 2d46bf62043d6e80]
+2017/12/19 06:48:38.859 log.go:85: [info] rafthttp: [stopped streaming with peer 2d46bf62043d6e80 (stream MsgApp v2 reader)]
+2017/12/19 06:48:38.859 log.go:85: [info] rafthttp: [stopped streaming with peer 2d46bf62043d6e80 (stream Message reader)]
+2017/12/19 06:48:38.859 log.go:85: [info] rafthttp: [stopped peer 2d46bf62043d6e80]
+2017/12/19 06:48:38.859 log.go:85: [info] rafthttp: [stopping peer 9dea63d24f4518fd...]
+2017/12/19 06:48:38.860 log.go:85: [info] rafthttp: [closed the TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 writer)]
+2017/12/19 06:48:38.860 log.go:85: [info] rafthttp: [stopped streaming with peer 9dea63d24f4518fd (writer)]
+2017/12/19 06:48:38.860 log.go:85: [info] rafthttp: [stopped streaming with peer 9dea63d24f4518fd (writer)]
+2017/12/19 06:48:38.860 log.go:85: [info] rafthttp: [stopped HTTP pipelining with peer 9dea63d24f4518fd]
+2017/12/19 06:48:38.860 log.go:85: [info] rafthttp: [stopped streaming with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:48:38.860 log.go:85: [info] rafthttp: [stopped streaming with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:48:38.860 log.go:85: [info] rafthttp: [stopped peer 9dea63d24f4518fd]
+2017/12/19 06:48:39.059 leader.go:65: [info] server is closed, return leader loop
+2017/12/19 06:48:39.059 server.go:270: [info] close server

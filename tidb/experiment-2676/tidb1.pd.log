@@ -1,0 +1,487 @@
+2017/12/19 06:42:55.409 util.go:54: [info] Welcome to Placement Driver (PD).
+2017/12/19 06:42:55.409 util.go:55: [info] Release Version: v1.1.0-alpha-50-gbc538fe
+2017/12/19 06:42:55.409 util.go:56: [info] Git Commit Hash: bc538fe75a60a03264c8d6898e75e66d407d1c80
+2017/12/19 06:42:55.409 util.go:57: [info] Git Branch: master
+2017/12/19 06:42:55.409 util.go:58: [info] UTC Build Time:  2017-12-15 08:29:28
+2017/12/19 06:42:55.409 metricutil.go:83: [info] disable Prometheus push client
+2017/12/19 06:42:55.409 server.go:94: [info] PD config - Config({FlagSet:0xc4201e0780 Version:false ClientUrls:http://10.0.0.8:2379 PeerUrls:http://10.0.0.8:2380 AdvertiseClientUrls:http://10.0.0.8:2379 AdvertisePeerUrls:http://10.0.0.8:2380 Name:pd1 DataDir:pd1 InitialCluster:pd1=http://10.0.0.8:2380,pd2=http://10.0.0.9:2480,pd3=http://10.0.0.10:2580 InitialClusterState:new Join: LeaderLease:3 Log:{Level: Format:text DisableTimestamp:false File:{Filename:tidb1.pd.log LogRotate:true MaxSize:300 MaxDays:0 MaxBackups:0}} LogFileDeprecated: LogLevelDeprecated: TsoSaveInterval:3s Metric:{PushJob:pd1 PushAddress: PushInterval:0s} Schedule:{MaxSnapshotCount:3 MaxPendingPeerCount:16 MaxStoreDownTime:1h0m0s LeaderScheduleLimit:64 RegionScheduleLimit:12 ReplicaScheduleLimit:16 TolerantSizeRatio:2.5 Schedulers:[{Type:balance-region Args:[]} {Type:balance-leader Args:[]} {Type:hot-region Args:[]}]} Replication:{MaxReplicas:3 LocationLabels:[]} Namespace:map[] QuotaBackendBytes:0 AutoCompactionRetention:1 TickInterval:500ms ElectionInterval:3s Security:{CAPath: CertPath: KeyPath:} configFile: WarningMsgs:[] NamespaceClassifier:default nextRetryDelay:1000000000 disableStrictReconfigCheck:false})
+2017/12/19 06:42:55.411 server.go:121: [info] start embed etcd
+2017/12/19 06:42:55.411 log.go:85: [info] embed: [listening for peers on  http://10.0.0.8:2380]
+2017/12/19 06:42:55.411 log.go:85: [info] embed: [pprof is enabled under /debug/pprof]
+2017/12/19 06:42:55.411 log.go:85: [info] embed: [listening for client requests on  10.0.0.8:2379]
+2017/12/19 06:42:55.411 systime_mon.go:24: [info] start system time monitor
+2017/12/19 06:42:55.415 log.go:85: [info] etcdserver: [name = pd1]
+2017/12/19 06:42:55.415 log.go:85: [info] etcdserver: [data dir = pd1]
+2017/12/19 06:42:55.415 log.go:85: [info] etcdserver: [member dir = pd1/member]
+2017/12/19 06:42:55.415 log.go:85: [info] etcdserver: [heartbeat = 500ms]
+2017/12/19 06:42:55.415 log.go:85: [info] etcdserver: [election = 3000ms]
+2017/12/19 06:42:55.415 log.go:85: [info] etcdserver: [snapshot count = 100000]
+2017/12/19 06:42:55.415 log.go:85: [info] etcdserver: [advertise client URLs = http://10.0.0.8:2379]
+2017/12/19 06:42:55.415 log.go:85: [info] etcdserver: [initial advertise peer URLs = http://10.0.0.8:2380]
+2017/12/19 06:42:55.415 log.go:85: [info] etcdserver: [initial cluster = pd1=http://10.0.0.8:2380,pd2=http://10.0.0.9:2480,pd3=http://10.0.0.10:2580]
+2017/12/19 06:42:55.416 log.go:85: [info] etcdserver: [starting member 2d46bf62043d6e80 in cluster a8f4a449d994c027]
+2017/12/19 06:42:55.416 log.go:85: [info] raft: [2d46bf62043d6e80 became follower at term 0]
+2017/12/19 06:42:55.416 log.go:85: [info] raft: [newRaft 2d46bf62043d6e80 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]]
+2017/12/19 06:42:55.416 log.go:85: [info] raft: [2d46bf62043d6e80 became follower at term 1]
+2017/12/19 06:42:55.420 log.go:81: [warning] auth: [simple token is not cryptographically signed]
+2017/12/19 06:42:55.421 log.go:85: [info] rafthttp: [starting peer 2946b859ec75fb6a...]
+2017/12/19 06:42:55.422 log.go:85: [info] rafthttp: [started HTTP pipelining with peer 2946b859ec75fb6a]
+2017/12/19 06:42:55.422 log.go:85: [info] rafthttp: [started streaming with peer 2946b859ec75fb6a (writer)]
+2017/12/19 06:42:55.422 log.go:85: [info] rafthttp: [started streaming with peer 2946b859ec75fb6a (writer)]
+2017/12/19 06:42:55.424 log.go:85: [info] rafthttp: [started peer 2946b859ec75fb6a]
+2017/12/19 06:42:55.424 log.go:85: [info] rafthttp: [added peer 2946b859ec75fb6a]
+2017/12/19 06:42:55.424 log.go:85: [info] rafthttp: [starting peer 9dea63d24f4518fd...]
+2017/12/19 06:42:55.425 log.go:85: [info] rafthttp: [started streaming with peer 2946b859ec75fb6a (stream Message reader)]
+2017/12/19 06:42:55.425 log.go:85: [info] rafthttp: [started streaming with peer 2946b859ec75fb6a (stream MsgApp v2 reader)]
+2017/12/19 06:42:55.425 log.go:85: [info] rafthttp: [started HTTP pipelining with peer 9dea63d24f4518fd]
+2017/12/19 06:42:55.426 log.go:85: [info] rafthttp: [started streaming with peer 9dea63d24f4518fd (writer)]
+2017/12/19 06:42:55.426 log.go:85: [info] rafthttp: [started streaming with peer 9dea63d24f4518fd (writer)]
+2017/12/19 06:42:55.427 log.go:85: [info] rafthttp: [started peer 9dea63d24f4518fd]
+2017/12/19 06:42:55.427 log.go:85: [info] rafthttp: [started streaming with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:42:55.427 log.go:85: [info] rafthttp: [added peer 9dea63d24f4518fd]
+2017/12/19 06:42:55.427 log.go:85: [info] etcdserver: [starting server... [version: 3.2.6, cluster version: to_be_decided]]
+2017/12/19 06:42:55.427 log.go:85: [info] rafthttp: [started streaming with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:42:55.429 log.go:81: [warning] etcdserver: [could not get cluster response from http://10.0.0.9:2480: Get http://10.0.0.9:2480/members: dial tcp 10.0.0.9:2480: getsockopt: connection refused]
+2017/12/19 06:42:55.429 etcdutil.go:65: [error] could not retrieve cluster information from the given urls
+2017/12/19 06:42:55.429 log.go:85: [info] etcdserver/membership: [added member 2946b859ec75fb6a [http://10.0.0.10:2580] to cluster a8f4a449d994c027]
+2017/12/19 06:42:55.429 log.go:85: [info] etcdserver/membership: [added member 2d46bf62043d6e80 [http://10.0.0.8:2380] to cluster a8f4a449d994c027]
+2017/12/19 06:42:55.430 log.go:85: [info] etcdserver/membership: [added member 9dea63d24f4518fd [http://10.0.0.9:2480] to cluster a8f4a449d994c027]
+2017/12/19 06:42:55.431 log.go:81: [warning] etcdserver: [could not get cluster response from http://10.0.0.10:2580: Get http://10.0.0.10:2580/members: dial tcp 10.0.0.10:2580: getsockopt: connection refused]
+2017/12/19 06:42:55.431 etcdutil.go:65: [error] could not retrieve cluster information from the given urls
+2017/12/19 06:42:57.917 log.go:85: [info] raft: [2d46bf62043d6e80 is starting a new election at term 1]
+2017/12/19 06:42:57.917 log.go:85: [info] raft: [2d46bf62043d6e80 became candidate at term 2]
+2017/12/19 06:42:57.917 log.go:85: [info] raft: [2d46bf62043d6e80 received MsgVoteResp from 2d46bf62043d6e80 at term 2]
+2017/12/19 06:42:57.917 log.go:85: [info] raft: [2d46bf62043d6e80 [logterm: 1, index: 3] sent MsgVote request to 2946b859ec75fb6a at term 2]
+2017/12/19 06:42:57.917 log.go:85: [info] raft: [2d46bf62043d6e80 [logterm: 1, index: 3] sent MsgVote request to 9dea63d24f4518fd at term 2]
+2017/12/19 06:42:58.684 log.go:85: [info] rafthttp: [peer 9dea63d24f4518fd became active]
+2017/12/19 06:42:58.684 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream Message writer)]
+2017/12/19 06:42:58.684 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:42:58.684 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:42:58.686 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 writer)]
+2017/12/19 06:43:00.425 log.go:81: [warning] rafthttp: [health check for peer 2946b859ec75fb6a could not connect: dial tcp 10.0.0.10:2580: getsockopt: connection refused]
+2017/12/19 06:43:00.672 log.go:85: [info] raft: [2d46bf62043d6e80 [logterm: 1, index: 3, vote: 2d46bf62043d6e80] rejected MsgVote from 9dea63d24f4518fd [logterm: 1, index: 3] at term 2]
+2017/12/19 06:43:00.917 log.go:85: [info] raft: [2d46bf62043d6e80 is starting a new election at term 2]
+2017/12/19 06:43:00.917 log.go:85: [info] raft: [2d46bf62043d6e80 became candidate at term 3]
+2017/12/19 06:43:00.917 log.go:85: [info] raft: [2d46bf62043d6e80 received MsgVoteResp from 2d46bf62043d6e80 at term 3]
+2017/12/19 06:43:00.917 log.go:85: [info] raft: [2d46bf62043d6e80 [logterm: 1, index: 3] sent MsgVote request to 2946b859ec75fb6a at term 3]
+2017/12/19 06:43:00.917 log.go:85: [info] raft: [2d46bf62043d6e80 [logterm: 1, index: 3] sent MsgVote request to 9dea63d24f4518fd at term 3]
+2017/12/19 06:43:00.919 log.go:85: [info] raft: [2d46bf62043d6e80 received MsgVoteResp from 9dea63d24f4518fd at term 3]
+2017/12/19 06:43:00.919 log.go:85: [info] raft: [2d46bf62043d6e80 [quorum:2] has received 2 MsgVoteResp votes and 0 vote rejections]
+2017/12/19 06:43:00.919 log.go:85: [info] raft: [2d46bf62043d6e80 became leader at term 3]
+2017/12/19 06:43:00.919 log.go:85: [info] raft: [raft.node: 2d46bf62043d6e80 elected leader 2d46bf62043d6e80 at term 3]
+2017/12/19 06:43:00.921 log.go:81: [warning] etcdserver: [failed to reach the peerURL(http://10.0.0.10:2580) of member 2946b859ec75fb6a (Get http://10.0.0.10:2580/version: dial tcp 10.0.0.10:2580: getsockopt: connection refused)]
+2017/12/19 06:43:00.921 log.go:81: [warning] etcdserver: [cannot get the version of member 2946b859ec75fb6a (Get http://10.0.0.10:2580/version: dial tcp 10.0.0.10:2580: getsockopt: connection refused)]
+2017/12/19 06:43:00.924 log.go:85: [info] etcdserver: [setting up the initial cluster version to 3.0]
+2017/12/19 06:43:00.929 log.go:83: [info] etcdserver/membership: [set the initial cluster version to 3.0]
+2017/12/19 06:43:00.929 log.go:85: [info] etcdserver: [published {Name:pd1 ClientURLs:[http://10.0.0.8:2379]} to cluster a8f4a449d994c027]
+2017/12/19 06:43:00.929 server.go:155: [info] create etcd v3 client with endpoints [http://10.0.0.8:2379]
+2017/12/19 06:43:00.929 log.go:85: [info] embed: [ready to serve client requests]
+2017/12/19 06:43:00.929 log.go:85: [info] etcdserver/api: [enabled capabilities for version 3.0]
+2017/12/19 06:43:00.929 log.go:83: [info] embed: [serving insecure client requests on 10.0.0.8:2379, this is strongly discouraged!]
+2017/12/19 06:43:00.933 server.go:194: [info] init cluster id 6501145025206059015
+2017/12/19 06:43:00.948 tso.go:104: [info] sync and save timestamp: last 0001-01-01 00:00:00 +0000 UTC save 2017-12-19 06:43:03.947343768 +0000 UTC m=+8.548283986
+2017/12/19 06:43:00.948 leader.go:249: [info] PD cluster leader pd1 is ready to serve
+2017/12/19 06:43:01.309 log.go:85: [info] rafthttp: [peer 2946b859ec75fb6a became active]
+2017/12/19 06:43:01.310 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2946b859ec75fb6a (stream Message writer)]
+2017/12/19 06:43:01.310 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2946b859ec75fb6a (stream MsgApp v2 writer)]
+2017/12/19 06:43:01.312 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2946b859ec75fb6a (stream Message reader)]
+2017/12/19 06:43:01.312 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2946b859ec75fb6a (stream MsgApp v2 reader)]
+2017/12/19 06:43:04.927 log.go:85: [info] etcdserver: [updating the cluster version from 3.0 to 3.2]
+2017/12/19 06:43:04.928 log.go:83: [info] etcdserver/membership: [updated the cluster version from 3.0 to 3.2]
+2017/12/19 06:43:04.928 log.go:85: [info] etcdserver/api: [enabled capabilities for version 3.2]
+2017/12/19 06:43:06.944 id.go:90: [info] idAllocator allocates a new id: 1000
+2017/12/19 06:43:06.948 server.go:305: [info] try to bootstrap raft cluster 6501145025206059015 with header:<cluster_id:6501145025206059015 > store:<id:1 address:"10.0.0.8:20160" > region:<id:2 region_epoch:<conf_ver:1 version:1 > peers:<id:3 store_id:1 > > 
+2017/12/19 06:43:06.950 server.go:362: [info] bootstrap cluster 6501145025206059015 ok
+2017/12/19 06:43:06.953 cache.go:76: [info] load 1 stores cost 2.719304ms
+2017/12/19 06:43:06.955 cache.go:82: [info] load 1 regions cost 1.033402ms
+2017/12/19 06:43:06.955 coordinator.go:120: [info] coordinator: Start collect cluster information
+2017/12/19 06:43:06.957 grpc_service.go:203: [info] put store ok - id:1 address:"10.0.0.8:20160" 
+2017/12/19 06:43:09.203 cache.go:400: [info] [region 2] Leader changed from {<nil>} to {id:3 store_id:1 }
+2017/12/19 06:43:09.955 coordinator.go:123: [info] coordinator: Cluster information is prepared
+2017/12/19 06:43:09.955 coordinator.go:133: [info] coordinator: Run scheduler
+2017/12/19 06:43:09.955 coordinator.go:142: [info] create scheduler balance-region-scheduler
+2017/12/19 06:43:09.955 coordinator.go:142: [info] create scheduler balance-leader-scheduler
+2017/12/19 06:43:09.955 coordinator.go:142: [info] create scheduler balance-hot-region-scheduler
+2017/12/19 06:43:09.989 grpc_service.go:203: [info] put store ok - id:4 address:"10.0.0.9:21160" 
+2017/12/19 06:43:13.302 grpc_service.go:203: [info] put store ok - id:5 address:"10.0.0.10:22160" 
+2017/12/19 06:43:18.109 cache.go:392: [info] [region 2] StartKey Changed:{} -> {start_key:"t\200\000\000\000\000\000\000\377\005\000\000\000\000\000\000\000\370" }, Version changed from {1} to {2}
+2017/12/19 06:43:18.109 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:6 end_key:"t\200\000\000\000\000\000\000\377\005\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:2 > peers:<id:7 store_id:1 > 
+2017/12/19 06:43:18.111 cache.go:382: [info] [region 6] Insert new region {id:6 end_key:"t\200\000\000\000\000\000\000\377\005\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:2 > peers:<id:7 store_id:1 > }
+2017/12/19 06:43:18.302 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\005\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\007\000\000\000\000\000\000\000\370" }, Version changed from {2} to {3}
+2017/12/19 06:43:18.302 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:8 start_key:"t\200\000\000\000\000\000\000\377\005\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\007\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:3 > peers:<id:9 store_id:1 > 
+2017/12/19 06:43:18.304 cache.go:382: [info] [region 8] Insert new region {id:8 start_key:"t\200\000\000\000\000\000\000\377\005\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\007\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:3 > peers:<id:9 store_id:1 > }
+2017/12/19 06:43:18.491 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\007\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\t\000\000\000\000\000\000\000\370" }, Version changed from {3} to {4}
+2017/12/19 06:43:18.491 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:10 start_key:"t\200\000\000\000\000\000\000\377\007\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\t\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:4 > peers:<id:11 store_id:1 > 
+2017/12/19 06:43:18.493 cache.go:382: [info] [region 10] Insert new region {id:10 start_key:"t\200\000\000\000\000\000\000\377\007\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\t\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:4 > peers:<id:11 store_id:1 > }
+2017/12/19 06:43:18.676 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\t\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\013\000\000\000\000\000\000\000\370" }, Version changed from {4} to {5}
+2017/12/19 06:43:18.676 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:12 start_key:"t\200\000\000\000\000\000\000\377\t\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\013\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:5 > peers:<id:13 store_id:1 > 
+2017/12/19 06:43:18.678 cache.go:382: [info] [region 12] Insert new region {id:12 start_key:"t\200\000\000\000\000\000\000\377\t\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\013\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:5 > peers:<id:13 store_id:1 > }
+2017/12/19 06:43:18.864 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\013\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\r\000\000\000\000\000\000\000\370" }, Version changed from {5} to {6}
+2017/12/19 06:43:18.864 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:14 start_key:"t\200\000\000\000\000\000\000\377\013\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\r\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:6 > peers:<id:15 store_id:1 > 
+2017/12/19 06:43:18.866 cache.go:382: [info] [region 14] Insert new region {id:14 start_key:"t\200\000\000\000\000\000\000\377\013\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\r\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:6 > peers:<id:15 store_id:1 > }
+2017/12/19 06:43:19.052 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\r\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\017\000\000\000\000\000\000\000\370" }, Version changed from {6} to {7}
+2017/12/19 06:43:19.052 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:16 start_key:"t\200\000\000\000\000\000\000\377\r\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\017\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:7 > peers:<id:17 store_id:1 > 
+2017/12/19 06:43:19.054 cache.go:382: [info] [region 16] Insert new region {id:16 start_key:"t\200\000\000\000\000\000\000\377\r\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\017\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:7 > peers:<id:17 store_id:1 > }
+2017/12/19 06:43:19.244 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\017\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\021\000\000\000\000\000\000\000\370" }, Version changed from {7} to {8}
+2017/12/19 06:43:19.244 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:18 start_key:"t\200\000\000\000\000\000\000\377\017\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\021\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:8 > peers:<id:19 store_id:1 > 
+2017/12/19 06:43:19.246 cache.go:382: [info] [region 18] Insert new region {id:18 start_key:"t\200\000\000\000\000\000\000\377\017\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\021\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:8 > peers:<id:19 store_id:1 > }
+2017/12/19 06:43:19.431 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\021\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\023\000\000\000\000\000\000\000\370" }, Version changed from {8} to {9}
+2017/12/19 06:43:19.431 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:20 start_key:"t\200\000\000\000\000\000\000\377\021\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\023\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:9 > peers:<id:21 store_id:1 > 
+2017/12/19 06:43:19.432 cache.go:382: [info] [region 20] Insert new region {id:20 start_key:"t\200\000\000\000\000\000\000\377\021\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\023\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:9 > peers:<id:21 store_id:1 > }
+2017/12/19 06:43:19.676 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\023\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\025\000\000\000\000\000\000\000\370" }, Version changed from {9} to {10}
+2017/12/19 06:43:19.676 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:22 start_key:"t\200\000\000\000\000\000\000\377\023\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\025\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:10 > peers:<id:23 store_id:1 > 
+2017/12/19 06:43:19.677 cache.go:382: [info] [region 22] Insert new region {id:22 start_key:"t\200\000\000\000\000\000\000\377\023\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\025\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:10 > peers:<id:23 store_id:1 > }
+2017/12/19 06:43:19.871 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\025\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\027\000\000\000\000\000\000\000\370" }, Version changed from {10} to {11}
+2017/12/19 06:43:19.871 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:24 start_key:"t\200\000\000\000\000\000\000\377\025\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\027\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:11 > peers:<id:25 store_id:1 > 
+2017/12/19 06:43:19.873 cache.go:382: [info] [region 24] Insert new region {id:24 start_key:"t\200\000\000\000\000\000\000\377\025\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\027\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:11 > peers:<id:25 store_id:1 > }
+2017/12/19 06:43:20.058 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\027\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\031\000\000\000\000\000\000\000\370" }, Version changed from {11} to {12}
+2017/12/19 06:43:20.059 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:26 start_key:"t\200\000\000\000\000\000\000\377\027\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\031\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:12 > peers:<id:27 store_id:1 > 
+2017/12/19 06:43:20.060 coordinator.go:353: [info] [region 2] add operator: makeUpReplica (kind:region,replica, region:2, createAt:2017-12-19 06:43:20.060685902 +0000 UTC m=+24.661626020, currentStep:0, steps:[add peer 28 on store 4]) 
+2017/12/19 06:43:20.060 coordinator.go:445: [info] [region 2] send schedule command: add peer 28 on store 4
+2017/12/19 06:43:20.061 cache.go:382: [info] [region 26] Insert new region {id:26 start_key:"t\200\000\000\000\000\000\000\377\027\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\031\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:12 > peers:<id:27 store_id:1 > }
+2017/12/19 06:43:20.062 coordinator.go:353: [info] [region 26] add operator: makeUpReplica (kind:region,replica, region:26, createAt:2017-12-19 06:43:20.062516805 +0000 UTC m=+24.663456923, currentStep:0, steps:[add peer 29 on store 4]) 
+2017/12/19 06:43:20.062 coordinator.go:445: [info] [region 26] send schedule command: add peer 29 on store 4
+2017/12/19 06:43:20.063 cache.go:396: [info] [region 2] Add peer:{id:28 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:43:20.065 coordinator.go:445: [info] [region 2] send schedule command: add peer 28 on store 4
+2017/12/19 06:43:20.065 coordinator.go:445: [info] [region 26] send schedule command: add peer 29 on store 4
+2017/12/19 06:43:20.065 cache.go:396: [info] [region 26] Add peer:{id:29 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:43:20.067 coordinator.go:445: [info] [region 26] send schedule command: add peer 29 on store 4
+2017/12/19 06:43:20.161 coordinator.go:353: [info] [region 18] add operator: makeUpReplica (kind:region,replica, region:18, createAt:2017-12-19 06:43:20.161278278 +0000 UTC m=+24.762218396, currentStep:0, steps:[add peer 30 on store 4]) 
+2017/12/19 06:43:20.161 coordinator.go:445: [info] [region 18] send schedule command: add peer 30 on store 4
+2017/12/19 06:43:20.164 cache.go:396: [info] [region 18] Add peer:{id:30 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:43:20.166 coordinator.go:445: [info] [region 18] send schedule command: add peer 30 on store 4
+2017/12/19 06:43:20.166 coordinator.go:353: [info] [region 16] add operator: makeUpReplica (kind:region,replica, region:16, createAt:2017-12-19 06:43:20.166659487 +0000 UTC m=+24.767599705, currentStep:0, steps:[add peer 31 on store 4]) 
+2017/12/19 06:43:20.166 coordinator.go:445: [info] [region 16] send schedule command: add peer 31 on store 4
+2017/12/19 06:43:20.181 cache.go:396: [info] [region 16] Add peer:{id:31 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:43:20.183 coordinator.go:445: [info] [region 16] send schedule command: add peer 31 on store 4
+2017/12/19 06:43:20.812 coordinator.go:353: [info] [region 12] add operator: makeUpReplica (kind:region,replica, region:12, createAt:2017-12-19 06:43:20.81293462 +0000 UTC m=+25.413874838, currentStep:0, steps:[add peer 32 on store 4]) 
+2017/12/19 06:43:20.813 coordinator.go:445: [info] [region 12] send schedule command: add peer 32 on store 4
+2017/12/19 06:43:20.813 coordinator.go:353: [info] [region 14] add operator: makeUpReplica (kind:region,replica, region:14, createAt:2017-12-19 06:43:20.813280621 +0000 UTC m=+25.414220739, currentStep:0, steps:[add peer 33 on store 4]) 
+2017/12/19 06:43:20.813 coordinator.go:445: [info] [region 14] send schedule command: add peer 33 on store 4
+2017/12/19 06:43:20.813 coordinator.go:353: [info] [region 20] add operator: makeUpReplica (kind:region,replica, region:20, createAt:2017-12-19 06:43:20.813624321 +0000 UTC m=+25.414564539, currentStep:0, steps:[add peer 34 on store 4]) 
+2017/12/19 06:43:20.813 coordinator.go:445: [info] [region 20] send schedule command: add peer 34 on store 4
+2017/12/19 06:43:20.813 coordinator.go:353: [info] [region 22] add operator: makeUpReplica (kind:region,replica, region:22, createAt:2017-12-19 06:43:20.813757021 +0000 UTC m=+25.414697139, currentStep:0, steps:[add peer 35 on store 4]) 
+2017/12/19 06:43:20.813 coordinator.go:445: [info] [region 22] send schedule command: add peer 35 on store 4
+2017/12/19 06:43:20.819 cache.go:396: [info] [region 12] Add peer:{id:32 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:43:20.821 coordinator.go:445: [info] [region 12] send schedule command: add peer 32 on store 4
+2017/12/19 06:43:20.821 cache.go:396: [info] [region 14] Add peer:{id:33 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:43:20.823 coordinator.go:445: [info] [region 14] send schedule command: add peer 33 on store 4
+2017/12/19 06:43:20.823 cache.go:396: [info] [region 20] Add peer:{id:34 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:43:20.824 coordinator.go:445: [info] [region 20] send schedule command: add peer 34 on store 4
+2017/12/19 06:43:20.824 cache.go:396: [info] [region 22] Add peer:{id:35 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:43:20.826 coordinator.go:445: [info] [region 22] send schedule command: add peer 35 on store 4
+2017/12/19 06:43:21.905 coordinator.go:353: [info] [region 24] add operator: makeUpReplica (kind:region,replica, region:24, createAt:2017-12-19 06:43:21.905729035 +0000 UTC m=+26.506669153, currentStep:0, steps:[add peer 36 on store 4]) 
+2017/12/19 06:43:21.905 coordinator.go:445: [info] [region 24] send schedule command: add peer 36 on store 4
+2017/12/19 06:43:21.912 cache.go:396: [info] [region 24] Add peer:{id:36 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:43:21.914 coordinator.go:445: [info] [region 24] send schedule command: add peer 36 on store 4
+2017/12/19 06:44:06.995 coordinator.go:353: [info] [region 6] add operator: makeUpReplica (kind:region,replica, region:6, createAt:2017-12-19 06:44:06.995552858 +0000 UTC m=+71.596493276, currentStep:0, steps:[add peer 37 on store 4]) 
+2017/12/19 06:44:06.995 coordinator.go:445: [info] [region 6] send schedule command: add peer 37 on store 4
+2017/12/19 06:44:06.995 coordinator.go:94: [info] [region 2] operator finish: makeUpReplica (kind:region,replica, region:2, createAt:2017-12-19 06:43:20.060685902 +0000 UTC m=+24.661626020, currentStep:1, steps:[add peer 28 on store 4]) finished
+2017/12/19 06:44:06.995 coordinator.go:353: [info] [region 2] add operator: makeUpReplica (kind:region,replica, region:2, createAt:2017-12-19 06:44:06.995933159 +0000 UTC m=+71.596873377, currentStep:0, steps:[add peer 38 on store 5]) 
+2017/12/19 06:44:06.995 coordinator.go:445: [info] [region 2] send schedule command: add peer 38 on store 5
+2017/12/19 06:44:06.996 coordinator.go:94: [info] [region 12] operator finish: makeUpReplica (kind:region,replica, region:12, createAt:2017-12-19 06:43:20.81293462 +0000 UTC m=+25.413874838, currentStep:1, steps:[add peer 32 on store 4]) finished
+2017/12/19 06:44:06.996 coordinator.go:353: [info] [region 12] add operator: makeUpReplica (kind:region,replica, region:12, createAt:2017-12-19 06:44:06.99626916 +0000 UTC m=+71.597209278, currentStep:0, steps:[add peer 39 on store 5]) 
+2017/12/19 06:44:06.996 coordinator.go:445: [info] [region 12] send schedule command: add peer 39 on store 5
+2017/12/19 06:44:06.996 coordinator.go:94: [info] [region 14] operator finish: makeUpReplica (kind:region,replica, region:14, createAt:2017-12-19 06:43:20.813280621 +0000 UTC m=+25.414220739, currentStep:1, steps:[add peer 33 on store 4]) finished
+2017/12/19 06:44:06.996 coordinator.go:353: [info] [region 14] add operator: makeUpReplica (kind:region,replica, region:14, createAt:2017-12-19 06:44:06.99649256 +0000 UTC m=+71.597432678, currentStep:0, steps:[add peer 40 on store 5]) 
+2017/12/19 06:44:06.996 coordinator.go:445: [info] [region 14] send schedule command: add peer 40 on store 5
+2017/12/19 06:44:06.996 coordinator.go:353: [info] [region 8] add operator: makeUpReplica (kind:region,replica, region:8, createAt:2017-12-19 06:44:06.996851661 +0000 UTC m=+71.597791779, currentStep:0, steps:[add peer 41 on store 4]) 
+2017/12/19 06:44:06.996 coordinator.go:445: [info] [region 8] send schedule command: add peer 41 on store 4
+2017/12/19 06:44:06.997 coordinator.go:353: [info] [region 10] add operator: makeUpReplica (kind:region,replica, region:10, createAt:2017-12-19 06:44:06.997206161 +0000 UTC m=+71.598146279, currentStep:0, steps:[add peer 42 on store 4]) 
+2017/12/19 06:44:06.997 coordinator.go:445: [info] [region 10] send schedule command: add peer 42 on store 4
+2017/12/19 06:44:06.997 coordinator.go:94: [info] [region 20] operator finish: makeUpReplica (kind:region,replica, region:20, createAt:2017-12-19 06:43:20.813624321 +0000 UTC m=+25.414564539, currentStep:1, steps:[add peer 34 on store 4]) finished
+2017/12/19 06:44:06.997 coordinator.go:353: [info] [region 20] add operator: makeUpReplica (kind:region,replica, region:20, createAt:2017-12-19 06:44:06.997715862 +0000 UTC m=+71.598655980, currentStep:0, steps:[add peer 43 on store 5]) 
+2017/12/19 06:44:06.997 coordinator.go:445: [info] [region 20] send schedule command: add peer 43 on store 5
+2017/12/19 06:44:06.997 coordinator.go:94: [info] [region 22] operator finish: makeUpReplica (kind:region,replica, region:22, createAt:2017-12-19 06:43:20.813757021 +0000 UTC m=+25.414697139, currentStep:1, steps:[add peer 35 on store 4]) finished
+2017/12/19 06:44:06.998 coordinator.go:353: [info] [region 22] add operator: makeUpReplica (kind:region,replica, region:22, createAt:2017-12-19 06:44:06.998104063 +0000 UTC m=+71.599044181, currentStep:0, steps:[add peer 44 on store 5]) 
+2017/12/19 06:44:06.998 coordinator.go:445: [info] [region 22] send schedule command: add peer 44 on store 5
+2017/12/19 06:44:06.998 coordinator.go:94: [info] [region 16] operator finish: makeUpReplica (kind:region,replica, region:16, createAt:2017-12-19 06:43:20.166659487 +0000 UTC m=+24.767599705, currentStep:1, steps:[add peer 31 on store 4]) finished
+2017/12/19 06:44:06.998 coordinator.go:353: [info] [region 16] add operator: makeUpReplica (kind:region,replica, region:16, createAt:2017-12-19 06:44:06.998385563 +0000 UTC m=+71.599325681, currentStep:0, steps:[add peer 45 on store 5]) 
+2017/12/19 06:44:06.998 coordinator.go:445: [info] [region 16] send schedule command: add peer 45 on store 5
+2017/12/19 06:44:06.998 coordinator.go:94: [info] [region 18] operator finish: makeUpReplica (kind:region,replica, region:18, createAt:2017-12-19 06:43:20.161278278 +0000 UTC m=+24.762218396, currentStep:1, steps:[add peer 30 on store 4]) finished
+2017/12/19 06:44:06.998 coordinator.go:353: [info] [region 18] add operator: makeUpReplica (kind:region,replica, region:18, createAt:2017-12-19 06:44:06.998851164 +0000 UTC m=+71.599791282, currentStep:0, steps:[add peer 46 on store 5]) 
+2017/12/19 06:44:06.999 coordinator.go:445: [info] [region 18] send schedule command: add peer 46 on store 5
+2017/12/19 06:44:06.999 coordinator.go:94: [info] [region 24] operator finish: makeUpReplica (kind:region,replica, region:24, createAt:2017-12-19 06:43:21.905729035 +0000 UTC m=+26.506669153, currentStep:1, steps:[add peer 36 on store 4]) finished
+2017/12/19 06:44:06.999 coordinator.go:353: [info] [region 24] add operator: makeUpReplica (kind:region,replica, region:24, createAt:2017-12-19 06:44:06.999622166 +0000 UTC m=+71.600562284, currentStep:0, steps:[add peer 47 on store 5]) 
+2017/12/19 06:44:06.999 coordinator.go:445: [info] [region 24] send schedule command: add peer 47 on store 5
+2017/12/19 06:44:06.999 coordinator.go:94: [info] [region 26] operator finish: makeUpReplica (kind:region,replica, region:26, createAt:2017-12-19 06:43:20.062516805 +0000 UTC m=+24.663456923, currentStep:1, steps:[add peer 29 on store 4]) finished
+2017/12/19 06:44:06.999 coordinator.go:353: [info] [region 26] add operator: makeUpReplica (kind:region,replica, region:26, createAt:2017-12-19 06:44:06.999935466 +0000 UTC m=+71.600875584, currentStep:0, steps:[add peer 48 on store 5]) 
+2017/12/19 06:44:06.999 coordinator.go:445: [info] [region 26] send schedule command: add peer 48 on store 5
+2017/12/19 06:44:07.000 cache.go:396: [info] [region 6] Add peer:{id:37 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:44:07.002 coordinator.go:445: [info] [region 6] send schedule command: add peer 37 on store 4
+2017/12/19 06:44:07.002 cache.go:396: [info] [region 8] Add peer:{id:41 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:44:07.005 coordinator.go:445: [info] [region 8] send schedule command: add peer 41 on store 4
+2017/12/19 06:44:07.005 cache.go:396: [info] [region 10] Add peer:{id:42 store_id:4 }, ConfVer changed from {1} to {2}
+2017/12/19 06:44:07.007 coordinator.go:445: [info] [region 10] send schedule command: add peer 42 on store 4
+2017/12/19 06:44:07.007 cache.go:396: [info] [region 2] Add peer:{id:38 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:44:07.008 coordinator.go:445: [info] [region 2] send schedule command: add peer 38 on store 5
+2017/12/19 06:44:07.008 cache.go:396: [info] [region 12] Add peer:{id:39 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:44:07.010 coordinator.go:445: [info] [region 12] send schedule command: add peer 39 on store 5
+2017/12/19 06:44:07.010 cache.go:396: [info] [region 14] Add peer:{id:40 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:44:07.011 coordinator.go:445: [info] [region 14] send schedule command: add peer 40 on store 5
+2017/12/19 06:44:07.012 cache.go:396: [info] [region 20] Add peer:{id:43 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:44:07.013 coordinator.go:445: [info] [region 20] send schedule command: add peer 43 on store 5
+2017/12/19 06:44:07.013 cache.go:396: [info] [region 22] Add peer:{id:44 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:44:07.014 coordinator.go:445: [info] [region 22] send schedule command: add peer 44 on store 5
+2017/12/19 06:44:07.014 cache.go:396: [info] [region 24] Add peer:{id:47 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:44:07.015 coordinator.go:445: [info] [region 24] send schedule command: add peer 47 on store 5
+2017/12/19 06:44:07.015 cache.go:396: [info] [region 16] Add peer:{id:45 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:44:07.017 coordinator.go:445: [info] [region 16] send schedule command: add peer 45 on store 5
+2017/12/19 06:44:07.017 cache.go:396: [info] [region 18] Add peer:{id:46 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:44:07.018 coordinator.go:445: [info] [region 18] send schedule command: add peer 46 on store 5
+2017/12/19 06:44:07.018 cache.go:396: [info] [region 26] Add peer:{id:48 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:44:07.020 coordinator.go:445: [info] [region 26] send schedule command: add peer 48 on store 5
+2017/12/19 06:44:13.612 cluster_worker.go:106: [info] [region 2] region split, generate new region: id:49 start_key:"t\200\000\000\000\000\000\000\377\031\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\035\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:3 version:13 > peers:<id:50 store_id:1 > peers:<id:51 store_id:4 > peers:<id:52 store_id:5 > 
+2017/12/19 06:44:13.612 cache.go:392: [info] [region 2] StartKey Changed:{start_key:"t\200\000\000\000\000\000\000\377\031\000\000\000\000\000\000\000\370" } -> {start_key:"t\200\000\000\000\000\000\000\377\035\000\000\000\000\000\000\000\370" }, Version changed from {12} to {13}
+2017/12/19 06:44:13.614 coordinator.go:94: [info] [region 2] operator finish: makeUpReplica (kind:region,replica, region:2, createAt:2017-12-19 06:44:06.995933159 +0000 UTC m=+71.596873377, currentStep:1, steps:[add peer 38 on store 5]) finished
+2017/12/19 06:44:13.614 cache.go:382: [info] [region 49] Insert new region {id:49 start_key:"t\200\000\000\000\000\000\000\377\031\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\035\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:3 version:13 > peers:<id:50 store_id:1 > peers:<id:51 store_id:4 > peers:<id:52 store_id:5 > }
+2017/12/19 06:44:17.116 coordinator.go:353: [info] [region 2] add operator: balance-leader (kind:leader,balance, region:2, createAt:2017-12-19 06:44:17.116933842 +0000 UTC m=+81.717873960, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:44:17.117 coordinator.go:445: [info] [region 2] send schedule command: transfer leader from store 1 to store 5
+2017/12/19 06:44:17.121 cache.go:400: [info] [region 2] Leader changed from {id:3 store_id:1 } to {id:38 store_id:5 }
+2017/12/19 06:44:17.121 coordinator.go:94: [info] [region 2] operator finish: balance-leader (kind:leader,balance, region:2, createAt:2017-12-19 06:44:17.116933842 +0000 UTC m=+81.717873960, currentStep:1, steps:[transfer leader from store 1 to store 5]) finished
+2017/12/19 06:45:07.094 coordinator.go:94: [info] [region 6] operator finish: makeUpReplica (kind:region,replica, region:6, createAt:2017-12-19 06:44:06.995552858 +0000 UTC m=+71.596493276, currentStep:1, steps:[add peer 37 on store 4]) finished
+2017/12/19 06:45:07.094 coordinator.go:353: [info] [region 6] add operator: makeUpReplica (kind:region,replica, region:6, createAt:2017-12-19 06:45:07.09473454 +0000 UTC m=+131.695674658, currentStep:0, steps:[add peer 53 on store 5]) 
+2017/12/19 06:45:07.094 coordinator.go:445: [info] [region 6] send schedule command: add peer 53 on store 5
+2017/12/19 06:45:07.094 coordinator.go:94: [info] [region 12] operator finish: makeUpReplica (kind:region,replica, region:12, createAt:2017-12-19 06:44:06.99626916 +0000 UTC m=+71.597209278, currentStep:1, steps:[add peer 39 on store 5]) finished
+2017/12/19 06:45:07.095 coordinator.go:94: [info] [region 14] operator finish: makeUpReplica (kind:region,replica, region:14, createAt:2017-12-19 06:44:06.99649256 +0000 UTC m=+71.597432678, currentStep:1, steps:[add peer 40 on store 5]) finished
+2017/12/19 06:45:07.095 coordinator.go:94: [info] [region 8] operator finish: makeUpReplica (kind:region,replica, region:8, createAt:2017-12-19 06:44:06.996851661 +0000 UTC m=+71.597791779, currentStep:1, steps:[add peer 41 on store 4]) finished
+2017/12/19 06:45:07.095 coordinator.go:353: [info] [region 8] add operator: makeUpReplica (kind:region,replica, region:8, createAt:2017-12-19 06:45:07.095392241 +0000 UTC m=+131.696332359, currentStep:0, steps:[add peer 54 on store 5]) 
+2017/12/19 06:45:07.095 coordinator.go:445: [info] [region 8] send schedule command: add peer 54 on store 5
+2017/12/19 06:45:07.095 coordinator.go:94: [info] [region 10] operator finish: makeUpReplica (kind:region,replica, region:10, createAt:2017-12-19 06:44:06.997206161 +0000 UTC m=+71.598146279, currentStep:1, steps:[add peer 42 on store 4]) finished
+2017/12/19 06:45:07.095 coordinator.go:353: [info] [region 10] add operator: makeUpReplica (kind:region,replica, region:10, createAt:2017-12-19 06:45:07.095708742 +0000 UTC m=+131.696648860, currentStep:0, steps:[add peer 55 on store 5]) 
+2017/12/19 06:45:07.095 coordinator.go:445: [info] [region 10] send schedule command: add peer 55 on store 5
+2017/12/19 06:45:07.095 coordinator.go:94: [info] [region 20] operator finish: makeUpReplica (kind:region,replica, region:20, createAt:2017-12-19 06:44:06.997715862 +0000 UTC m=+71.598655980, currentStep:1, steps:[add peer 43 on store 5]) finished
+2017/12/19 06:45:07.096 coordinator.go:94: [info] [region 22] operator finish: makeUpReplica (kind:region,replica, region:22, createAt:2017-12-19 06:44:06.998104063 +0000 UTC m=+71.599044181, currentStep:1, steps:[add peer 44 on store 5]) finished
+2017/12/19 06:45:07.096 coordinator.go:94: [info] [region 16] operator finish: makeUpReplica (kind:region,replica, region:16, createAt:2017-12-19 06:44:06.998385563 +0000 UTC m=+71.599325681, currentStep:1, steps:[add peer 45 on store 5]) finished
+2017/12/19 06:45:07.096 coordinator.go:94: [info] [region 18] operator finish: makeUpReplica (kind:region,replica, region:18, createAt:2017-12-19 06:44:06.998851164 +0000 UTC m=+71.599791282, currentStep:1, steps:[add peer 46 on store 5]) finished
+2017/12/19 06:45:07.096 coordinator.go:94: [info] [region 24] operator finish: makeUpReplica (kind:region,replica, region:24, createAt:2017-12-19 06:44:06.999622166 +0000 UTC m=+71.600562284, currentStep:1, steps:[add peer 47 on store 5]) finished
+2017/12/19 06:45:07.096 coordinator.go:94: [info] [region 26] operator finish: makeUpReplica (kind:region,replica, region:26, createAt:2017-12-19 06:44:06.999935466 +0000 UTC m=+71.600875584, currentStep:1, steps:[add peer 48 on store 5]) finished
+2017/12/19 06:45:07.109 cache.go:396: [info] [region 6] Add peer:{id:53 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:45:07.111 coordinator.go:445: [info] [region 6] send schedule command: add peer 53 on store 5
+2017/12/19 06:45:07.111 cache.go:396: [info] [region 8] Add peer:{id:54 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:45:07.113 coordinator.go:445: [info] [region 8] send schedule command: add peer 54 on store 5
+2017/12/19 06:45:07.113 cache.go:396: [info] [region 10] Add peer:{id:55 store_id:5 }, ConfVer changed from {2} to {3}
+2017/12/19 06:45:07.114 coordinator.go:445: [info] [region 10] send schedule command: add peer 55 on store 5
+2017/12/19 06:45:07.822 coordinator.go:353: [info] [region 22] add operator: balance-leader (kind:leader,balance, region:22, createAt:2017-12-19 06:45:07.822067035 +0000 UTC m=+132.423007153, currentStep:0, steps:[transfer leader from store 1 to store 4]) 
+2017/12/19 06:45:07.822 coordinator.go:445: [info] [region 22] send schedule command: transfer leader from store 1 to store 4
+2017/12/19 06:45:07.828 cache.go:400: [info] [region 22] Leader changed from {id:23 store_id:1 } to {id:35 store_id:4 }
+2017/12/19 06:45:07.828 coordinator.go:94: [info] [region 22] operator finish: balance-leader (kind:leader,balance, region:22, createAt:2017-12-19 06:45:07.822067035 +0000 UTC m=+132.423007153, currentStep:1, steps:[transfer leader from store 1 to store 4]) finished
+2017/12/19 06:45:16.995 coordinator.go:353: [info] [region 20] add operator: balance-leader (kind:leader,balance, region:20, createAt:2017-12-19 06:45:16.995494485 +0000 UTC m=+141.596434703, currentStep:0, steps:[transfer leader from store 1 to store 4]) 
+2017/12/19 06:45:16.995 coordinator.go:445: [info] [region 20] send schedule command: transfer leader from store 1 to store 4
+2017/12/19 06:45:17.000 cache.go:400: [info] [region 20] Leader changed from {id:21 store_id:1 } to {id:34 store_id:4 }
+2017/12/19 06:45:17.000 coordinator.go:94: [info] [region 20] operator finish: balance-leader (kind:leader,balance, region:20, createAt:2017-12-19 06:45:16.995494485 +0000 UTC m=+141.596434703, currentStep:1, steps:[transfer leader from store 1 to store 4]) finished
+2017/12/19 06:45:17.005 coordinator.go:353: [info] [region 26] add operator: balance-leader (kind:leader,balance, region:26, createAt:2017-12-19 06:45:17.005586003 +0000 UTC m=+141.606526121, currentStep:0, steps:[transfer leader from store 1 to store 4]) 
+2017/12/19 06:45:17.005 coordinator.go:445: [info] [region 26] send schedule command: transfer leader from store 1 to store 4
+2017/12/19 06:45:17.009 cache.go:400: [info] [region 26] Leader changed from {id:27 store_id:1 } to {id:29 store_id:4 }
+2017/12/19 06:45:17.009 coordinator.go:94: [info] [region 26] operator finish: balance-leader (kind:leader,balance, region:26, createAt:2017-12-19 06:45:17.005586003 +0000 UTC m=+141.606526121, currentStep:1, steps:[transfer leader from store 1 to store 4]) finished
+2017/12/19 06:45:17.015 coordinator.go:353: [info] [region 14] add operator: balance-leader (kind:leader,balance, region:14, createAt:2017-12-19 06:45:17.015688521 +0000 UTC m=+141.616628639, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:45:17.015 coordinator.go:445: [info] [region 14] send schedule command: transfer leader from store 1 to store 5
+2017/12/19 06:45:17.019 cache.go:400: [info] [region 14] Leader changed from {id:15 store_id:1 } to {id:40 store_id:5 }
+2017/12/19 06:45:17.019 coordinator.go:94: [info] [region 14] operator finish: balance-leader (kind:leader,balance, region:14, createAt:2017-12-19 06:45:17.015688521 +0000 UTC m=+141.616628639, currentStep:1, steps:[transfer leader from store 1 to store 5]) finished
+2017/12/19 06:45:17.025 coordinator.go:353: [info] [region 24] add operator: balance-leader (kind:leader,balance, region:24, createAt:2017-12-19 06:45:17.025819339 +0000 UTC m=+141.626759557, currentStep:0, steps:[transfer leader from store 1 to store 4]) 
+2017/12/19 06:45:17.025 coordinator.go:445: [info] [region 24] send schedule command: transfer leader from store 1 to store 4
+2017/12/19 06:45:17.035 coordinator.go:353: [info] [region 12] add operator: balance-leader (kind:leader,balance, region:12, createAt:2017-12-19 06:45:17.035935657 +0000 UTC m=+141.636875775, currentStep:0, steps:[transfer leader from store 1 to store 4]) 
+2017/12/19 06:45:17.035 coordinator.go:445: [info] [region 12] send schedule command: transfer leader from store 1 to store 4
+2017/12/19 06:45:17.036 cache.go:400: [info] [region 24] Leader changed from {id:25 store_id:1 } to {id:36 store_id:4 }
+2017/12/19 06:45:17.036 coordinator.go:94: [info] [region 24] operator finish: balance-leader (kind:leader,balance, region:24, createAt:2017-12-19 06:45:17.025819339 +0000 UTC m=+141.626759557, currentStep:1, steps:[transfer leader from store 1 to store 4]) finished
+2017/12/19 06:45:17.039 cache.go:400: [info] [region 12] Leader changed from {id:13 store_id:1 } to {id:32 store_id:4 }
+2017/12/19 06:45:17.039 coordinator.go:94: [info] [region 12] operator finish: balance-leader (kind:leader,balance, region:12, createAt:2017-12-19 06:45:17.035935657 +0000 UTC m=+141.636875775, currentStep:1, steps:[transfer leader from store 1 to store 4]) finished
+2017/12/19 06:45:17.046 coordinator.go:353: [info] [region 49] add operator: balance-leader (kind:leader,balance, region:49, createAt:2017-12-19 06:45:17.046061475 +0000 UTC m=+141.647001593, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:45:17.046 coordinator.go:445: [info] [region 49] send schedule command: transfer leader from store 1 to store 5
+2017/12/19 06:45:17.051 cache.go:400: [info] [region 49] Leader changed from {id:50 store_id:1 } to {id:52 store_id:5 }
+2017/12/19 06:45:17.051 coordinator.go:94: [info] [region 49] operator finish: balance-leader (kind:leader,balance, region:49, createAt:2017-12-19 06:45:17.046061475 +0000 UTC m=+141.647001593, currentStep:1, steps:[transfer leader from store 1 to store 5]) finished
+2017/12/19 06:45:17.056 coordinator.go:353: [info] [region 18] add operator: balance-leader (kind:leader,balance, region:18, createAt:2017-12-19 06:45:17.056398393 +0000 UTC m=+141.657338511, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:45:17.056 coordinator.go:445: [info] [region 18] send schedule command: transfer leader from store 1 to store 5
+2017/12/19 06:45:17.060 cache.go:400: [info] [region 18] Leader changed from {id:19 store_id:1 } to {id:46 store_id:5 }
+2017/12/19 06:45:17.060 coordinator.go:94: [info] [region 18] operator finish: balance-leader (kind:leader,balance, region:18, createAt:2017-12-19 06:45:17.056398393 +0000 UTC m=+141.657338511, currentStep:1, steps:[transfer leader from store 1 to store 5]) finished
+2017/12/19 06:45:34.639 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2946b859ec75fb6a (stream MsgApp v2 reader)]
+2017/12/19 06:45:34.639 log.go:79: [error] rafthttp: [failed to read 2946b859ec75fb6a on stream MsgApp v2 (read tcp 10.0.0.8:50104->10.0.0.10:2580: i/o timeout)]
+2017/12/19 06:45:34.639 log.go:85: [info] rafthttp: [peer 2946b859ec75fb6a became inactive]
+2017/12/19 06:45:35.418 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2946b859ec75fb6a (stream Message reader)]
+2017/12/19 06:45:39.435 cache.go:400: [info] [region 14] Leader changed from {id:40 store_id:5 } to {id:33 store_id:4 }
+2017/12/19 06:45:40.537 cache.go:400: [info] [region 49] Leader changed from {id:52 store_id:5 } to {id:51 store_id:4 }
+2017/12/19 06:45:40.537 cache.go:400: [info] [region 18] Leader changed from {id:46 store_id:5 } to {id:30 store_id:4 }
+2017/12/19 06:45:48.036 cache.go:400: [info] [region 2] Leader changed from {id:38 store_id:5 } to {id:28 store_id:4 }
+2017/12/19 06:46:07.096 coordinator.go:94: [info] [region 6] operator finish: makeUpReplica (kind:region,replica, region:6, createAt:2017-12-19 06:45:07.09473454 +0000 UTC m=+131.695674658, currentStep:1, steps:[add peer 53 on store 5]) finished
+2017/12/19 06:46:07.096 coordinator.go:94: [info] [region 8] operator finish: makeUpReplica (kind:region,replica, region:8, createAt:2017-12-19 06:45:07.095392241 +0000 UTC m=+131.696332359, currentStep:1, steps:[add peer 54 on store 5]) finished
+2017/12/19 06:46:07.097 coordinator.go:94: [info] [region 10] operator finish: makeUpReplica (kind:region,replica, region:10, createAt:2017-12-19 06:45:07.095708742 +0000 UTC m=+131.696648860, currentStep:1, steps:[add peer 55 on store 5]) finished
+2017/12/19 06:46:08.713 coordinator.go:353: [info] [region 10] add operator: balance-leader (kind:leader,balance, region:10, createAt:2017-12-19 06:46:08.713954456 +0000 UTC m=+193.314894674, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:46:08.714 coordinator.go:445: [info] [region 10] send schedule command: transfer leader from store 1 to store 5
+2017/12/19 06:46:24.217 coordinator.go:353: [info] [region 10] add operator: balance-leader (kind:leader,balance, region:10, createAt:2017-12-19 06:46:24.216966223 +0000 UTC m=+208.817906441, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:46:24.217 coordinator.go:359: [info] [region 10] cancel add operator, old: balance-leader (kind:leader,balance, region:10, createAt:2017-12-19 06:46:08.713954456 +0000 UTC m=+193.314894674, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:46:24.227 coordinator.go:353: [info] [region 20] add operator: balance-leader (kind:leader,balance, region:20, createAt:2017-12-19 06:46:24.227039506 +0000 UTC m=+208.827979624, currentStep:0, steps:[transfer leader from store 4 to store 5]) 
+2017/12/19 06:46:24.227 coordinator.go:445: [info] [region 20] send schedule command: transfer leader from store 4 to store 5
+2017/12/19 06:46:24.237 coordinator.go:353: [info] [region 10] add operator: balance-leader (kind:leader,balance, region:10, createAt:2017-12-19 06:46:24.237303788 +0000 UTC m=+208.838243906, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:46:24.237 coordinator.go:359: [info] [region 10] cancel add operator, old: balance-leader (kind:leader,balance, region:10, createAt:2017-12-19 06:46:08.713954456 +0000 UTC m=+193.314894674, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:46:24.247 coordinator.go:353: [info] [region 20] add operator: balance-leader (kind:leader,balance, region:20, createAt:2017-12-19 06:46:24.24752287 +0000 UTC m=+208.848463088, currentStep:0, steps:[transfer leader from store 4 to store 5]) 
+2017/12/19 06:46:24.247 coordinator.go:359: [info] [region 20] cancel add operator, old: balance-leader (kind:leader,balance, region:20, createAt:2017-12-19 06:46:24.227039506 +0000 UTC m=+208.827979624, currentStep:0, steps:[transfer leader from store 4 to store 5]) 
+2017/12/19 06:46:27.456 log.go:85: [info] rafthttp: [peer 2946b859ec75fb6a became active]
+2017/12/19 06:46:27.456 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2946b859ec75fb6a (stream MsgApp v2 reader)]
+2017/12/19 06:46:27.542 log.go:81: [warning] rafthttp: [closed an existing TCP streaming connection with peer 2946b859ec75fb6a (stream Message writer)]
+2017/12/19 06:46:27.542 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2946b859ec75fb6a (stream Message writer)]
+2017/12/19 06:46:27.543 log.go:81: [warning] rafthttp: [closed an existing TCP streaming connection with peer 2946b859ec75fb6a (stream MsgApp v2 writer)]
+2017/12/19 06:46:27.543 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2946b859ec75fb6a (stream MsgApp v2 writer)]
+2017/12/19 06:46:27.550 log.go:85: [info] rafthttp: [established a TCP streaming connection with peer 2946b859ec75fb6a (stream Message reader)]
+2017/12/19 06:46:27.735 log.go:85: [info] raft: [2d46bf62043d6e80 [term: 3] received a MsgAppResp message with higher term from 2946b859ec75fb6a [term: 17]]
+2017/12/19 06:46:27.735 log.go:85: [info] raft: [2d46bf62043d6e80 became follower at term 17]
+2017/12/19 06:46:27.735 log.go:85: [info] raft: [raft.node: 2d46bf62043d6e80 changed leader from 2d46bf62043d6e80 to 2946b859ec75fb6a at term 17]
+2017/12/19 06:46:27.735 log.go:85: [info] raft: [2d46bf62043d6e80 [term: 17] ignored a MsgHeartbeatResp message with lower term from 9dea63d24f4518fd [term: 3]]
+2017/12/19 06:46:30.301 log.go:85: [info] raft: [2d46bf62043d6e80 [logterm: 3, index: 221, vote: 0] ignored MsgVote from 2946b859ec75fb6a [logterm: 3, index: 202] at term 17: lease is not expired (remaining ticks: 1)]
+2017/12/19 06:46:30.917 log.go:85: [info] raft: [2d46bf62043d6e80 is starting a new election at term 17]
+2017/12/19 06:46:30.917 log.go:85: [info] raft: [2d46bf62043d6e80 became candidate at term 18]
+2017/12/19 06:46:30.917 log.go:85: [info] raft: [2d46bf62043d6e80 received MsgVoteResp from 2d46bf62043d6e80 at term 18]
+2017/12/19 06:46:30.917 log.go:85: [info] raft: [2d46bf62043d6e80 [logterm: 3, index: 221] sent MsgVote request to 2946b859ec75fb6a at term 18]
+2017/12/19 06:46:30.917 log.go:85: [info] raft: [2d46bf62043d6e80 [logterm: 3, index: 221] sent MsgVote request to 9dea63d24f4518fd at term 18]
+2017/12/19 06:46:30.917 log.go:85: [info] raft: [raft.node: 2d46bf62043d6e80 lost leader 2946b859ec75fb6a at term 18]
+2017/12/19 06:46:30.918 log.go:85: [info] raft: [2d46bf62043d6e80 received MsgVoteResp rejection from 2946b859ec75fb6a at term 18]
+2017/12/19 06:46:30.918 log.go:85: [info] raft: [2d46bf62043d6e80 [quorum:2] has received 1 MsgVoteResp votes and 1 vote rejections]
+2017/12/19 06:46:30.918 log.go:85: [info] raft: [2d46bf62043d6e80 received MsgVoteResp from 9dea63d24f4518fd at term 18]
+2017/12/19 06:46:30.918 log.go:85: [info] raft: [2d46bf62043d6e80 [quorum:2] has received 2 MsgVoteResp votes and 1 vote rejections]
+2017/12/19 06:46:30.918 log.go:85: [info] raft: [2d46bf62043d6e80 became leader at term 18]
+2017/12/19 06:46:30.918 log.go:85: [info] raft: [raft.node: 2d46bf62043d6e80 elected leader 2d46bf62043d6e80 at term 18]
+2017/12/19 06:46:30.921 util.go:193: [warning] txn runs too slow, resp: &{cluster_id:12174536329779265575 member_id:3262505407775338112 revision:189 raft_term:18  true [response_put:<header:<revision:189 > > ]}, err: <nil>, cost: 1.27249975s
+2017/12/19 06:46:30.921 tso.go:122: [warning] clock offset: 1.272658848s, prev: 2017-12-19 06:46:29.648902333 +0000 UTC m=+214.249842551, now: 2017-12-19 06:46:30.921561181 +0000 UTC m=+215.522501399
+2017/12/19 06:46:32.981 leader.go:258: [info] keep alive channel is closed
+2017/12/19 06:46:32.981 coordinator.go:342: [info] balance-hot-region-scheduler stopped: context canceled
+2017/12/19 06:46:32.981 coordinator.go:342: [info] balance-region-scheduler stopped: context canceled
+2017/12/19 06:46:32.981 coordinator.go:342: [info] balance-leader-scheduler stopped: context canceled
+2017/12/19 06:46:37.734 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.734 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.734 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000373752s err context deadline exceeded
+2017/12/19 06:46:37.734 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.734 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000262352s err context deadline exceeded
+2017/12/19 06:46:37.734 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:37.734 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:37.734 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.734 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000495952s err context deadline exceeded
+2017/12/19 06:46:37.734 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000507852s err context deadline exceeded
+2017/12/19 06:46:37.779 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.779 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000195955s err context deadline exceeded
+2017/12/19 06:46:37.779 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:37.779 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.779 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:37.779 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000259855s err context deadline exceeded
+2017/12/19 06:46:37.779 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.779 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:37.779 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000325755s err context deadline exceeded
+2017/12/19 06:46:37.779 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.779 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.779 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000443254s err context deadline exceeded
+2017/12/19 06:46:37.779 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000244955s err context deadline exceeded
+2017/12/19 06:46:37.779 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:37.779 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000515054s err context deadline exceeded
+2017/12/19 06:46:37.779 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = DeadlineExceeded desc = "context deadline exceeded"]
+2017/12/19 06:46:38.734 log.go:81: [warning] etcdserver: [timed out waiting for read index response]
+2017/12/19 06:46:38.735 etcd_kv.go:103: [error] load from etcd error: context deadline exceeded
+2017/12/19 06:46:38.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 10.000226113s err context deadline exceeded
+2017/12/19 06:46:38.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 9.480248196s err <nil>
+2017/12/19 06:46:38.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 1.750234524s err <nil>
+2017/12/19 06:46:38.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 1.749825425s err <nil>
+2017/12/19 06:46:38.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 3.476020869s err <nil>
+2017/12/19 06:46:38.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 4.75071205s err <nil>
+2017/12/19 06:46:38.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 4.751184449s err <nil>
+2017/12/19 06:46:38.736 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 3.999514s err <nil>
+2017/12/19 06:46:38.736 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 5.754523472s err <nil>
+2017/12/19 06:46:38.735 etcd_kv.go:106: [warning] kv gets too slow: key /pd/6501145025206059015/leader cost 6.999882384s err <nil>
+2017/12/19 06:46:38.736 leader.go:79: [warning] leader is still name:"pd1" member_id:3262505407775338112 peer_urls:"http://10.0.0.8:2380" client_urls:"http://10.0.0.8:2379" , delete and campaign again
+2017/12/19 06:46:38.752 cache.go:76: [info] load 3 stores cost 7.624987ms
+2017/12/19 06:46:38.754 cache.go:82: [info] load 13 regions cost 1.985397ms
+2017/12/19 06:46:38.754 coordinator.go:120: [info] coordinator: Start collect cluster information
+2017/12/19 06:46:38.756 tso.go:104: [info] sync and save timestamp: last 2017-12-19 06:46:35.648933279 +0000 UTC save 2017-12-19 06:46:41.755238463 +0000 UTC m=+226.356178681
+2017/12/19 06:46:38.756 leader.go:249: [info] PD cluster leader pd1 is ready to serve
+2017/12/19 06:46:54.899 cache.go:400: [info] [region 18] Leader changed from {<nil>} to {id:19 store_id:1 }
+2017/12/19 06:47:03.699 cache.go:400: [info] [region 49] Leader changed from {<nil>} to {id:50 store_id:1 }
+2017/12/19 06:47:07.196 cache.go:400: [info] [region 6] Leader changed from {<nil>} to {id:7 store_id:1 }
+2017/12/19 06:47:07.196 cache.go:400: [info] [region 8] Leader changed from {<nil>} to {id:9 store_id:1 }
+2017/12/19 06:47:07.196 cache.go:400: [info] [region 10] Leader changed from {<nil>} to {id:11 store_id:1 }
+2017/12/19 06:47:07.196 cache.go:400: [info] [region 16] Leader changed from {<nil>} to {id:17 store_id:1 }
+2017/12/19 06:47:10.433 cache.go:400: [info] [region 2] Leader changed from {<nil>} to {id:28 store_id:4 }
+2017/12/19 06:47:10.433 cache.go:400: [info] [region 12] Leader changed from {<nil>} to {id:32 store_id:4 }
+2017/12/19 06:47:10.434 cache.go:400: [info] [region 14] Leader changed from {<nil>} to {id:33 store_id:4 }
+2017/12/19 06:47:10.434 cache.go:400: [info] [region 20] Leader changed from {<nil>} to {id:34 store_id:4 }
+2017/12/19 06:47:10.434 cache.go:400: [info] [region 22] Leader changed from {<nil>} to {id:35 store_id:4 }
+2017/12/19 06:47:10.434 cache.go:400: [info] [region 24] Leader changed from {<nil>} to {id:36 store_id:4 }
+2017/12/19 06:47:10.434 cache.go:400: [info] [region 26] Leader changed from {<nil>} to {id:29 store_id:4 }
+2017/12/19 06:47:11.755 coordinator.go:123: [info] coordinator: Cluster information is prepared
+2017/12/19 06:47:11.755 coordinator.go:133: [info] coordinator: Run scheduler
+2017/12/19 06:47:11.755 coordinator.go:142: [info] create scheduler balance-region-scheduler
+2017/12/19 06:47:11.755 coordinator.go:142: [info] create scheduler balance-leader-scheduler
+2017/12/19 06:47:11.755 coordinator.go:142: [info] create scheduler balance-hot-region-scheduler
+2017/12/19 06:47:11.766 coordinator.go:353: [info] [region 20] add operator: balance-leader (kind:leader,balance, region:20, createAt:2017-12-19 06:47:11.766475512 +0000 UTC m=+256.367415630, currentStep:0, steps:[transfer leader from store 4 to store 5]) 
+2017/12/19 06:47:11.766 coordinator.go:445: [info] [region 20] send schedule command: transfer leader from store 4 to store 5
+2017/12/19 06:47:11.776 coordinator.go:353: [info] [region 49] add operator: balance-leader (kind:leader,balance, region:49, createAt:2017-12-19 06:47:11.776539498 +0000 UTC m=+256.377479616, currentStep:0, steps:[transfer leader from store 1 to store 5]) 
+2017/12/19 06:47:11.776 coordinator.go:445: [info] [region 49] send schedule command: transfer leader from store 1 to store 5
+2017/12/19 06:47:11.782 cache.go:400: [info] [region 49] Leader changed from {id:50 store_id:1 } to {id:52 store_id:5 }
+2017/12/19 06:47:11.782 coordinator.go:94: [info] [region 49] operator finish: balance-leader (kind:leader,balance, region:49, createAt:2017-12-19 06:47:11.776539498 +0000 UTC m=+256.377479616, currentStep:1, steps:[transfer leader from store 1 to store 5]) finished
+2017/12/19 06:47:11.786 coordinator.go:353: [info] [region 20] add operator: balance-leader (kind:leader,balance, region:20, createAt:2017-12-19 06:47:11.786638383 +0000 UTC m=+256.387578601, currentStep:0, steps:[transfer leader from store 4 to store 5]) 
+2017/12/19 06:47:11.786 coordinator.go:359: [info] [region 20] cancel add operator, old: balance-leader (kind:leader,balance, region:20, createAt:2017-12-19 06:47:11.766475512 +0000 UTC m=+256.367415630, currentStep:0, steps:[transfer leader from store 4 to store 5]) 
+2017/12/19 06:47:19.479 cache.go:400: [info] [region 26] Leader changed from {id:29 store_id:4 } to {id:48 store_id:5 }
+2017/12/19 06:47:20.653 cache.go:400: [info] [region 16] Leader changed from {id:17 store_id:1 } to {id:45 store_id:5 }
+2017/12/19 06:47:23.752 cache.go:400: [info] [region 24] Leader changed from {id:36 store_id:4 } to {id:47 store_id:5 }
+2017/12/19 06:47:23.754 cache.go:400: [info] [region 20] Leader changed from {id:34 store_id:4 } to {id:43 store_id:5 }
+2017/12/19 06:47:23.754 coordinator.go:94: [info] [region 20] operator finish: balance-leader (kind:leader,balance, region:20, createAt:2017-12-19 06:47:11.766475512 +0000 UTC m=+256.367415630, currentStep:1, steps:[transfer leader from store 4 to store 5]) finished
+2017/12/19 06:47:23.759 coordinator.go:353: [info] [region 12] add operator: balance-leader (kind:leader,balance, region:12, createAt:2017-12-19 06:47:23.759126189 +0000 UTC m=+268.360066407, currentStep:0, steps:[transfer leader from store 4 to store 1]) 
+2017/12/19 06:47:23.759 coordinator.go:445: [info] [region 12] send schedule command: transfer leader from store 4 to store 1
+2017/12/19 06:47:26.951 cache.go:400: [info] [region 10] Leader changed from {id:11 store_id:1 } to {id:55 store_id:5 }
+2017/12/19 06:47:29.055 cache.go:400: [info] [region 6] Leader changed from {id:7 store_id:1 } to {id:53 store_id:5 }
+2017/12/19 06:47:31.262 cache.go:400: [info] [region 12] Leader changed from {id:32 store_id:4 } to {id:39 store_id:5 }
+2017/12/19 06:47:31.262 coordinator.go:445: [info] [region 12] send schedule command: transfer leader from store 4 to store 1
+2017/12/19 06:47:31.269 cache.go:400: [info] [region 12] Leader changed from {id:39 store_id:5 } to {id:13 store_id:1 }
+2017/12/19 06:47:31.269 coordinator.go:94: [info] [region 12] operator finish: balance-leader (kind:leader,balance, region:12, createAt:2017-12-19 06:47:23.759126189 +0000 UTC m=+268.360066407, currentStep:1, steps:[transfer leader from store 4 to store 1]) finished
+2017/12/19 06:47:31.276 coordinator.go:353: [info] [region 49] add operator: balance-leader (kind:leader,balance, region:49, createAt:2017-12-19 06:47:31.276833088 +0000 UTC m=+275.877773306, currentStep:0, steps:[transfer leader from store 5 to store 1]) 
+2017/12/19 06:47:31.276 coordinator.go:445: [info] [region 49] send schedule command: transfer leader from store 5 to store 1
+2017/12/19 06:47:31.280 cache.go:400: [info] [region 49] Leader changed from {id:52 store_id:5 } to {id:50 store_id:1 }
+2017/12/19 06:47:31.280 coordinator.go:94: [info] [region 49] operator finish: balance-leader (kind:leader,balance, region:49, createAt:2017-12-19 06:47:31.276833088 +0000 UTC m=+275.877773306, currentStep:1, steps:[transfer leader from store 5 to store 1]) finished
+2017/12/19 06:47:45.734 cache.go:400: [info] [region 18] Leader changed from {id:19 store_id:1 } to {id:30 store_id:4 }
+2017/12/19 06:48:11.009 coordinator.go:353: [info] [region 14] add operator: balance-leader (kind:leader,balance, region:14, createAt:2017-12-19 06:48:11.009331884 +0000 UTC m=+315.610272002, currentStep:0, steps:[transfer leader from store 4 to store 1]) 
+2017/12/19 06:48:11.009 coordinator.go:445: [info] [region 14] send schedule command: transfer leader from store 4 to store 1
+2017/12/19 06:48:11.015 cache.go:400: [info] [region 14] Leader changed from {id:33 store_id:4 } to {id:15 store_id:1 }
+2017/12/19 06:48:11.015 coordinator.go:94: [info] [region 14] operator finish: balance-leader (kind:leader,balance, region:14, createAt:2017-12-19 06:48:11.009331884 +0000 UTC m=+315.610272002, currentStep:1, steps:[transfer leader from store 4 to store 1]) finished
+2017/12/19 06:48:14.042 log.go:85: [info] etcdserver/api/v3rpc: [grpc: Server.processUnaryRPC failed to write status: stream error: code = Canceled desc = "context canceled"]
+2017/12/19 06:48:22.934 coordinator.go:353: [info] [region 26] add operator: balance-leader (kind:leader,balance, region:26, createAt:2017-12-19 06:48:22.93458059 +0000 UTC m=+327.535520708, currentStep:0, steps:[transfer leader from store 5 to store 1]) 
+2017/12/19 06:48:22.934 coordinator.go:445: [info] [region 26] send schedule command: transfer leader from store 5 to store 1
+2017/12/19 06:48:29.427 main.go:90: [info] Got signal [2] to exit.
+2017/12/19 06:48:29.428 server.go:252: [info] closing server
+2017/12/19 06:48:29.428 coordinator.go:342: [info] balance-hot-region-scheduler stopped: context canceled
+2017/12/19 06:48:29.428 coordinator.go:342: [info] balance-region-scheduler stopped: context canceled
+2017/12/19 06:48:29.428 coordinator.go:342: [info] balance-leader-scheduler stopped: context canceled
+2017/12/19 06:48:29.428 leader.go:107: [error] campaign leader err github.com/pingcap/pd/server/leader.go:269: server closed
+2017/12/19 06:48:29.428 leader.go:65: [info] server is closed, return leader loop
+2017/12/19 06:48:29.428 log.go:85: [info] etcdserver: [2d46bf62043d6e80 starts leadership transfer from 2d46bf62043d6e80 to 9dea63d24f4518fd]
+2017/12/19 06:48:29.428 log.go:85: [info] etcdserver/api/v3rpc: [grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: Error while dialing dial tcp 10.0.0.8:2379: getsockopt: connection refused"; Reconnecting to {10.0.0.8:2379 <nil>}]
+2017/12/19 06:48:29.428 log.go:85: [info] etcdserver/api/v3rpc: [Failed to dial 10.0.0.8:2379: grpc: the connection is closing; please retry.]
+2017/12/19 06:48:29.428 log.go:85: [info] raft: [2d46bf62043d6e80 [term 18] starts to transfer leadership to 9dea63d24f4518fd]
+2017/12/19 06:48:29.428 log.go:85: [info] raft: [2d46bf62043d6e80 sends MsgTimeoutNow to 9dea63d24f4518fd immediately as 9dea63d24f4518fd already has up-to-date log]
+2017/12/19 06:48:29.430 log.go:85: [info] raft: [2d46bf62043d6e80 [term: 18] received a MsgVote message with higher term from 9dea63d24f4518fd [term: 19]]
+2017/12/19 06:48:29.430 log.go:85: [info] raft: [2d46bf62043d6e80 became follower at term 19]
+2017/12/19 06:48:29.430 log.go:85: [info] raft: [2d46bf62043d6e80 [logterm: 18, index: 283, vote: 0] cast MsgVote for 9dea63d24f4518fd [logterm: 18, index: 283] at term 19]
+2017/12/19 06:48:29.430 log.go:85: [info] raft: [raft.node: 2d46bf62043d6e80 lost leader 2d46bf62043d6e80 at term 19]
+2017/12/19 06:48:29.431 log.go:85: [info] raft: [raft.node: 2d46bf62043d6e80 elected leader 9dea63d24f4518fd at term 19]
+2017/12/19 06:48:29.928 log.go:85: [info] etcdserver: [2d46bf62043d6e80 finished leadership transfer from 2d46bf62043d6e80 to 9dea63d24f4518fd (took 500.137682ms)]
+2017/12/19 06:48:29.928 log.go:85: [info] rafthttp: [stopping peer 2946b859ec75fb6a...]
+2017/12/19 06:48:29.929 log.go:85: [info] rafthttp: [closed the TCP streaming connection with peer 2946b859ec75fb6a (stream MsgApp v2 writer)]
+2017/12/19 06:48:29.929 log.go:85: [info] rafthttp: [stopped streaming with peer 2946b859ec75fb6a (writer)]
+2017/12/19 06:48:29.930 log.go:85: [info] rafthttp: [closed the TCP streaming connection with peer 2946b859ec75fb6a (stream Message writer)]
+2017/12/19 06:48:29.930 log.go:85: [info] rafthttp: [stopped streaming with peer 2946b859ec75fb6a (writer)]
+2017/12/19 06:48:29.930 log.go:85: [info] rafthttp: [stopped HTTP pipelining with peer 2946b859ec75fb6a]
+2017/12/19 06:48:29.930 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2946b859ec75fb6a (stream MsgApp v2 reader)]
+2017/12/19 06:48:29.930 log.go:85: [info] rafthttp: [stopped streaming with peer 2946b859ec75fb6a (stream MsgApp v2 reader)]
+2017/12/19 06:48:29.930 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 2946b859ec75fb6a (stream Message reader)]
+2017/12/19 06:48:29.930 log.go:79: [error] rafthttp: [failed to read 2946b859ec75fb6a on stream Message (context canceled)]
+2017/12/19 06:48:29.930 log.go:85: [info] rafthttp: [peer 2946b859ec75fb6a became inactive]
+2017/12/19 06:48:29.930 log.go:85: [info] rafthttp: [stopped streaming with peer 2946b859ec75fb6a (stream Message reader)]
+2017/12/19 06:48:29.930 log.go:85: [info] rafthttp: [stopped peer 2946b859ec75fb6a]
+2017/12/19 06:48:29.930 log.go:85: [info] rafthttp: [stopping peer 9dea63d24f4518fd...]
+2017/12/19 06:48:29.931 log.go:85: [info] rafthttp: [closed the TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 writer)]
+2017/12/19 06:48:29.931 log.go:85: [info] rafthttp: [stopped streaming with peer 9dea63d24f4518fd (writer)]
+2017/12/19 06:48:29.932 log.go:85: [info] rafthttp: [closed the TCP streaming connection with peer 9dea63d24f4518fd (stream Message writer)]
+2017/12/19 06:48:29.932 log.go:85: [info] rafthttp: [stopped streaming with peer 9dea63d24f4518fd (writer)]
+2017/12/19 06:48:29.932 log.go:85: [info] rafthttp: [stopped HTTP pipelining with peer 9dea63d24f4518fd]
+2017/12/19 06:48:29.932 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:48:29.932 log.go:79: [error] rafthttp: [failed to read 9dea63d24f4518fd on stream MsgApp v2 (context canceled)]
+2017/12/19 06:48:29.932 log.go:85: [info] rafthttp: [peer 9dea63d24f4518fd became inactive]
+2017/12/19 06:48:29.932 log.go:85: [info] rafthttp: [stopped streaming with peer 9dea63d24f4518fd (stream MsgApp v2 reader)]
+2017/12/19 06:48:29.932 log.go:81: [warning] rafthttp: [lost the TCP streaming connection with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:48:29.932 log.go:85: [info] rafthttp: [stopped streaming with peer 9dea63d24f4518fd (stream Message reader)]
+2017/12/19 06:48:29.932 log.go:85: [info] rafthttp: [stopped peer 9dea63d24f4518fd]
+2017/12/19 06:48:30.934 server.go:270: [info] close server

@@ -1,0 +1,1264 @@
+2017/12/19 06:43:17.892 printer.go:33: [info] Welcome to TiDB.
+2017/12/19 06:43:17.892 printer.go:34: [info] Release Version: v1.1.0-alpha-290-g7995346
+2017/12/19 06:43:17.892 printer.go:35: [info] Git Commit Hash: 7995346d8d54afd4d85ac3c9f6a3594c0bc7dbbd
+2017/12/19 06:43:17.892 printer.go:36: [info] Git Branch: master
+2017/12/19 06:43:17.892 printer.go:37: [info] UTC Build Time:  2017-12-18 03:25:13
+2017/12/19 06:43:17.892 tidb.go:265: [info] new store
+2017/12/19 06:43:17.892 client.go:114: [info] [pd] create pd client with endpoints [10.0.0.8:2379 10.0.0.9:2479 10.0.0.10:2579]
+2017/12/19 06:43:17.896 client.go:212: [info] [pd] leader switches to: http://10.0.0.8:2379, previous: 
+2017/12/19 06:43:17.896 client.go:133: [info] [pd] init cluster id 6501145025206059015
+2017/12/19 06:43:17.901 tidb.go:63: [info] store tikv-6501145025206059015 new domain, ddl lease 100ms, stats lease 3000000000
+2017/12/19 06:43:17.902 ddl.go:284: [info] [ddl] start delRangeManager OK, with emulator: false
+2017/12/19 06:43:17.904 ddl.go:291: [info] [ddl] start DDL:b52ed9fb-0d31-4ba0-ad44-723cf54b21cb
+2017/12/19 06:43:17.908 manager.go:238: [info] [ddl] /tidb/ddl/fg/owner ownerManager b52ed9fb-0d31-4ba0-ad44-723cf54b21cb, owner is b52ed9fb-0d31-4ba0-ad44-723cf54b21cb
+2017/12/19 06:43:17.910 domain.go:114: [info] [ddl] full load InfoSchema from version 0 to 0, in 666.102µs
+2017/12/19 06:43:17.911 domain.go:306: [info] [ddl] full load and reset schema validator.
+2017/12/19 06:43:17.912 tidb.go:169: [info] RollbackTxn for ddl/autocommit error.
+2017/12/19 06:43:17.912 txn.go:188: [info] [kv] Rollback txn 396798406924435459
+2017/12/19 06:43:17.912 session.go:674: [warning] [0] session error:
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/simple.go:93: [schema:1049]Unknown database 'mysql'
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/simple.go:83: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/adapter.go:279: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/tidb.go:176: 
+{
+  "currDBName": "",
+  "id": 0,
+  "status": 2,
+  "strictMode": true,
+  "user": null
+}
+2017/12/19 06:43:17.912 session.go:747: [warning] [0] compile error:
+[schema:1146]Table 'mysql.tidb' doesn't exist
+SELECT VARIABLE_VALUE FROM mysql.tidb WHERE VARIABLE_NAME="bootstrapped"
+2017/12/19 06:43:17.921 ddl.go:420: [info] [ddl] start DDL job ID:2, Type:create schema, State:none, SchemaState:none, SchemaID:1, TableID:0, RowCount:0, ArgLen:1, Query:
+CREATE DATABASE IF NOT EXISTS test
+2017/12/19 06:43:17.924 ddl_worker.go:254: [info] [ddl] run DDL job ID:2, Type:create schema, State:none, SchemaState:none, SchemaID:1, TableID:0, RowCount:0, ArgLen:0
+2017/12/19 06:43:17.935 domain.go:114: [info] [ddl] full load InfoSchema from version 0 to 1, in 1.781203ms
+2017/12/19 06:43:17.936 domain.go:306: [info] [ddl] full load and reset schema validator.
+2017/12/19 06:43:17.984 ddl_worker.go:376: [info] [ddl] wait latest schema version 1 changed, take time 53.280593ms
+2017/12/19 06:43:17.986 ddl_worker.go:152: [info] [ddl] finish DDL job ID:2, Type:create schema, State:synced, SchemaState:public, SchemaID:1, TableID:0, RowCount:0, ArgLen:0
+2017/12/19 06:43:17.992 ddl.go:456: [info] [ddl] DDL job 2 is finished
+2017/12/19 06:43:17.992 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:17.993 session.go:1319: [info] [CRUCIAL OPERATION] CREATE DATABASE IF NOT EXISTS test (by <nil>).
+2017/12/19 06:43:18.005 ddl.go:420: [info] [ddl] start DDL job ID:4, Type:create schema, State:none, SchemaState:none, SchemaID:3, TableID:0, RowCount:0, ArgLen:1, Query:
+CREATE DATABASE IF NOT EXISTS mysql;
+2017/12/19 06:43:18.008 ddl_worker.go:254: [info] [ddl] run DDL job ID:4, Type:create schema, State:none, SchemaState:none, SchemaID:3, TableID:0, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.020 domain.go:99: [info] [ddl] diff load InfoSchema from version 1 to 2, in 1.562703ms
+2017/12/19 06:43:18.069 ddl_worker.go:376: [info] [ddl] wait latest schema version 2 changed, take time 53.612594ms
+2017/12/19 06:43:18.071 ddl_worker.go:152: [info] [ddl] finish DDL job ID:4, Type:create schema, State:synced, SchemaState:public, SchemaID:3, TableID:0, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.081 ddl.go:456: [info] [ddl] DDL job 4 is finished
+2017/12/19 06:43:18.081 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:18.082 session.go:1319: [info] [CRUCIAL OPERATION] CREATE DATABASE IF NOT EXISTS mysql; (by <nil>).
+2017/12/19 06:43:18.098 ddl.go:420: [info] [ddl] start DDL job ID:6, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:5, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.user (
+		Host				CHAR(64),
+		User				CHAR(16),
+		Password			CHAR(41),
+		Select_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Insert_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Update_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Delete_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Drop_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Process_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Grant_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		References_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Alter_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Show_db_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Super_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_tmp_table_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Lock_tables_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Execute_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_view_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Show_view_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_routine_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Alter_routine_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Index_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_user_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Event_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Trigger_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		PRIMARY KEY (Host, User));
+2017/12/19 06:43:18.101 ddl_worker.go:254: [info] [ddl] run DDL job ID:6, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:5, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.105 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\x05"
+2017/12/19 06:43:18.108 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\x05" complete, new regions: id:6 end_key:"t\200\000\000\000\000\000\000\377\005\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:2 > peers:<id:7 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\005\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:2 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:18.212 domain.go:314: [warning] [ddl] loading schema takes a long time 100.318076ms
+2017/12/19 06:43:18.222 domain.go:99: [info] [ddl] diff load InfoSchema from version 2 to 3, in 2.789905ms
+2017/12/19 06:43:18.269 ddl_worker.go:376: [info] [ddl] wait latest schema version 3 changed, take time 53.476894ms
+2017/12/19 06:43:18.276 ddl_worker.go:152: [info] [ddl] finish DDL job ID:6, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:5, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.282 ddl.go:456: [info] [ddl] DDL job 6 is finished
+2017/12/19 06:43:18.282 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:18.282 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.user (
+		Host				CHAR(64),
+		User				CHAR(16),
+		Password			CHAR(41),
+		Select_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Insert_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Update_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Delete_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Drop_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Process_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Grant_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		References_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Alter_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Show_db_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Super_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_tmp_table_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Lock_tables_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Execute_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_view_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Show_view_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_routine_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Alter_routine_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Index_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_user_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Event_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Trigger_priv			ENUM('N','Y') NOT NULL DEFAULT 'N',
+		PRIMARY KEY (Host, User)); (by <nil>).
+2017/12/19 06:43:18.292 ddl.go:420: [info] [ddl] start DDL job ID:8, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:7, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.db (
+		Host			CHAR(60),
+		DB			CHAR(64),
+		User			CHAR(16),
+		Select_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Insert_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Update_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Delete_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Create_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Drop_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Grant_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		References_priv 	ENUM('N','Y') Not Null DEFAULT 'N',
+		Index_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Alter_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Create_tmp_table_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Lock_tables_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_view_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Show_view_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_routine_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Alter_routine_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Execute_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Event_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Trigger_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		PRIMARY KEY (Host, DB, User));
+2017/12/19 06:43:18.295 ddl_worker.go:254: [info] [ddl] run DDL job ID:8, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:7, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.299 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\a"
+2017/12/19 06:43:18.301 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\a" complete, new regions: id:8 start_key:"t\200\000\000\000\000\000\000\377\005\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\007\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:3 > peers:<id:9 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\007\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:3 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:18.311 domain.go:99: [info] [ddl] diff load InfoSchema from version 3 to 4, in 1.846803ms
+2017/12/19 06:43:18.360 ddl_worker.go:376: [info] [ddl] wait latest schema version 4 changed, take time 52.877193ms
+2017/12/19 06:43:18.363 ddl_worker.go:152: [info] [ddl] finish DDL job ID:8, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:7, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.369 ddl.go:456: [info] [ddl] DDL job 8 is finished
+2017/12/19 06:43:18.369 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:18.370 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.db (
+		Host			CHAR(60),
+		DB			CHAR(64),
+		User			CHAR(16),
+		Select_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Insert_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Update_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Delete_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Create_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Drop_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Grant_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		References_priv 	ENUM('N','Y') Not Null DEFAULT 'N',
+		Index_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Alter_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Create_tmp_table_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Lock_tables_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_view_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Show_view_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Create_routine_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Alter_routine_priv	ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Execute_priv		ENUM('N','Y') Not Null DEFAULT 'N',
+		Event_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		Trigger_priv		ENUM('N','Y') NOT NULL DEFAULT 'N',
+		PRIMARY KEY (Host, DB, User)); (by <nil>).
+2017/12/19 06:43:18.379 ddl.go:420: [info] [ddl] start DDL job ID:10, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:9, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.tables_priv (
+		Host		CHAR(60),
+		DB			CHAR(64),
+		User		CHAR(16),
+		Table_name	CHAR(64),
+		Grantor		CHAR(77),
+		Timestamp	Timestamp DEFAULT CURRENT_TIMESTAMP,
+		Table_priv	SET('Select','Insert','Update','Delete','Create','Drop','Grant', 'Index','Alter'),
+		Column_priv	SET('Select','Insert','Update'),
+		PRIMARY KEY (Host, DB, User, Table_name));
+2017/12/19 06:43:18.382 ddl_worker.go:254: [info] [ddl] run DDL job ID:10, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:9, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.387 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\t"
+2017/12/19 06:43:18.490 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\t" complete, new regions: id:10 start_key:"t\200\000\000\000\000\000\000\377\007\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\t\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:4 > peers:<id:11 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\t\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:4 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:18.499 domain.go:99: [info] [ddl] diff load InfoSchema from version 4 to 5, in 1.455702ms
+2017/12/19 06:43:18.548 ddl_worker.go:376: [info] [ddl] wait latest schema version 5 changed, take time 52.732592ms
+2017/12/19 06:43:18.551 ddl_worker.go:152: [info] [ddl] finish DDL job ID:10, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:9, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.555 ddl.go:456: [info] [ddl] DDL job 10 is finished
+2017/12/19 06:43:18.555 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:18.556 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.tables_priv (
+		Host		CHAR(60),
+		DB			CHAR(64),
+		User		CHAR(16),
+		Table_name	CHAR(64),
+		Grantor		CHAR(77),
+		Timestamp	Timestamp DEFAULT CURRENT_TIMESTAMP,
+		Table_priv	SET('Select','Insert','Update','Delete','Create','Drop','Grant', 'Index','Alter'),
+		Column_priv	SET('Select','Insert','Update'),
+		PRIMARY KEY (Host, DB, User, Table_name)); (by <nil>).
+2017/12/19 06:43:18.565 ddl.go:420: [info] [ddl] start DDL job ID:12, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:11, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.columns_priv(
+		Host		CHAR(60),
+		DB			CHAR(64),
+		User		CHAR(16),
+		Table_name	CHAR(64),
+		Column_name	CHAR(64),
+		Timestamp	Timestamp DEFAULT CURRENT_TIMESTAMP,
+		Column_priv	SET('Select','Insert','Update'),
+		PRIMARY KEY (Host, DB, User, Table_name, Column_name));
+2017/12/19 06:43:18.568 ddl_worker.go:254: [info] [ddl] run DDL job ID:12, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:11, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.572 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\v"
+2017/12/19 06:43:18.675 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\v" complete, new regions: id:12 start_key:"t\200\000\000\000\000\000\000\377\t\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\013\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:5 > peers:<id:13 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\013\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:5 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:18.686 domain.go:99: [info] [ddl] diff load InfoSchema from version 5 to 6, in 1.714603ms
+2017/12/19 06:43:18.735 ddl_worker.go:376: [info] [ddl] wait latest schema version 6 changed, take time 53.287293ms
+2017/12/19 06:43:18.738 ddl_worker.go:152: [info] [ddl] finish DDL job ID:12, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:11, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.744 ddl.go:456: [info] [ddl] DDL job 12 is finished
+2017/12/19 06:43:18.744 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:18.745 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.columns_priv(
+		Host		CHAR(60),
+		DB			CHAR(64),
+		User		CHAR(16),
+		Table_name	CHAR(64),
+		Column_name	CHAR(64),
+		Timestamp	Timestamp DEFAULT CURRENT_TIMESTAMP,
+		Column_priv	SET('Select','Insert','Update'),
+		PRIMARY KEY (Host, DB, User, Table_name, Column_name)); (by <nil>).
+2017/12/19 06:43:18.753 ddl.go:420: [info] [ddl] start DDL job ID:14, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:13, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.GLOBAL_VARIABLES(
+		VARIABLE_NAME  VARCHAR(64) Not Null PRIMARY KEY,
+		VARIABLE_VALUE VARCHAR(1024) DEFAULT Null);
+2017/12/19 06:43:18.755 ddl_worker.go:254: [info] [ddl] run DDL job ID:14, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:13, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.760 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\r"
+2017/12/19 06:43:18.863 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\r" complete, new regions: id:14 start_key:"t\200\000\000\000\000\000\000\377\013\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\r\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:6 > peers:<id:15 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\r\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:6 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:18.873 domain.go:99: [info] [ddl] diff load InfoSchema from version 6 to 7, in 1.663102ms
+2017/12/19 06:43:18.922 ddl_worker.go:376: [info] [ddl] wait latest schema version 7 changed, take time 53.148893ms
+2017/12/19 06:43:18.924 ddl_worker.go:152: [info] [ddl] finish DDL job ID:14, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:13, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.929 ddl.go:456: [info] [ddl] DDL job 14 is finished
+2017/12/19 06:43:18.929 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:18.930 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.GLOBAL_VARIABLES(
+		VARIABLE_NAME  VARCHAR(64) Not Null PRIMARY KEY,
+		VARIABLE_VALUE VARCHAR(1024) DEFAULT Null); (by <nil>).
+2017/12/19 06:43:18.939 ddl.go:420: [info] [ddl] start DDL job ID:16, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:15, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.tidb(
+		VARIABLE_NAME  VARCHAR(64) Not Null PRIMARY KEY,
+		VARIABLE_VALUE VARCHAR(1024) DEFAULT Null,
+		COMMENT VARCHAR(1024));
+2017/12/19 06:43:18.941 ddl_worker.go:254: [info] [ddl] run DDL job ID:16, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:15, RowCount:0, ArgLen:0
+2017/12/19 06:43:18.949 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\x0f"
+2017/12/19 06:43:19.051 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\x0f" complete, new regions: id:16 start_key:"t\200\000\000\000\000\000\000\377\r\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\017\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:7 > peers:<id:17 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\017\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:7 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:19.061 domain.go:99: [info] [ddl] diff load InfoSchema from version 7 to 8, in 1.580303ms
+2017/12/19 06:43:19.110 ddl_worker.go:376: [info] [ddl] wait latest schema version 8 changed, take time 53.373193ms
+2017/12/19 06:43:19.112 ddl_worker.go:152: [info] [ddl] finish DDL job ID:16, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:15, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.118 ddl.go:456: [info] [ddl] DDL job 16 is finished
+2017/12/19 06:43:19.118 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:19.118 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.tidb(
+		VARIABLE_NAME  VARCHAR(64) Not Null PRIMARY KEY,
+		VARIABLE_VALUE VARCHAR(1024) DEFAULT Null,
+		COMMENT VARCHAR(1024)); (by <nil>).
+2017/12/19 06:43:19.126 ddl.go:420: [info] [ddl] start DDL job ID:18, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:17, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.help_topic (
+  		help_topic_id int(10) unsigned NOT NULL,
+  		name char(64) NOT NULL,
+  		help_category_id smallint(5) unsigned NOT NULL,
+  		description text NOT NULL,
+  		example text NOT NULL,
+  		url text NOT NULL,
+  		PRIMARY KEY (help_topic_id),
+  		UNIQUE KEY name (name)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8 STATS_PERSISTENT=0 COMMENT='help topics';
+2017/12/19 06:43:19.129 ddl_worker.go:254: [info] [ddl] run DDL job ID:18, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:17, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.139 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\x11"
+2017/12/19 06:43:19.243 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\x11" complete, new regions: id:18 start_key:"t\200\000\000\000\000\000\000\377\017\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\021\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:8 > peers:<id:19 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\021\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:8 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:19.252 domain.go:99: [info] [ddl] diff load InfoSchema from version 8 to 9, in 1.511302ms
+2017/12/19 06:43:19.301 ddl_worker.go:376: [info] [ddl] wait latest schema version 9 changed, take time 52.957292ms
+2017/12/19 06:43:19.304 ddl_worker.go:152: [info] [ddl] finish DDL job ID:18, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:17, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.309 ddl.go:456: [info] [ddl] DDL job 18 is finished
+2017/12/19 06:43:19.309 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:19.310 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.help_topic (
+  		help_topic_id int(10) unsigned NOT NULL,
+  		name char(64) NOT NULL,
+  		help_category_id smallint(5) unsigned NOT NULL,
+  		description text NOT NULL,
+  		example text NOT NULL,
+  		url text NOT NULL,
+  		PRIMARY KEY (help_topic_id),
+  		UNIQUE KEY name (name)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8 STATS_PERSISTENT=0 COMMENT='help topics'; (by <nil>).
+2017/12/19 06:43:19.319 ddl.go:420: [info] [ddl] start DDL job ID:20, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:19, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.stats_meta (
+		version bigint(64) unsigned NOT NULL,
+		table_id bigint(64) NOT NULL,
+		modify_count bigint(64) NOT NULL DEFAULT 0,
+		count bigint(64) unsigned NOT NULL DEFAULT 0,
+		index idx_ver(version),
+		unique index tbl(table_id)
+	);
+2017/12/19 06:43:19.321 ddl_worker.go:254: [info] [ddl] run DDL job ID:20, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:19, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.327 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\x13"
+2017/12/19 06:43:19.430 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\x13" complete, new regions: id:20 start_key:"t\200\000\000\000\000\000\000\377\021\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\023\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:9 > peers:<id:21 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\023\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:9 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:19.440 domain.go:99: [info] [ddl] diff load InfoSchema from version 9 to 10, in 1.504702ms
+2017/12/19 06:43:19.489 ddl_worker.go:376: [info] [ddl] wait latest schema version 10 changed, take time 53.274094ms
+2017/12/19 06:43:19.491 ddl_worker.go:152: [info] [ddl] finish DDL job ID:20, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:19, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.496 ddl.go:456: [info] [ddl] DDL job 20 is finished
+2017/12/19 06:43:19.496 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:19.497 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.stats_meta (
+		version bigint(64) unsigned NOT NULL,
+		table_id bigint(64) NOT NULL,
+		modify_count bigint(64) NOT NULL DEFAULT 0,
+		count bigint(64) unsigned NOT NULL DEFAULT 0,
+		index idx_ver(version),
+		unique index tbl(table_id)
+	); (by <nil>).
+2017/12/19 06:43:19.506 ddl.go:420: [info] [ddl] start DDL job ID:22, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:21, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.stats_histograms (
+		table_id bigint(64) NOT NULL,
+		is_index tinyint(2) NOT NULL,
+		hist_id bigint(64) NOT NULL,
+		distinct_count bigint(64) NOT NULL,
+		null_count bigint(64) NOT NULL DEFAULT 0,
+		modify_count bigint(64) NOT NULL DEFAULT 0,
+		version bigint(64) unsigned NOT NULL DEFAULT 0,
+		cm_sketch blob,
+		unique index tbl(table_id, is_index, hist_id)
+	);
+2017/12/19 06:43:19.563 ddl_worker.go:254: [info] [ddl] run DDL job ID:22, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:21, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.571 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\x15"
+2017/12/19 06:43:19.675 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\x15" complete, new regions: id:22 start_key:"t\200\000\000\000\000\000\000\377\023\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\025\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:10 > peers:<id:23 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\025\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:10 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:19.684 domain.go:99: [info] [ddl] diff load InfoSchema from version 10 to 11, in 1.522003ms
+2017/12/19 06:43:19.733 ddl_worker.go:376: [info] [ddl] wait latest schema version 11 changed, take time 53.153093ms
+2017/12/19 06:43:19.736 ddl_worker.go:152: [info] [ddl] finish DDL job ID:22, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:21, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.745 ddl.go:456: [info] [ddl] DDL job 22 is finished
+2017/12/19 06:43:19.745 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:19.746 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.stats_histograms (
+		table_id bigint(64) NOT NULL,
+		is_index tinyint(2) NOT NULL,
+		hist_id bigint(64) NOT NULL,
+		distinct_count bigint(64) NOT NULL,
+		null_count bigint(64) NOT NULL DEFAULT 0,
+		modify_count bigint(64) NOT NULL DEFAULT 0,
+		version bigint(64) unsigned NOT NULL DEFAULT 0,
+		cm_sketch blob,
+		unique index tbl(table_id, is_index, hist_id)
+	); (by <nil>).
+2017/12/19 06:43:19.759 ddl.go:420: [info] [ddl] start DDL job ID:24, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:23, RowCount:0, ArgLen:1, Query:
+CREATE TABLE if not exists mysql.stats_buckets (
+		table_id bigint(64) NOT NULL,
+		is_index tinyint(2) NOT NULL,
+		hist_id bigint(64) NOT NULL,
+		bucket_id bigint(64) NOT NULL,
+		count bigint(64) NOT NULL,
+		repeats bigint(64) NOT NULL,
+		upper_bound blob NOT NULL,
+		lower_bound blob ,
+		unique index tbl(table_id, is_index, hist_id, bucket_id)
+	);
+2017/12/19 06:43:19.762 ddl_worker.go:254: [info] [ddl] run DDL job ID:24, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:23, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.767 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\x17"
+2017/12/19 06:43:19.870 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\x17" complete, new regions: id:24 start_key:"t\200\000\000\000\000\000\000\377\025\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\027\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:11 > peers:<id:25 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\027\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:11 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:19.878 domain.go:99: [info] [ddl] diff load InfoSchema from version 11 to 12, in 1.579103ms
+2017/12/19 06:43:19.927 ddl_worker.go:376: [info] [ddl] wait latest schema version 12 changed, take time 52.940393ms
+2017/12/19 06:43:19.931 ddl_worker.go:152: [info] [ddl] finish DDL job ID:24, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:23, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.936 ddl.go:456: [info] [ddl] DDL job 24 is finished
+2017/12/19 06:43:19.936 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:19.937 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE if not exists mysql.stats_buckets (
+		table_id bigint(64) NOT NULL,
+		is_index tinyint(2) NOT NULL,
+		hist_id bigint(64) NOT NULL,
+		bucket_id bigint(64) NOT NULL,
+		count bigint(64) NOT NULL,
+		repeats bigint(64) NOT NULL,
+		upper_bound blob NOT NULL,
+		lower_bound blob ,
+		unique index tbl(table_id, is_index, hist_id, bucket_id)
+	); (by <nil>).
+2017/12/19 06:43:19.945 ddl.go:420: [info] [ddl] start DDL job ID:26, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:25, RowCount:0, ArgLen:1, Query:
+CREATE TABLE IF NOT EXISTS mysql.gc_delete_range (
+		job_id BIGINT NOT NULL COMMENT "the DDL job ID",
+		element_id BIGINT NOT NULL COMMENT "the schema element ID",
+		start_key VARCHAR(255) NOT NULL COMMENT "encoded in hex",
+		end_key VARCHAR(255) NOT NULL COMMENT "encoded in hex",
+		ts BIGINT NOT NULL COMMENT "timestamp in int64",
+		UNIQUE KEY (element_id),
+		KEY (job_id, element_id)
+	);
+2017/12/19 06:43:19.948 ddl_worker.go:254: [info] [ddl] run DDL job ID:26, Type:create table, State:none, SchemaState:none, SchemaID:3, TableID:25, RowCount:0, ArgLen:0
+2017/12/19 06:43:19.953 split_region.go:30: [info] start split_region at "t\x80\x00\x00\x00\x00\x00\x00\x19"
+2017/12/19 06:43:20.057 split_region.go:64: [info] split_region at "t\x80\x00\x00\x00\x00\x00\x00\x19" complete, new regions: id:26 start_key:"t\200\000\000\000\000\000\000\377\027\000\000\000\000\000\000\000\370" end_key:"t\200\000\000\000\000\000\000\377\031\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:12 > peers:<id:27 store_id:1 > , id:2 start_key:"t\200\000\000\000\000\000\000\377\031\000\000\000\000\000\000\000\370" region_epoch:<conf_ver:1 version:12 > peers:<id:3 store_id:1 > 
+2017/12/19 06:43:20.067 domain.go:99: [info] [ddl] diff load InfoSchema from version 12 to 13, in 3.025305ms
+2017/12/19 06:43:20.116 ddl_worker.go:376: [info] [ddl] wait latest schema version 13 changed, take time 53.098993ms
+2017/12/19 06:43:20.121 ddl_worker.go:152: [info] [ddl] finish DDL job ID:26, Type:create table, State:synced, SchemaState:public, SchemaID:3, TableID:25, RowCount:0, ArgLen:0
+2017/12/19 06:43:20.128 ddl.go:456: [info] [ddl] DDL job 26 is finished
+2017/12/19 06:43:20.128 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:43:20.129 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE IF NOT EXISTS mysql.gc_delete_range (
+		job_id BIGINT NOT NULL COMMENT "the DDL job ID",
+		element_id BIGINT NOT NULL COMMENT "the schema element ID",
+		start_key VARCHAR(255) NOT NULL COMMENT "encoded in hex",
+		end_key VARCHAR(255) NOT NULL COMMENT "encoded in hex",
+		ts BIGINT NOT NULL COMMENT "timestamp in int64",
+		UNIQUE KEY (element_id),
+		KEY (job_id, element_id)
+	); (by <nil>).
+2017/12/19 06:43:27.410 session.go:291: [warning] [0] retryable error: [try again later]: 2PC commit failed: retryable:"Txn(Mvcc(TxnLockNotFound { start_ts: 396798407501152264, commit_ts: 396798409414541314, key: [116, 128, 0, 0, 0, 0, 0, 0, 255, 5, 95, 105, 128, 0, 0, 0, 0, 255, 0, 0, 1, 1, 37, 0, 0, 0, 255, 0, 0, 0, 0, 248, 1, 114, 111, 255, 111, 116, 0, 0, 0, 0, 251, 0, 254] }))" , txn: <nil>
+2017/12/19 06:43:27.410 session.go:424: [warning] [0] Retry [0] query [0] BEGIN
+2017/12/19 06:43:27.410 session.go:424: [warning] [0] Retry [0] query [1] INSERT INTO mysql.user VALUES
+		("%", "root", "", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y")
+2017/12/19 06:43:27.411 session.go:424: [warning] [0] Retry [0] query [2] INSERT INTO mysql.GLOBAL_VARIABLES VALUES ("innodb_open_files", "2000"), ("innodb_read_only", "OFF"), ("innodb_ft_total_cache_size", "640000000"), ("innodb_adaptive_flushing", "ON"), ("datadir", "/usr/local/mysql/data/"), ("ssl_key", ""), ("innodb_print_all_deadlocks", "OFF"), ("innodb_flush_log_at_trx_commit", "1"), ("lc_time_names", "en_US"), ("max_connect_errors", "100"), ("ndb_deferred_constraints", ""), ("sha256_password_proxy_users", ""), ("innodb_autoextend_increment", "64"), ("have_geometry", "YES"), ("max_heap_table_size", "16777216"), ("innodb_purge_batch_size", "300"), ("performance_schema_events_statements_history_long_size", "10000"), ("mysql_native_password_proxy_users", ""), ("simplified_binlog_gtid_recovery", "OFF"), ("general_log", "OFF"), ("session_track_state_change", ""), ("relay_log_recovery", "OFF"), ("innodb_max_purge_lag_delay", "0"), ("max_sort_length", "1024"), ("innodb_read_io_threads", "4"), ("min_examined_row_limit", "0"), ("performance_schema_max_table_instances", "12500"), ("inn(len:18197)
+2017/12/19 06:43:27.428 session.go:424: [warning] [0] Retry [0] query [3] INSERT INTO mysql.tidb VALUES("bootstrapped", "True", "Bootstrap flag. Do not delete.")
+		ON DUPLICATE KEY UPDATE VARIABLE_VALUE="True"
+2017/12/19 06:43:27.439 session.go:424: [warning] [0] Retry [0] query [4] INSERT INTO mysql.tidb VALUES("tidb_server_version", "16", "Bootstrap version. Do not delete.")
+2017/12/19 06:43:27.439 session.go:424: [warning] [0] Retry [0] query [5] COMMIT
+2017/12/19 06:43:27.450 2pc.go:577: [info] 2PC clean up done, tid: 396798407501152264
+2017/12/19 06:43:27.698 session.go:454: [warning] [0] retryable error: [try again later]: tikv restarts txn: Txn(Mvcc(WriteConflict { start_ts: 396798409414541315, conflict_ts: 396798409453862915, key: [116, 128, 0, 0, 0, 0, 0, 0, 255, 13, 95, 105, 128, 0, 0, 0, 0, 255, 0, 0, 1, 1, 97, 117, 116, 111, 255, 95, 105, 110, 99, 255, 114, 101, 109, 255, 101, 110, 116, 95, 105, 255, 110, 99, 255, 114, 101, 109, 101, 110, 116, 255, 0, 255, 0, 0, 0, 0, 0, 0, 0, 247, 255, 0, 0, 0, 0, 0, 0, 0, 0, 247], primary: [116, 128, 0, 0, 0, 0, 0, 0, 5, 95, 105, 128, 0, 0, 0, 0, 0, 0, 1, 1, 37, 0, 0, 0, 0, 0, 0, 0, 248, 1, 114, 111, 111, 116, 0, 0, 0, 0, 251] })), txn: <nil>
+2017/12/19 06:43:27.698 session.go:426: [warning] [0] Retry [1] query [0]
+2017/12/19 06:43:27.699 session.go:426: [warning] [0] Retry [1] query [1]
+2017/12/19 06:43:27.700 session.go:426: [warning] [0] Retry [1] query [2]
+2017/12/19 06:43:27.714 2pc.go:577: [info] 2PC clean up done, tid: 396798409414541315
+2017/12/19 06:43:27.717 session.go:426: [warning] [0] Retry [1] query [3]
+2017/12/19 06:43:27.726 session.go:426: [warning] [0] Retry [1] query [4]
+2017/12/19 06:43:27.726 session.go:426: [warning] [0] Retry [1] query [5]
+2017/12/19 06:43:27.745 session.go:446: [warning] [0] session:{
+  "currDBName": "",
+  "id": 0,
+  "status": 2,
+  "strictMode": true,
+  "user": null
+}, err:[kv:1062]Duplicate entry 'ndb_index_stat_option' for key 'PRIMARY'
+2017/12/19 06:43:27.745 session.go:301: [warning] [0] finished txn:<nil>, [kv:1062]Duplicate entry 'ndb_index_stat_option' for key 'PRIMARY'
+2017/12/19 06:43:28.751 manager.go:166: [info] [ddl] /tidb/ddl/fg/owner ownerManager b52ed9fb-0d31-4ba0-ad44-723cf54b21cb etcd session is done, creates a new one
+2017/12/19 06:43:28.751 manager.go:170: [info] [ddl] /tidb/ddl/fg/owner ownerManager b52ed9fb-0d31-4ba0-ad44-723cf54b21cb break campaign loop, NewSession err context canceled
+2017/12/19 06:43:28.753 delete_range.go:105: [info] [ddl] closing delRange session pool
+2017/12/19 06:43:28.753 manager.go:214: [info] [ddl] /tidb/ddl/fg/owner ownerManager b52ed9fb-0d31-4ba0-ad44-723cf54b21cb break campaign loop, revoke err <nil>
+2017/12/19 06:43:28.753 ddl.go:331: [info] close DDL:b52ed9fb-0d31-4ba0-ad44-723cf54b21cb
+2017/12/19 06:43:28.754 ddl.go:300: [info] stop DDL:b52ed9fb-0d31-4ba0-ad44-723cf54b21cb
+2017/12/19 06:43:28.754 tidb.go:63: [info] store tikv-6501145025206059015 new domain, ddl lease 10s, stats lease 3000000000
+2017/12/19 06:43:28.754 ddl.go:284: [info] [ddl] start delRangeManager OK, with emulator: false
+2017/12/19 06:43:28.756 ddl.go:291: [info] [ddl] start DDL:ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5
+2017/12/19 06:43:28.773 domain.go:114: [info] [ddl] full load InfoSchema from version 0 to 13, in 9.331316ms
+2017/12/19 06:43:28.774 domain.go:306: [info] [ddl] full load and reset schema validator.
+2017/12/19 06:43:28.786 gc_worker.go:118: [info] [gc worker] 581b60d25b0000f start.
+2017/12/19 06:43:28.801 simple.go:128: [info] [0] execute rollback statement
+2017/12/19 06:43:28.801 txn.go:188: [info] [kv] Rollback txn 396798409781805057
+2017/12/19 06:43:28.802 server.go:193: [warning] Secure connection is NOT ENABLED
+2017/12/19 06:43:28.802 server.go:161: [info] Server is running MySQL Protocol at [10.0.0.8:4000]
+2017/12/19 06:43:28.802 main.go:190: [info] disable Prometheus push client
+2017/12/19 06:43:28.802 systime_mon.go:24: [info] start system time monitor
+2017/12/19 06:43:28.802 http_status.go:67: [info] Listening on :10080 for status and metrics report.
+2017/12/19 06:43:28.895 domain.go:616: [info] [stats] init stats info takes 109.029691ms
+2017/12/19 06:44:12.195 server.go:119: [info] [1] new connection 10.0.0.11:42858
+2017/12/19 06:44:12.218 ddl.go:420: [info] [ddl] start DDL job ID:28, Type:create schema, State:none, SchemaState:none, SchemaID:27, TableID:0, RowCount:0, ArgLen:1, Query:
+CREATE DATABASE lily
+2017/12/19 06:44:12.610 domain.go:99: [info] [ddl] diff load InfoSchema from version 13 to 14, in 1.308503ms
+2017/12/19 06:44:13.220 ddl.go:456: [info] [ddl] DDL job 28 is finished
+2017/12/19 06:44:13.220 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:44:13.221 session.go:1319: [info] [CRUCIAL OPERATION] CREATE DATABASE lily (by root@10.0.0.11).
+2017/12/19 06:44:13.245 ddl.go:420: [info] [ddl] start DDL job ID:30, Type:create table, State:none, SchemaState:none, SchemaID:27, TableID:29, RowCount:0, ArgLen:1, Query:
+CREATE TABLE IF NOT EXISTS storage (id VARCHAR(25), value VARCHAR(25), PRIMARY KEY (id))
+2017/12/19 06:44:13.630 domain.go:99: [info] [ddl] diff load InfoSchema from version 14 to 15, in 2.285304ms
+2017/12/19 06:44:14.246 ddl.go:456: [info] [ddl] DDL job 30 is finished
+2017/12/19 06:44:14.246 domain.go:403: [info] [ddl] on DDL change, must reload
+2017/12/19 06:44:14.247 session.go:1319: [info] [CRUCIAL OPERATION] CREATE TABLE IF NOT EXISTS storage (id VARCHAR(25), value VARCHAR(25), PRIMARY KEY (id)) (by root@10.0.0.11).
+2017/12/19 06:44:14.248 server.go:297: [info] [1] close connection
+2017/12/19 06:44:22.159 server.go:119: [info] [2] new connection 10.0.0.11:42880
+2017/12/19 06:44:22.172 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.311 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.314 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 1 WHERE id = 'key0'
+2017/12/19 06:44:22.324 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.394 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 2 WHERE id = 'key0'
+2017/12/19 06:44:22.471 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.474 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 3 WHERE id = 'key0'
+2017/12/19 06:44:22.485 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.488 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 4 WHERE id = 'key0'
+2017/12/19 06:44:22.498 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.500 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 5 WHERE id = 'key0'
+2017/12/19 06:44:22.513 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.516 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 6 WHERE id = 'key0'
+2017/12/19 06:44:22.528 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.532 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 7 WHERE id = 'key0'
+2017/12/19 06:44:22.614 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.617 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 8 WHERE id = 'key0'
+2017/12/19 06:44:22.629 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.633 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 9 WHERE id = 'key0'
+2017/12/19 06:44:22.644 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.647 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 10 WHERE id = 'key0'
+2017/12/19 06:44:22.661 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.664 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 11 WHERE id = 'key0'
+2017/12/19 06:44:22.674 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.677 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 12 WHERE id = 'key0'
+2017/12/19 06:44:22.689 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.692 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 13 WHERE id = 'key0'
+2017/12/19 06:44:22.704 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.707 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 14 WHERE id = 'key0'
+2017/12/19 06:44:22.719 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.722 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 15 WHERE id = 'key0'
+2017/12/19 06:44:22.734 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.789 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 16 WHERE id = 'key0'
+2017/12/19 06:44:22.802 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.806 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 17 WHERE id = 'key0'
+2017/12/19 06:44:22.816 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.820 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 18 WHERE id = 'key0'
+2017/12/19 06:44:22.831 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.834 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 19 WHERE id = 'key0'
+2017/12/19 06:44:22.846 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.849 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 20 WHERE id = 'key0'
+2017/12/19 06:44:22.860 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.863 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 21 WHERE id = 'key0'
+2017/12/19 06:44:22.875 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.879 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 22 WHERE id = 'key0'
+2017/12/19 06:44:22.890 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.892 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 23 WHERE id = 'key0'
+2017/12/19 06:44:22.902 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.905 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 24 WHERE id = 'key0'
+2017/12/19 06:44:22.916 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.919 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 25 WHERE id = 'key0'
+2017/12/19 06:44:22.930 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:22.933 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 26 WHERE id = 'key0'
+2017/12/19 06:44:23.010 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.013 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 27 WHERE id = 'key0'
+2017/12/19 06:44:23.025 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.027 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 28 WHERE id = 'key0'
+2017/12/19 06:44:23.039 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.042 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 29 WHERE id = 'key0'
+2017/12/19 06:44:23.054 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.057 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 30 WHERE id = 'key0'
+2017/12/19 06:44:23.069 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.072 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 31 WHERE id = 'key0'
+2017/12/19 06:44:23.084 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.088 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 32 WHERE id = 'key0'
+2017/12/19 06:44:23.098 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.101 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 33 WHERE id = 'key0'
+2017/12/19 06:44:23.112 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.116 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 34 WHERE id = 'key0'
+2017/12/19 06:44:23.133 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.136 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 35 WHERE id = 'key0'
+2017/12/19 06:44:23.154 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.157 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 36 WHERE id = 'key0'
+2017/12/19 06:44:23.168 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.171 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 37 WHERE id = 'key0'
+2017/12/19 06:44:23.184 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.187 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 38 WHERE id = 'key0'
+2017/12/19 06:44:23.199 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.202 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 39 WHERE id = 'key0'
+2017/12/19 06:44:23.213 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.215 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 40 WHERE id = 'key0'
+2017/12/19 06:44:23.226 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.229 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 41 WHERE id = 'key0'
+2017/12/19 06:44:23.240 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.243 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 42 WHERE id = 'key0'
+2017/12/19 06:44:23.253 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.255 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 43 WHERE id = 'key0'
+2017/12/19 06:44:23.267 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.270 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 44 WHERE id = 'key0'
+2017/12/19 06:44:23.282 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.285 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 45 WHERE id = 'key0'
+2017/12/19 06:44:23.295 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.298 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 46 WHERE id = 'key0'
+2017/12/19 06:44:23.313 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.316 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 47 WHERE id = 'key0'
+2017/12/19 06:44:23.328 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.331 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 48 WHERE id = 'key0'
+2017/12/19 06:44:23.344 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.347 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 49 WHERE id = 'key0'
+2017/12/19 06:44:23.360 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.365 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 50 WHERE id = 'key0'
+2017/12/19 06:44:23.376 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.379 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 51 WHERE id = 'key0'
+2017/12/19 06:44:23.390 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.392 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 52 WHERE id = 'key0'
+2017/12/19 06:44:23.402 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.405 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 53 WHERE id = 'key0'
+2017/12/19 06:44:23.416 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.493 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 54 WHERE id = 'key0'
+2017/12/19 06:44:23.507 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.510 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 55 WHERE id = 'key0'
+2017/12/19 06:44:23.521 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.524 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 56 WHERE id = 'key0'
+2017/12/19 06:44:23.536 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.539 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 57 WHERE id = 'key0'
+2017/12/19 06:44:23.552 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.555 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 58 WHERE id = 'key0'
+2017/12/19 06:44:23.566 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.568 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 59 WHERE id = 'key0'
+2017/12/19 06:44:23.579 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.582 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 60 WHERE id = 'key0'
+2017/12/19 06:44:23.594 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.597 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 61 WHERE id = 'key0'
+2017/12/19 06:44:23.608 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.610 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 62 WHERE id = 'key0'
+2017/12/19 06:44:23.621 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.624 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 63 WHERE id = 'key0'
+2017/12/19 06:44:23.635 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.638 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 64 WHERE id = 'key0'
+2017/12/19 06:44:23.649 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.652 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 65 WHERE id = 'key0'
+2017/12/19 06:44:23.664 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.667 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 66 WHERE id = 'key0'
+2017/12/19 06:44:23.680 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.683 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 67 WHERE id = 'key0'
+2017/12/19 06:44:23.695 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.776 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 68 WHERE id = 'key0'
+2017/12/19 06:44:23.788 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.791 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 69 WHERE id = 'key0'
+2017/12/19 06:44:23.802 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.805 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 70 WHERE id = 'key0'
+2017/12/19 06:44:23.816 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.819 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 71 WHERE id = 'key0'
+2017/12/19 06:44:23.830 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.833 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 72 WHERE id = 'key0'
+2017/12/19 06:44:23.846 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.849 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 73 WHERE id = 'key0'
+2017/12/19 06:44:23.861 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.864 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 74 WHERE id = 'key0'
+2017/12/19 06:44:23.877 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.880 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 75 WHERE id = 'key0'
+2017/12/19 06:44:23.891 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:23.950 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 76 WHERE id = 'key0'
+2017/12/19 06:44:24.025 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.028 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 77 WHERE id = 'key0'
+2017/12/19 06:44:24.040 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.043 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 78 WHERE id = 'key0'
+2017/12/19 06:44:24.054 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.057 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 79 WHERE id = 'key0'
+2017/12/19 06:44:24.068 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.170 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 80 WHERE id = 'key0'
+2017/12/19 06:44:24.181 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.184 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 81 WHERE id = 'key0'
+2017/12/19 06:44:24.195 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.198 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 82 WHERE id = 'key0'
+2017/12/19 06:44:24.209 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.213 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 83 WHERE id = 'key0'
+2017/12/19 06:44:24.225 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.228 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 84 WHERE id = 'key0'
+2017/12/19 06:44:24.240 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.243 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 85 WHERE id = 'key0'
+2017/12/19 06:44:24.257 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.260 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 86 WHERE id = 'key0'
+2017/12/19 06:44:24.271 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.275 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 87 WHERE id = 'key0'
+2017/12/19 06:44:24.286 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.290 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 88 WHERE id = 'key0'
+2017/12/19 06:44:24.302 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.305 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 89 WHERE id = 'key0'
+2017/12/19 06:44:24.315 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.318 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 90 WHERE id = 'key0'
+2017/12/19 06:44:24.329 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.332 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 91 WHERE id = 'key0'
+2017/12/19 06:44:24.345 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.348 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 92 WHERE id = 'key0'
+2017/12/19 06:44:24.435 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.523 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 93 WHERE id = 'key0'
+2017/12/19 06:44:24.533 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.536 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 94 WHERE id = 'key0'
+2017/12/19 06:44:24.548 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.551 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 95 WHERE id = 'key0'
+2017/12/19 06:44:24.564 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.567 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 96 WHERE id = 'key0'
+2017/12/19 06:44:24.578 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.581 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 97 WHERE id = 'key0'
+2017/12/19 06:44:24.593 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.596 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 98 WHERE id = 'key0'
+2017/12/19 06:44:24.607 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.610 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 99 WHERE id = 'key0'
+2017/12/19 06:44:24.622 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.625 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 100 WHERE id = 'key0'
+2017/12/19 06:44:24.638 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.640 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 101 WHERE id = 'key0'
+2017/12/19 06:44:24.650 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.654 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 102 WHERE id = 'key0'
+2017/12/19 06:44:24.665 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.668 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 103 WHERE id = 'key0'
+2017/12/19 06:44:24.680 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.682 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 104 WHERE id = 'key0'
+2017/12/19 06:44:24.693 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.695 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 105 WHERE id = 'key0'
+2017/12/19 06:44:24.706 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.709 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 106 WHERE id = 'key0'
+2017/12/19 06:44:24.719 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.723 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 107 WHERE id = 'key0'
+2017/12/19 06:44:24.736 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.739 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 108 WHERE id = 'key0'
+2017/12/19 06:44:24.752 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.755 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 109 WHERE id = 'key0'
+2017/12/19 06:44:24.768 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.771 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 110 WHERE id = 'key0'
+2017/12/19 06:44:24.784 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.787 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 111 WHERE id = 'key0'
+2017/12/19 06:44:24.799 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.802 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 112 WHERE id = 'key0'
+2017/12/19 06:44:24.813 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.815 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 113 WHERE id = 'key0'
+2017/12/19 06:44:24.829 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.832 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 114 WHERE id = 'key0'
+2017/12/19 06:44:24.914 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.918 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 115 WHERE id = 'key0'
+2017/12/19 06:44:24.929 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.931 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 116 WHERE id = 'key0'
+2017/12/19 06:44:24.943 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.946 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 117 WHERE id = 'key0'
+2017/12/19 06:44:24.958 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.962 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 118 WHERE id = 'key0'
+2017/12/19 06:44:24.973 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.976 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 119 WHERE id = 'key0'
+2017/12/19 06:44:24.991 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:24.995 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 120 WHERE id = 'key0'
+2017/12/19 06:44:25.008 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.011 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 121 WHERE id = 'key0'
+2017/12/19 06:44:25.025 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.029 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 122 WHERE id = 'key0'
+2017/12/19 06:44:25.041 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.044 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 123 WHERE id = 'key0'
+2017/12/19 06:44:25.055 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.058 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 124 WHERE id = 'key0'
+2017/12/19 06:44:25.070 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.072 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 125 WHERE id = 'key0'
+2017/12/19 06:44:25.084 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.086 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 126 WHERE id = 'key0'
+2017/12/19 06:44:25.099 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.101 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 127 WHERE id = 'key0'
+2017/12/19 06:44:25.113 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.115 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 128 WHERE id = 'key0'
+2017/12/19 06:44:25.128 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.131 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 129 WHERE id = 'key0'
+2017/12/19 06:44:25.142 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.144 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 130 WHERE id = 'key0'
+2017/12/19 06:44:25.158 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.160 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 131 WHERE id = 'key0'
+2017/12/19 06:44:25.172 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.175 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 132 WHERE id = 'key0'
+2017/12/19 06:44:25.186 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.189 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 133 WHERE id = 'key0'
+2017/12/19 06:44:25.200 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.204 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 134 WHERE id = 'key0'
+2017/12/19 06:44:25.214 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.217 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 135 WHERE id = 'key0'
+2017/12/19 06:44:25.227 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.230 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 136 WHERE id = 'key0'
+2017/12/19 06:44:25.242 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.245 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 137 WHERE id = 'key0'
+2017/12/19 06:44:25.256 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.259 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 138 WHERE id = 'key0'
+2017/12/19 06:44:25.364 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.367 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 139 WHERE id = 'key0'
+2017/12/19 06:44:25.379 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.381 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 140 WHERE id = 'key0'
+2017/12/19 06:44:25.392 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.395 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 141 WHERE id = 'key0'
+2017/12/19 06:44:25.407 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.410 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 142 WHERE id = 'key0'
+2017/12/19 06:44:25.420 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.424 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 143 WHERE id = 'key0'
+2017/12/19 06:44:25.437 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.440 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 144 WHERE id = 'key0'
+2017/12/19 06:44:25.451 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.455 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 145 WHERE id = 'key0'
+2017/12/19 06:44:25.538 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.541 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 146 WHERE id = 'key0'
+2017/12/19 06:44:25.550 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.553 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 147 WHERE id = 'key0'
+2017/12/19 06:44:25.564 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.567 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 148 WHERE id = 'key0'
+2017/12/19 06:44:25.577 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.581 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 149 WHERE id = 'key0'
+2017/12/19 06:44:25.592 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.680 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 150 WHERE id = 'key0'
+2017/12/19 06:44:25.693 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.696 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 151 WHERE id = 'key0'
+2017/12/19 06:44:25.706 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.709 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 152 WHERE id = 'key0'
+2017/12/19 06:44:25.720 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.723 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 153 WHERE id = 'key0'
+2017/12/19 06:44:25.734 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.738 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 154 WHERE id = 'key0'
+2017/12/19 06:44:25.750 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.753 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 155 WHERE id = 'key0'
+2017/12/19 06:44:25.764 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.767 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 156 WHERE id = 'key0'
+2017/12/19 06:44:25.778 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.781 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 157 WHERE id = 'key0'
+2017/12/19 06:44:25.792 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.795 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 158 WHERE id = 'key0'
+2017/12/19 06:44:25.807 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.816 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 159 WHERE id = 'key0'
+2017/12/19 06:44:25.896 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.899 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 160 WHERE id = 'key0'
+2017/12/19 06:44:25.910 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.913 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 161 WHERE id = 'key0'
+2017/12/19 06:44:25.925 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.928 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 162 WHERE id = 'key0'
+2017/12/19 06:44:25.939 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.942 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 163 WHERE id = 'key0'
+2017/12/19 06:44:25.952 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:25.955 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 164 WHERE id = 'key0'
+2017/12/19 06:44:26.064 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.067 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 165 WHERE id = 'key0'
+2017/12/19 06:44:26.079 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.082 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 166 WHERE id = 'key0'
+2017/12/19 06:44:26.094 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.098 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 167 WHERE id = 'key0'
+2017/12/19 06:44:26.109 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.112 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 168 WHERE id = 'key0'
+2017/12/19 06:44:26.124 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.127 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 169 WHERE id = 'key0'
+2017/12/19 06:44:26.139 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.142 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 170 WHERE id = 'key0'
+2017/12/19 06:44:26.153 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.156 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 171 WHERE id = 'key0'
+2017/12/19 06:44:26.169 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.171 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 172 WHERE id = 'key0'
+2017/12/19 06:44:26.184 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.187 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 173 WHERE id = 'key0'
+2017/12/19 06:44:26.200 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.203 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 174 WHERE id = 'key0'
+2017/12/19 06:44:26.214 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.289 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 175 WHERE id = 'key0'
+2017/12/19 06:44:26.302 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.305 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 176 WHERE id = 'key0'
+2017/12/19 06:44:26.317 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.322 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 177 WHERE id = 'key0'
+2017/12/19 06:44:26.336 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.339 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 178 WHERE id = 'key0'
+2017/12/19 06:44:26.349 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.353 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 179 WHERE id = 'key0'
+2017/12/19 06:44:26.366 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.369 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 180 WHERE id = 'key0'
+2017/12/19 06:44:26.460 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.463 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 181 WHERE id = 'key0'
+2017/12/19 06:44:26.474 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.477 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 182 WHERE id = 'key0'
+2017/12/19 06:44:26.489 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.492 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 183 WHERE id = 'key0'
+2017/12/19 06:44:26.504 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.507 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 184 WHERE id = 'key0'
+2017/12/19 06:44:26.519 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.522 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 185 WHERE id = 'key0'
+2017/12/19 06:44:26.536 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.542 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 186 WHERE id = 'key0'
+2017/12/19 06:44:26.554 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.557 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 187 WHERE id = 'key0'
+2017/12/19 06:44:26.570 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.573 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 188 WHERE id = 'key0'
+2017/12/19 06:44:26.585 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.588 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 189 WHERE id = 'key0'
+2017/12/19 06:44:26.600 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.603 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 190 WHERE id = 'key0'
+2017/12/19 06:44:26.615 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.618 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 191 WHERE id = 'key0'
+2017/12/19 06:44:26.631 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.634 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 192 WHERE id = 'key0'
+2017/12/19 06:44:26.648 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.652 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 193 WHERE id = 'key0'
+2017/12/19 06:44:26.663 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.665 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 194 WHERE id = 'key0'
+2017/12/19 06:44:26.676 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.679 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 195 WHERE id = 'key0'
+2017/12/19 06:44:26.692 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.694 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 196 WHERE id = 'key0'
+2017/12/19 06:44:26.706 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.709 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 197 WHERE id = 'key0'
+2017/12/19 06:44:26.721 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.724 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 198 WHERE id = 'key0'
+2017/12/19 06:44:26.739 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.743 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 199 WHERE id = 'key0'
+2017/12/19 06:44:26.754 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.757 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 200 WHERE id = 'key0'
+2017/12/19 06:44:26.768 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.771 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 201 WHERE id = 'key0'
+2017/12/19 06:44:26.784 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.787 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 202 WHERE id = 'key0'
+2017/12/19 06:44:26.798 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.802 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 203 WHERE id = 'key0'
+2017/12/19 06:44:26.812 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.816 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 204 WHERE id = 'key0'
+2017/12/19 06:44:26.827 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.830 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 205 WHERE id = 'key0'
+2017/12/19 06:44:26.841 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.844 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 206 WHERE id = 'key0'
+2017/12/19 06:44:26.855 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.858 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 207 WHERE id = 'key0'
+2017/12/19 06:44:26.869 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.872 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 208 WHERE id = 'key0'
+2017/12/19 06:44:26.882 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.884 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 209 WHERE id = 'key0'
+2017/12/19 06:44:26.896 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.900 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 210 WHERE id = 'key0'
+2017/12/19 06:44:26.910 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.914 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 211 WHERE id = 'key0'
+2017/12/19 06:44:26.926 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.929 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 212 WHERE id = 'key0'
+2017/12/19 06:44:26.941 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.944 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 213 WHERE id = 'key0'
+2017/12/19 06:44:26.955 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.958 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 214 WHERE id = 'key0'
+2017/12/19 06:44:26.969 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.972 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 215 WHERE id = 'key0'
+2017/12/19 06:44:26.984 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:26.987 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 216 WHERE id = 'key0'
+2017/12/19 06:44:26.999 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.002 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 217 WHERE id = 'key0'
+2017/12/19 06:44:27.014 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.018 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 218 WHERE id = 'key0'
+2017/12/19 06:44:27.028 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.031 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 219 WHERE id = 'key0'
+2017/12/19 06:44:27.042 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.045 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 220 WHERE id = 'key0'
+2017/12/19 06:44:27.057 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.060 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 221 WHERE id = 'key0'
+2017/12/19 06:44:27.072 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.075 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 222 WHERE id = 'key0'
+2017/12/19 06:44:27.086 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.092 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 223 WHERE id = 'key0'
+2017/12/19 06:44:27.171 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.174 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 224 WHERE id = 'key0'
+2017/12/19 06:44:27.186 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.189 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 225 WHERE id = 'key0'
+2017/12/19 06:44:27.200 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.203 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 226 WHERE id = 'key0'
+2017/12/19 06:44:27.215 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.218 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 227 WHERE id = 'key0'
+2017/12/19 06:44:27.229 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.232 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 228 WHERE id = 'key0'
+2017/12/19 06:44:27.243 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.246 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 229 WHERE id = 'key0'
+2017/12/19 06:44:27.256 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.259 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 230 WHERE id = 'key0'
+2017/12/19 06:44:27.270 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.273 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 231 WHERE id = 'key0'
+2017/12/19 06:44:27.283 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.287 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 232 WHERE id = 'key0'
+2017/12/19 06:44:27.297 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.299 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 233 WHERE id = 'key0'
+2017/12/19 06:44:27.311 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.376 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 234 WHERE id = 'key0'
+2017/12/19 06:44:27.489 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.492 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 235 WHERE id = 'key0'
+2017/12/19 06:44:27.503 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.506 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 236 WHERE id = 'key0'
+2017/12/19 06:44:27.518 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.521 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 237 WHERE id = 'key0'
+2017/12/19 06:44:27.535 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.538 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 238 WHERE id = 'key0'
+2017/12/19 06:44:27.549 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.553 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 239 WHERE id = 'key0'
+2017/12/19 06:44:27.625 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.629 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 240 WHERE id = 'key0'
+2017/12/19 06:44:27.639 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.642 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 241 WHERE id = 'key0'
+2017/12/19 06:44:27.653 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.656 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 242 WHERE id = 'key0'
+2017/12/19 06:44:27.669 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.672 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 243 WHERE id = 'key0'
+2017/12/19 06:44:27.683 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.686 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 244 WHERE id = 'key0'
+2017/12/19 06:44:27.697 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.700 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 245 WHERE id = 'key0'
+2017/12/19 06:44:27.711 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.714 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 246 WHERE id = 'key0'
+2017/12/19 06:44:27.726 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.731 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 247 WHERE id = 'key0'
+2017/12/19 06:44:27.743 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.745 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 248 WHERE id = 'key0'
+2017/12/19 06:44:27.756 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.758 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 249 WHERE id = 'key0'
+2017/12/19 06:44:27.769 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.771 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 250 WHERE id = 'key0'
+2017/12/19 06:44:27.784 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.787 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 251 WHERE id = 'key0'
+2017/12/19 06:44:27.800 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.802 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 252 WHERE id = 'key0'
+2017/12/19 06:44:27.812 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.816 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 253 WHERE id = 'key0'
+2017/12/19 06:44:27.826 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.828 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 254 WHERE id = 'key0'
+2017/12/19 06:44:27.839 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.842 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 255 WHERE id = 'key0'
+2017/12/19 06:44:27.946 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.949 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 256 WHERE id = 'key0'
+2017/12/19 06:44:27.959 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.962 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 257 WHERE id = 'key0'
+2017/12/19 06:44:27.971 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.974 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 258 WHERE id = 'key0'
+2017/12/19 06:44:27.986 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:27.988 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 259 WHERE id = 'key0'
+2017/12/19 06:44:28.002 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.005 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 260 WHERE id = 'key0'
+2017/12/19 06:44:28.016 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.018 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 261 WHERE id = 'key0'
+2017/12/19 06:44:28.034 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.139 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 262 WHERE id = 'key0'
+2017/12/19 06:44:28.151 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.154 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 263 WHERE id = 'key0'
+2017/12/19 06:44:28.165 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.168 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 264 WHERE id = 'key0'
+2017/12/19 06:44:28.178 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.181 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 265 WHERE id = 'key0'
+2017/12/19 06:44:28.192 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.195 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 266 WHERE id = 'key0'
+2017/12/19 06:44:28.208 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.211 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 267 WHERE id = 'key0'
+2017/12/19 06:44:28.223 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.225 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 268 WHERE id = 'key0'
+2017/12/19 06:44:28.239 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.242 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 269 WHERE id = 'key0'
+2017/12/19 06:44:28.253 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.256 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 270 WHERE id = 'key0'
+2017/12/19 06:44:28.267 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.270 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 271 WHERE id = 'key0'
+2017/12/19 06:44:28.283 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.286 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 272 WHERE id = 'key0'
+2017/12/19 06:44:28.298 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.300 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 273 WHERE id = 'key0'
+2017/12/19 06:44:28.311 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.314 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 274 WHERE id = 'key0'
+2017/12/19 06:44:28.324 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.326 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 275 WHERE id = 'key0'
+2017/12/19 06:44:28.338 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.341 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 276 WHERE id = 'key0'
+2017/12/19 06:44:28.352 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.415 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 277 WHERE id = 'key0'
+2017/12/19 06:44:28.428 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.430 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 278 WHERE id = 'key0'
+2017/12/19 06:44:28.442 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.445 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 279 WHERE id = 'key0'
+2017/12/19 06:44:28.456 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.459 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 280 WHERE id = 'key0'
+2017/12/19 06:44:28.472 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.475 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 281 WHERE id = 'key0'
+2017/12/19 06:44:28.490 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.493 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 282 WHERE id = 'key0'
+2017/12/19 06:44:28.504 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.507 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 283 WHERE id = 'key0'
+2017/12/19 06:44:28.520 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.523 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 284 WHERE id = 'key0'
+2017/12/19 06:44:28.621 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.624 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 285 WHERE id = 'key0'
+2017/12/19 06:44:28.636 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.639 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 286 WHERE id = 'key0'
+2017/12/19 06:44:28.650 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.652 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 287 WHERE id = 'key0'
+2017/12/19 06:44:28.665 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.668 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 288 WHERE id = 'key0'
+2017/12/19 06:44:28.678 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.752 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 289 WHERE id = 'key0'
+2017/12/19 06:44:28.764 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.766 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 290 WHERE id = 'key0'
+2017/12/19 06:44:28.777 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.779 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 291 WHERE id = 'key0'
+2017/12/19 06:44:28.791 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.794 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 292 WHERE id = 'key0'
+2017/12/19 06:44:28.816 simple.go:128: [info] [0] execute rollback statement
+2017/12/19 06:44:28.816 txn.go:188: [info] [kv] Rollback txn 396798425510182921
+2017/12/19 06:44:28.892 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:28.990 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 293 WHERE id = 'key0'
+2017/12/19 06:44:29.001 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.004 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 294 WHERE id = 'key0'
+2017/12/19 06:44:29.086 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.091 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 295 WHERE id = 'key0'
+2017/12/19 06:44:29.175 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.256 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 296 WHERE id = 'key0'
+2017/12/19 06:44:29.269 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.272 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 297 WHERE id = 'key0'
+2017/12/19 06:44:29.284 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.287 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 298 WHERE id = 'key0'
+2017/12/19 06:44:29.298 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.301 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 299 WHERE id = 'key0'
+2017/12/19 06:44:29.314 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.319 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 300 WHERE id = 'key0'
+2017/12/19 06:44:29.332 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.336 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 301 WHERE id = 'key0'
+2017/12/19 06:44:29.414 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.417 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 302 WHERE id = 'key0'
+2017/12/19 06:44:29.525 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.628 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 303 WHERE id = 'key0'
+2017/12/19 06:44:29.704 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.708 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 304 WHERE id = 'key0'
+2017/12/19 06:44:29.809 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.812 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 305 WHERE id = 'key0'
+2017/12/19 06:44:29.900 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.902 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 306 WHERE id = 'key0'
+2017/12/19 06:44:29.913 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.916 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 307 WHERE id = 'key0'
+2017/12/19 06:44:29.928 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:29.931 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 308 WHERE id = 'key0'
+2017/12/19 06:44:30.001 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.003 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 309 WHERE id = 'key0'
+2017/12/19 06:44:30.014 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.016 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 310 WHERE id = 'key0'
+2017/12/19 06:44:30.027 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.029 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 311 WHERE id = 'key0'
+2017/12/19 06:44:30.131 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.135 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 312 WHERE id = 'key0'
+2017/12/19 06:44:30.145 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.148 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 313 WHERE id = 'key0'
+2017/12/19 06:44:30.160 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.163 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 314 WHERE id = 'key0'
+2017/12/19 06:44:30.175 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.178 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 315 WHERE id = 'key0'
+2017/12/19 06:44:30.276 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.279 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 316 WHERE id = 'key0'
+2017/12/19 06:44:30.289 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.292 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 317 WHERE id = 'key0'
+2017/12/19 06:44:30.394 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.496 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 318 WHERE id = 'key0'
+2017/12/19 06:44:30.583 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.587 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 319 WHERE id = 'key0'
+2017/12/19 06:44:30.682 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.744 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 320 WHERE id = 'key0'
+2017/12/19 06:44:30.756 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:30.845 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 321 WHERE id = 'key0'
+2017/12/19 06:44:30.956 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:31.036 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 322 WHERE id = 'key0'
+2017/12/19 06:44:31.051 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:31.140 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 323 WHERE id = 'key0'
+2017/12/19 06:44:31.231 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:31.235 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 324 WHERE id = 'key0'
+2017/12/19 06:44:31.247 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:31.305 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 325 WHERE id = 'key0'
+2017/12/19 06:44:31.375 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:31.378 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 326 WHERE id = 'key0'
+2017/12/19 06:44:31.455 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:31.537 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 327 WHERE id = 'key0'
+2017/12/19 06:44:31.548 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:31.551 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 328 WHERE id = 'key0'
+2017/12/19 06:44:31.562 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:31.564 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 329 WHERE id = 'key0'
+2017/12/19 06:44:31.647 metrics.go:363: [warning] [EXPENSIVE_QUERY] SELECT id, value FROM storage WHERE id = 'key0'
+2017/12/19 06:44:31.748 metrics.go:363: [warning] [EXPENSIVE_QUERY] UPDATE storage SET value = 330 WHERE id = 'key0'
+2017/12/19 06:45:28.926 simple.go:128: [info] [0] execute rollback statement
+2017/12/19 06:45:28.926 txn.go:188: [info] [kv] Rollback txn 396798441265299468
+2017/12/19 06:45:50.722 region_cache.go:467: [info] drop regions of store 5 from cache due to request fail, err: rpc error: code = DeadlineExceeded desc = context deadline exceeded
+2017/12/19 06:46:28.822 simple.go:128: [info] [0] execute rollback statement
+2017/12/19 06:46:28.822 txn.go:188: [info] [kv] Rollback txn 396798456967725069
+2017/12/19 06:46:32.928 kv.go:244: [error] [tikv] fail to load safepoint: context deadline exceeded
+2017/12/19 06:46:32.984 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:32.988 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:32.988 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:33.320 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:33.757 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:33.775 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:33.897 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:33.897 pd.go:126: [error] updateTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:34.072 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:34.073 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:34.175 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:34.787 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:34.787 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:34.836 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:35.085 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:35.126 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:35.405 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:35.884 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:35.897 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:35.897 pd.go:126: [error] updateTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:35.985 client.go:297: [error] [pd] failed updateLeader: failed to get leader from [http://10.0.0.10:2579 http://10.0.0.8:2379 http://10.0.0.9:2479]
+2017/12/19 06:46:36.415 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:36.948 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:37.863 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:37.897 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:37.897 pd.go:126: [error] updateTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:38.220 backoff.go:211: [warning] backoffer.maxSleep 5000ms is exceeded, errors:
+get timestamp failed: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+get timestamp failed: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+get timestamp failed: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:38.221 tidb.go:169: [info] RollbackTxn for ddl/autocommit error.
+2017/12/19 06:46:38.221 session.go:674: [warning] [2] session error:
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/backoff.go:131: [tikv:9001]PD server timeout[try again later]
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/kv.go:400: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/txn.go:49: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/kv.go:338: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/session.go:1260: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/adapter.go:310: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/adapter.go:211: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/tidb.go:176: 
+{
+  "currDBName": "lily",
+  "id": 2,
+  "status": 2,
+  "strictMode": true,
+  "user": {
+    "Username": "root",
+    "Hostname": "10.0.0.11"
+  }
+}
+2017/12/19 06:46:38.221 conn.go:440: [warning] [2] dispatch error:
+id:2, addr:10.0.0.11:42880 status:2, collation:utf8_general_ci, user:root
+"UPDATE storage SET value = 5823 WHERE id = 'key0'"
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/backoff.go:131: [tikv:9001]PD server timeout[try again later]
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/kv.go:400: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/txn.go:49: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/kv.go:338: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/session.go:1260: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/adapter.go:310: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/adapter.go:211: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/tidb.go:176: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/session.go:676: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/session.go:760: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/server/conn.go:760: 
+2017/12/19 06:46:38.223 server.go:297: [info] [2] close connection
+2017/12/19 06:46:38.223 server.go:119: [info] [3] new connection 10.0.0.11:43160
+2017/12/19 06:46:38.225 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:38.225 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:38.594 client.go:391: [error] [pd] getTS error: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:38.898 backoff.go:211: [warning] backoffer.maxSleep 5000ms is exceeded, errors:
+get timestamp failed: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+get timestamp failed: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+get timestamp failed: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:38.898 domain.go:333: [error] [ddl] reload schema in loop err /home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/backoff.go:131: [tikv:9001]PD server timeout[try again later]
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/kv.go:400: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/kv.go:387: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/domain/domain.go:284: 
+2017/12/19 06:46:38.985 client.go:297: [error] [pd] failed updateLeader: failed to get leader from [http://10.0.0.10:2579 http://10.0.0.8:2379 http://10.0.0.9:2479]
+2017/12/19 06:46:39.000 backoff.go:211: [warning] backoffer.maxSleep 5000ms is exceeded, errors:
+get timestamp failed: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+get timestamp failed: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+get timestamp failed: rpc error: code = Unknown desc = rpc error: code = Unavailable desc = not leader
+2017/12/19 06:46:39.000 txn.go:37: [error] [kv] RunInNewTxn error - [tikv:9001]PD server timeout[try again later]
+2017/12/19 06:46:39.000 ddl_worker.go:60: [error] [ddl] handle ddl job err /home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/backoff.go:131: [tikv:9001]PD server timeout[try again later]
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/kv.go:400: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/txn.go:49: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/store/tikv/kv.go:338: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/kv/txn.go:38: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/ddl/ddl_worker.go:223: 
+2017/12/19 06:47:30.711 coprocessor.go:379: [info] [TIME_COP_TASK] 13.24166658s backoff(13200ms [regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss]) region(2 3 13) ranges(1) store()
+2017/12/19 06:47:36.032 coprocessor.go:379: [info] [TIME_COP_TASK] 16.245315587s backoff(16200ms [regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss]) region(22 2 10) ranges(1) store()
+2017/12/19 06:47:46.141 coprocessor.go:379: [info] [TIME_COP_TASK] 17.232426553s backoff(17200ms [regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss regionMiss]) region(18 3 8) ranges(1) store()
+2017/12/19 06:47:46.145 session.go:291: [warning] [0] retryable error: [try again later]: tikv restarts txn: Txn(Mvcc(WriteConflict { start_ts: 396798472685092867, conflict_ts: 396798477233291272, key: [116, 128, 0, 0, 0, 0, 0, 0, 255, 15, 95, 114, 128, 0, 0, 0, 0, 255, 0, 58, 153, 0, 0, 0, 0, 0, 250], primary: [116, 128, 0, 0, 0, 0, 0, 0, 15, 95, 114, 128, 0, 0, 0, 0, 0, 58, 153] })), txn: <nil>
+2017/12/19 06:47:46.145 session.go:301: [warning] [0] finished txn:<nil>, [0] can not retry select for update statement
+2017/12/19 06:47:46.145 tidb.go:169: [info] RollbackTxn for ddl/autocommit error.
+2017/12/19 06:47:46.145 session.go:674: [warning] [0] session error:
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/session.go:395: [0] can not retry select for update statement
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/session.go:302: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/session.go:325: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/session.go:862: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/simple.go:112: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/simple.go:83: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/executor/adapter.go:279: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/tidb.go:176: 
+{
+  "currDBName": "",
+  "id": 0,
+  "status": 2,
+  "strictMode": true,
+  "user": null
+}
+2017/12/19 06:47:46.145 gc_worker.go:162: [warning] [gc worker] check leader err: [0] can not retry select for update statement
+2017/12/19 06:47:46.145 2pc.go:577: [info] 2PC clean up done, tid: 396798472685092867
+2017/12/19 06:48:00.591 conn.go:412: [error] [3] read packet error, close this connection read tcp 10.0.0.8:4000->10.0.0.11:43160: read: connection reset by peer
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/server/packetio.go:69: 
+/home/jenkins/workspace/build_tidb_master/go/src/github.com/pingcap/tidb/server/packetio.go:91: 
+2017/12/19 06:48:00.591 server.go:297: [info] [3] close connection
+2017/12/19 06:48:09.790 manager.go:238: [info] [ddl] /tidb/ddl/fg/owner ownerManager ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5, owner is ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5
+2017/12/19 06:48:14.038 main.go:405: [info] Got signal [2] to exit.
+2017/12/19 06:48:14.038 manager.go:166: [info] [ddl] /tidb/ddl/fg/owner ownerManager ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5 etcd session is done, creates a new one
+2017/12/19 06:48:14.038 manager.go:170: [info] [ddl] /tidb/ddl/fg/owner ownerManager ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5 break campaign loop, NewSession err context canceled
+2017/12/19 06:48:14.040 manager.go:214: [info] [ddl] /tidb/ddl/fg/owner ownerManager ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5 break campaign loop, revoke err <nil>
+2017/12/19 06:48:14.041 delete_range.go:105: [info] [ddl] closing delRange session pool
+2017/12/19 06:48:14.041 ddl.go:331: [info] close DDL:ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5
+2017/12/19 06:48:14.041 ddl.go:300: [info] stop DDL:ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5
+2017/12/19 06:48:14.041 manager.go:193: [info] [stats] /tidb/stats/owner ownerManager ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5 failed to campaign, err lost watcher waiting for delete
+2017/12/19 06:48:14.042 manager.go:193: [info] [stats] /tidb/stats/owner ownerManager ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5 failed to campaign, err rpc error: code = Internal desc = transport is closing
+2017/12/19 06:48:14.042 manager.go:166: [info] [stats] /tidb/stats/owner ownerManager ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5 etcd session is done, creates a new one
+2017/12/19 06:48:14.042 manager.go:140: [warning] [stats] /tidb/stats/owner ownerManager ad167a66-cdcd-44cf-bf43-8cba6ac1ebd5 failed to new session, err grpc: the client connection is closing
