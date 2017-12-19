@@ -1,5 +1,5 @@
 {
-    "tidb1": { "host": "10.0.0.4", "db": { "statusPort": 10080, "port": 4000 }, "kv" : { "name": "tikv1", "port": 20160 }, "pd": { "name": "pd1", "clientPort" : 2379, "peerPort": 2380 } },
-    "tidb2": { "host": "10.0.0.5", "db": { "statusPort": 20080, "port": 4001 }, "kv" : { "name": "tikv2", "port": 21160 }, "pd": { "name": "pd2", "clientPort" : 2479, "peerPort": 2480 } },
-    "tidb3": { "host": "10.0.0.6", "db": { "statusPort": 30080, "port": 4002 }, "kv" : { "name": "tikv3", "port": 22160 }, "pd": { "name": "pd3", "clientPort" : 2579, "peerPort": 2580 } }
+    "tidb1": { "host": "10.0.0.8", "db": { "statusPort": 10080, "port": 4000 }, "kv" : { "name": "tikv1", "port": 20160 }, "pd": { "name": "pd1", "clientPort" : 2379, "peerPort": 2380 } },
+    "tidb2": { "host": "10.0.0.9", "db": { "statusPort": 20080, "port": 4001 }, "kv" : { "name": "tikv2", "port": 21160 }, "pd": { "name": "pd2", "clientPort" : 2479, "peerPort": 2480 } },
+    "tidb3": { "host": "10.0.0.10", "db": { "statusPort": 30080, "port": 4002 }, "kv" : { "name": "tikv3", "port": 22160 }, "pd": { "name": "pd3", "clientPort" : 2579, "peerPort": 2580 } }
 }
