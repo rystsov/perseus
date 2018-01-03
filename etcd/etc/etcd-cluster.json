@@ -1,5 +1,0 @@
-{
-    "etcd1": { "host": "10.0.0.5", "peerPort": 2380, "clientPort": 2379 },
-    "etcd2": { "host": "10.0.0.6", "peerPort": 2380, "clientPort": 2379 },
-    "etcd3": { "host": "10.0.0.7", "peerPort": 2380, "clientPort": 2379 }
-}

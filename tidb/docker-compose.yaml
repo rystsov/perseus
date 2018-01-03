@@ -1,0 +1,35 @@
+version: '3'
+services:
+  tidb1:
+    build: db
+    privileged: true
+    container_name: tidb1
+    hostname: tidb1
+    tmpfs: /tidb/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/tidb/logs
+  tidb2:
+    build: db
+    privileged: true
+    container_name: tidb2
+    hostname: tidb2
+    tmpfs: /tidb/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/tidb/logs
+  tidb3:
+    build: db
+    privileged: true
+    container_name: tidb3
+    hostname: tidb3
+    tmpfs: /tidb/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/tidb/logs
+networks:
+  perseus:
+    driver: bridge
