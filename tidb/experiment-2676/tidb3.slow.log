@@ -1,5 +1,0 @@
-2017/12/19 06:45:08.137 adapter.go:368: [warning] slow-query sql=SELECT version, table_id, modify_count, count from mysql.stats_meta where version > 396798433374502940 order by version txnStartTS=396798435733798930 costTime=309.154492ms type=slow-query database= succ=true connectionId=0
-2017/12/19 06:47:21.096 adapter.go:368: [warning] slow-query database= sql=begin txnStartTS=396798470050545665 type=slow-query connectionId=0 costTime=12.181311167s succ=true
-2017/12/19 06:47:21.203 adapter.go:368: [warning] slow-query sql=use `lily` txnStartTS=396798470050545667 type=slow-query costTime=20.82462038s succ=true database=lily connectionId=4
-2017/12/19 06:47:31.441 adapter.go:368: [warning] slow-query txnStartTS=18446744073709551615 connectionId=4 sql=SELECT id, value FROM storage WHERE id = 'key2' type=slow-query costTime=10.236473067s database=lily succ=true
-2017/12/19 06:47:36.347 adapter.go:368: [warning] slow-query sql=update mysql.stats_meta set version = 396798470050545665, count = count + 0, modify_count = modify_count + 137 where table_id = 29 type=slow-query costTime=15.250234699s database= connectionId=0 succ=true txnStartTS=396798470050545665

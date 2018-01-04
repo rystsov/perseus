@@ -1,1 +1,0 @@
-2017/12/19 06:47:35.889 adapter.go:368: [warning] slow-query database= txnStartTS=396798470024331265 type=slow-query costTime=17.264956869s sql=SELECT version, table_id, modify_count, count from mysql.stats_meta where version > 396798464820772883 order by version connectionId=0 succ=true
