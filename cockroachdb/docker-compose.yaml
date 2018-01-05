@@ -1,0 +1,35 @@
+version: '3'
+services:
+  roach1:
+    build: db
+    privileged: true
+    container_name: roach1
+    hostname: roach1
+    tmpfs: /roach/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/roach/logs
+  roach2:
+    build: db
+    privileged: true
+    container_name: roach2
+    hostname: roach2
+    tmpfs: /roach/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/roach/logs
+  roach3:
+    build: db
+    privileged: true
+    container_name: roach3
+    hostname: roach3
+    tmpfs: /roach/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/roach/logs
+networks:
+  perseus:
+    driver: bridge

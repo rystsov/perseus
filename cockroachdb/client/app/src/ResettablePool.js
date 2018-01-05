@@ -1,6 +1,6 @@
 const pg = require('pg');
 
-class RetriableClient {
+class ResettablePool {
     constructor(config) {
         this.config = config;
         this.client = null;
@@ -46,5 +46,5 @@ function query(client, sql, params) {
     });
 }
 
-exports.RetriableClient = RetriableClient;
+exports.ResettablePool = ResettablePool;
 exports.query = query;

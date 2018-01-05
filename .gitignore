@@ -13,3 +13,7 @@ rethinkdb/node_modules
 rethinkdb/deployment
 
 tikv/node_modules
+
+cockroachdb/logs
+etcs/logs
+tidb/logs

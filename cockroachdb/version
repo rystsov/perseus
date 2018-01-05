@@ -1,8 +1,0 @@
-Build Tag:    beta-20170223
-Build Time:   2017/02/23 16:30:53
-Distribution: CCL
-Platform:     linux amd64
-Go Version:   go1.7.5
-C Compiler:   gcc 4.9.3
-Build SHA-1:  4c8949513d287b92be1c167615398a2a53fe39da
-Build Type:   release

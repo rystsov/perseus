@@ -1,83 +1,66 @@
-Perseus is a set of scripts to test how CockroachDB behaves when a leader is separated from the peer but maintain connection to the clients. It consists of scripts:
+Perseus/CockroachDB is a set of scripts to investigate responsiveness of a CockroachDB cluster when its node is separated from the peers.
 
-  * to download CockroachDB
-  * to run it
-  * to generate load and measure a number of successful operations per second per node and per whole cluster
+The scripts measure an impact from a client's perspective by opening a connection to every node of the cluster, incrementing a value per each of them and dumping the statistics every second.
 
-The load generating script is pretty straightforward, it open connections to each of the nodes in the cluster and execute the following loop:
+All scripts are dockerized so it's painless to reproduce the results.
 
- 1. read a value by a key
- 2. if the wasn't set then set it to 0
- 3. increment the value
- 4. write it back
- 5. increment a number of successful iterations 
- 6. repeat the loop
+## Output
 
-Each connection uses its own key to avoid collision. If there is an error during the loop then it closes the current connection, opens a new one and begins the next iteration.
+A summary of `logs/client1.log`:
 
-Once in a second the script dumps the number of successful iterations for the last second per cluster and per each node (metrics).
+<pre>#legend: time|roach1|roach2|roach3|roach1:err|roach2:err|roach3:err
+1	57	54	65	0	0	0	2018/01/04 05:22:38
+2	57	67	66	0	0	0	2018/01/04 05:22:39
+...
+13	40	44	52	0	0	0	2018/01/04 05:22:50
+14	51	61	77	0	0	0	2018/01/04 05:22:51
+# isolating roach3
+# isolated roach3
+15	46	37	54	0	0	0	2018/01/04 05:22:52
+16	0	0	0	0	0	0	2018/01/04 05:22:53
+...
+28	174	0	0	0	0	0	2018/01/04 05:23:05
+29	168	0	0	0	0	0	2018/01/04 05:23:06
+...
+51	119	91	0	0	0	0	2018/01/04 05:23:28
+52	116	92	0	0	0	0	2018/01/04 05:23:29
+...
+# rejoining roach3
+# rejoined roach3
+88	103	69	0	0	0	0	2018/01/04 05:24:05
+89	116	79	0	0	0	0	2018/01/04 05:24:06
+90	99	70	0	0	0	0	2018/01/04 05:24:07
+91	26	17	0	0	0	0	2018/01/04 05:24:08
+92	0	0	0	0	0	0	2018/01/04 05:24:09
+93	0	0	0	0	0	0	2018/01/04 05:24:10
+...
+100	0	0	0	0	0	0	2018/01/04 05:24:17
+101	3	13	1	0	0	1	2018/01/04 05:24:18
+102	83	65	62	0	0	0	2018/01/04 05:24:19
+103	80	61	60	0	0	0	2018/01/04 05:24:20</pre>
 
-A user is expected to mess with the cluster and observe its effect of the metrics.
+The first column is the number of second since the begining of the experiment, the following last three columns represent the number of increments per each node of the cluster per second, the next triplet is number of errors per second and the last is time.
 
-## Example of an output
+The all zero row means that all connections hang.
 
-The first column is the number of second since the begining of the experiment, the second column is the number of successful iterations per cluster, the last three columns represent the number of successful iterations per each node of the cluster.
+## How to use Perseus?
 
-<pre>
-1 360  99  94 167
-2 458 129 120 209
-3 493 139 128 226
-4 469 136 120 213
-5 486 136 130 220
-6 478 136 130 212
-7 488 142 124 222</pre>
+Clone this repository:
 
-You can see that everything looks normal. The next fragment represents a moment when I killed a leader the whole cluster became unavailable for 12 seconds until a new leader was elected:
+    git clone https://github.com/rystsov/perseus.git
 
-<pre>
-150 549 250 143 156
-151 410 186 109 115 # kill -9
-152   0   0   0   0
-...                    
-161   0   0   0   0
-162 106   0 106   0
-163 221   0 167  54
-164 310   0 188 122</pre>
+Switch to CockroachDB folder:
 
-Since I didn't restart the second node (the former leader) it continued generating zero metrics.
+    cd perseus/cockroachdb
 
-Let's see what happens when the leader is isolated from the peers:
+Run the cockroachdb cluster (3 nodes):
 
-<pre>
-70 474 140 122 212
-71 484 137 135 212
-72 284  81  78 125 #iptables down
-73   0   0   0   0
-...                 
-80   0   0   0   0
-81 182 130  52   0
-82 309 195 114   0
-83 342 216 126   0</pre>
+    docker-compose up
 
-The unavailability window is around 10 seconds.
+Open new tab, build and run a client's container
 
-## How to reproduce the test
+    ./build-client.sh && ./run-client1.sh
 
-Prerequisites: [jq](https://stedolan.github.io/jq/) and [node-nightly](https://www.npmjs.com/package/node-nightly).
+You'll see an output similar to `logs/client1.log` but without isolating/rejoin markers (the log still has them).
 
-1. clone this repo
-2. update etc/roach-cluster.json with the ip addresses of your set of nodes
-3. commit 'n' push
-4. on each of the nodes:
-  1. clone your repo
-  2. execute `./bin/get-cockroach.sh` to download CockroachDB
-  3. execute `./bin/run-cockroach.sh roach1` (if you're on a node with an address corresponding to roach1 in your etc/roach-cluster.json)
-5. clone your repo on the client and execute:
-  1. `./bin/init-lily.sh roach1` to initialize the db
-  2. `./bin/test.sh` to start the test
-
-### How to kill a node
-
-1. ctrl-c + ctrl-c
-2. `kill -9 ...`
-3. Run `sudo iptables -A INPUT -s 10.0.0.5 -j DROP; sudo iptables -A INPUT -s 10.0.0.6 -j DROP; sudo iptables -A OUTPUT -d 10.0.0.5 -j DROP; sudo iptables -A OUTPUT -d 10.0.0.6 -j DROP` to separate current node from the rest of the cluster (10.0.0.5 and 10.0.0.6 in my case); run `sudo iptables -D INPUT -s 10.0.0.5 -j DROP; sudo iptables -D INPUT -s 10.0.0.6 -j DROP; sudo iptables -D OUTPUT -d 10.0.0.5 -j DROP; sudo iptables -D OUTPUT -d 10.0.0.6 -j DROP` to undo the effect
+Then use the `./isolate.sh roach1` to isolate `roach1` (you can use `roach2`, `roach3` too). To rejoin `roach1` to the cluster use  `./rejoin.sh roach1`

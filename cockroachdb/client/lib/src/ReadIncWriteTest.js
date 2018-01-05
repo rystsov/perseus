@@ -1,13 +1,13 @@
 const {SlidingWindow} = require('./SlidingWindow');
-const {RetriableClient} = require('./RetriableClient');
-const {RoachKV} = require('./RoachKV');
+const moment = require("moment");
 
 class ReadIncWriteTest {
-    constructor(nodes) {
+    constructor(nodes, period) {
         this.nodes = nodes;
         this.cps = new SlidingWindow();
-        this.hostPorts = nodes.map(node => node.host + ":" + node.port);
         this.isActive = false;
+        this.period = period;
+        this.ids = nodes.map(node => node.id);
     }
     async run() {
         this.isActive = true;
@@ -24,33 +24,35 @@ class ReadIncWriteTest {
     }
     async agg() {
         const started = time_us();
+        var dims = this.ids.concat(this.ids.map(x => `${x}:err`));
+        console.info("#legend: time|" + dims.join("|"));
+
         while (this.isActive) {
             await new Promise((resolve, reject) => {
-                setTimeout(() => resolve(true), 1000);
+                setTimeout(() => resolve(true), this.period);
             });
             const time = time_us()
-            this.cps.forgetBefore(time - 1000*1000)
+            this.cps.forgetBefore(time - this.period*1000)
             
             console.info(
-                "" + Math.floor((time - started) / (1000 * 1000)) + "\t" + 
-                this.cps.getStat(this.hostPorts)
+                "" + Math.floor((time - started) / (this.period * 1000)) + "\t" + this.cps.getStat(dims) +
+                "\t" + moment().format("YYYY/MM/DD hh:mm:ss")
             );
         }
     }
     async startClientThread(node, key) {
-        const hostPort = node.host + ":" + node.port;
-        const conn = new RetriableClient(node);
-        const service = new RoachKV(conn);
         while (this.isActive) {
             try {
-                const read = await service.read(key);
+                const read = await node.read(key);
                 if (read==null) {
-                    await service.create(key, "0");
+                    await node.create(key, "0");
                 } else {
-                    await service.update(key, parseInt(read) + 1);
+                    await node.update(key, parseInt(read) + 1);
                 }
-                this.cps.enqueue(time_us(), hostPort);
-            } catch (e) { }
+                this.cps.enqueue(time_us(), node.id);
+            } catch (e) {  
+                this.cps.enqueue(time_us(), node.id + ":err");
+            }
         }
     }
 }

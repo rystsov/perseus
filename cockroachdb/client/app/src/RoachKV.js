@@ -1,8 +1,9 @@
-const {query} = require('./RetriableClient');
+const {query} = require('./ResettablePool');
 
 class RoachKV {
-    constructor(pool) {
+    constructor(id, pool) {
         this.pool = pool;
+        this.id = id;
     }
     async read(key) {
         try {
