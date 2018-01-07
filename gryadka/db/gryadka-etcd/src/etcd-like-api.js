@@ -61,6 +61,24 @@ function change(prevIndex, value) {
     }
 }
 
+function overwrite(value) {
+    return function(state) {
+        if (state == null) {
+            return [{
+                created: 0,
+                modified: 0,
+                value: value
+            }, null];
+        } else {
+            return [{
+                created: 0,
+                modified: state.modified + 1,
+                value: value
+            }, null];
+        }
+    }
+}
+
 class EtcdLikeAPI {
     constructor(settings) {
         this.settings = settings;
@@ -82,10 +100,6 @@ class EtcdLikeAPI {
     }
 
     read(req, res) {
-        // console.info("request /read:");
-        // console.info(req.params);
-        // console.info(req.query);
-
         const key = req.params.key;
         
         (async () => {
@@ -124,11 +138,6 @@ class EtcdLikeAPI {
     }
 
     write(req, res) {
-        // console.info("request /write:");
-        // console.info(req.params);
-        // console.info(req.query);
-        // console.info(req.body);
-        
         const key = req.params.key;
         const value = req.body.value;
 
@@ -187,9 +196,24 @@ class EtcdLikeAPI {
                     } else {
                         throw new Error();
                     }
+                } else {
+                    const status = await this.proposer.changeQuery(key, overwrite(value), x=>x, null);
+                    if (status.status == "OK") {
+                        res.status(200).json({
+                            "action": "update",
+                            "node": {
+                                "key": "/" + key,
+                                "value": status.details.value,
+                                "modifiedIndex": status.details.modified,
+                                "createdIndex": status.details.created
+                            }
+                        });
+                    } else {
+                        console.info(status);
+                        throw new Error();
+                    }
                 }
             } catch(e) {
-                //console.info(e);
                 res.sendStatus(500);
             }
         })();
@@ -206,7 +230,19 @@ class EtcdLikeAPI {
     }
 }
 
-const settings = JSON.parse(fs.readFileSync(process.argv[2]));
+const cluster = JSON.parse(fs.readFileSync(process.argv[2]));
+const proposerId = process.argv[3];
+
+const proposer = cluster.proposers[proposerId];
+const settings = {
+    id: proposer.id,
+    port: proposer.port,
+    quorum: proposer.quorum,
+    acceptors: proposer.acceptors.map(aid => {
+        return cluster.acceptors[aid];
+    })
+};
+
 console.info(settings);
 
 const service = new EtcdLikeAPI(settings);

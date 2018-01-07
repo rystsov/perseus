@@ -1,0 +1,27 @@
+{
+  "name": "perseus-tidb",
+  "version": "1.0.0",
+  "description": "Perseus is a set of scripts to test how TiDB behaves when a leader is separated from the peer but maintain connection to the clients",
+  "main": "index.js",
+  "dependencies": {
+    "request": "2.74.0",
+    "perseus-base": "file:../lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rystsov/perseus.git"
+  },
+  "keywords": [
+    "tidb",
+    "raft"
+  ],
+  "author": "Denis Rystsov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rystsov/perseus/issues"
+  },
+  "homepage": "https://github.com/rystsov/perseus"
+}
