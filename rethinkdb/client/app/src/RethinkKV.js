@@ -1,10 +1,10 @@
 const r = require("rethinkdb");
 
 class RethinkKV {
-    constructor(pool, table) {
+    constructor(pool, table, id) {
         this.pool = pool;
         this.table = table;
-        this.hostPort = pool.hostPort;
+        this.id = id;
     }
     async read(key) {
         try {

@@ -17,4 +17,4 @@ COPY lib /roach/lib
 WORKDIR /roach/app
 RUN npm install
 WORKDIR /roach
-CMD /bin/bash
+CMD /roach/test.sh

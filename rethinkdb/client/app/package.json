@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "rethinkdb": "2.3.3",
-    "perseus-base": "file:../base"
+    "perseus-base": "file:../lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

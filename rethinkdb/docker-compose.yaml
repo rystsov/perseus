@@ -1,0 +1,35 @@
+version: '3'
+services:
+  rethink1:
+    build: db
+    privileged: true
+    container_name: rethink1
+    hostname: rethink1
+    tmpfs: /rethink/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/rethink/logs
+  rethink2:
+    build: db
+    privileged: true
+    container_name: rethink2
+    hostname: rethink2
+    tmpfs: /rethink/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/rethink/logs
+  rethink3:
+    build: db
+    privileged: true
+    container_name: rethink3
+    hostname: rethink3
+    tmpfs: /rethink/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/rethink/logs
+networks:
+  perseus:
+    driver: bridge
