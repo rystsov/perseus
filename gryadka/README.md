@@ -6,7 +6,7 @@ All scripts are dockerized so it's painless to reproduce the results.
 
 ## Output
 
-A summary of `logs/client1.log`:
+A summary of `logs/client1.log` (gryadka: 1.61.8, redis: 4.0.1):
 
 <pre>#legend: time|gryadka1|gryadka2|gryadka3|gryadka1:err|gryadka2:err|gryadka3:err
 1	51	58	60	0	0	0	2018/01/07 09:38:08

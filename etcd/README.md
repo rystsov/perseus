@@ -6,7 +6,7 @@ All scripts are dockerized so it's painless to reproduce the results.
 
 ## Output
 
-A summary of `logs/client1.log`:
+A summary of `logs/client1.log` (3.2.13):
 
 <pre>#legend: time|etcd1|etcd2|etcd3|etcd1:err|etcd2:err|etcd3:err
 1	58	56	54	0	0	0	2018/01/08 06:43:09

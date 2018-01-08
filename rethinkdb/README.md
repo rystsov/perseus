@@ -6,7 +6,7 @@ All scripts are dockerized so it's painless to reproduce the results.
 
 ## Output
 
-A summary of `logs/client1.log`:
+A summary of `logs/client1.log` (2.3.6~0zesty):
 
 <pre>#legend: time|rethink1|rethink2|rethink3|rethink1:err|rethink2:err|rethink3:err
 1	133	130	140	0	0	0	2018/01/08 04:53:07

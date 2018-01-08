@@ -15,7 +15,7 @@ rethinkdb/deployment
 tikv/node_modules
 
 cockroachdb/logs
-etcs/logs
+etcd/logs
 tidb/logs
 gryadka/logs
 rethinkdb/logs

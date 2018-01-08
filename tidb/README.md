@@ -6,7 +6,7 @@ All scripts are dockerized so it's painless to reproduce the results.
 
 ## Output
 
-A summary of `logs/client1.log`:
+A summary of `logs/client1.log` (PD: v1.1.0-alpha-54-g5598c00, TiKV: 1.0.1, TiDB: v1.1.0-alpha-357-gb1e1a26):
 
 <pre>#legend: time|tidb1|tidb2|tidb3|tidb1:err|tidb2:err|tidb3:err
 1	0	0	0	0	0	0	2018/01/08 07:35:04

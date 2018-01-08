@@ -6,7 +6,7 @@ All scripts are dockerized so it's painless to reproduce the results.
 
 ## Output
 
-A summary of `logs/client1.log`:
+A summary of `logs/client1.log` (v1.1.3):
 
 <pre>#legend: time|roach1|roach2|roach3|roach1:err|roach2:err|roach3:err
 1	60	72	59	0	0	0	2018/01/08 05:31:33
