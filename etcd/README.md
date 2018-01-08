@@ -9,24 +9,25 @@ All scripts are dockerized so it's painless to reproduce the results.
 A summary of `logs/client1.log`:
 
 <pre>#legend: time|etcd1|etcd2|etcd3|etcd1:err|etcd2:err|etcd3:err
-1	43	49	43	0	0	0	2018/01/03 04:34:40
-2	43	49	43	0	0	0	2018/01/03 04:34:41
+1	58	56	54	0	0	0	2018/01/08 06:43:09
+2	65	58	55	0	0	0	2018/01/08 06:43:10
 ...
-28	56	58	59	0	0	0	2018/01/03 04:35:07
-29	55	57	54	0	0	0	2018/01/03 04:35:08
+18	65	58	56	0	0	0	2018/01/08 06:43:26
+19	76	55	67	0	0	0	2018/01/08 06:43:27
 # isolating etcd1
 # isolated etcd1
-30	9	70	66	0	0	0	2018/01/03 04:35:09
-31	0	72	64	1	0	0	2018/01/03 04:35:10
+20	27	26	26	0	0	0	2018/01/08 06:43:28
+21	0	0	0	1	1	1	2018/01/08 06:43:29
+22	0	43	47	1	1	1	2018/01/08 06:43:30
 ...
-50	0	91	80	1	0	0	2018/01/03 04:35:29
-51	0	91	75	1	0	0	2018/01/03 04:35:30
+42	0	100	106	1	0	0	2018/01/08 06:43:50
+43	0	96	112	1	0	0	2018/01/08 06:43:51
 # rejoining etcd1
 # rejoined etcd1
-52	0	58	52	1	0	0	2018/01/03 04:35:31
-53	0	0	0	1	1	1	2018/01/03 04:35:32
-54	42	49	44	1	0	0	2018/01/03 04:35:33
-55	53	62	50	0	0	0	2018/01/03 04:35:34</pre>
+44	0	81	88	1	0	0	2018/01/08 06:43:52
+45	0	0	0	1	1	1	2018/01/08 06:43:53
+46	12	19	21	1	0	0	2018/01/08 06:43:54
+47	67	64	65	0	0	0	2018/01/08 06:43:55</pre>
 
 The first column is the number of second since the begining of the experiment, the following last three columns represent the number of increments per each node of the cluster per second, the next triplet is number of errors per second and the last is time.
 
