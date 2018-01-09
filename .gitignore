@@ -19,3 +19,4 @@ etcd/logs
 tidb/logs
 gryadka/logs
 rethinkdb/logs
+consul/logs

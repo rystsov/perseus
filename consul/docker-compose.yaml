@@ -1,0 +1,35 @@
+version: '3'
+services:
+  consul1:
+    build: db
+    privileged: true
+    container_name: consul1
+    hostname: consul1
+    tmpfs: /consul/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/consul/logs
+  consul2:
+    build: db
+    privileged: true
+    container_name: consul2
+    hostname: consul2
+    tmpfs: /consul/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/consul/logs
+  consul3:
+    build: db
+    privileged: true
+    container_name: consul3
+    hostname: consul3
+    tmpfs: /consul/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/consul/logs
+networks:
+  perseus:
+    driver: bridge
