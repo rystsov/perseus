@@ -3,6 +3,7 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 | Database | Complete unavailability | Unexpected unavailability | Recovery time | Version |
 | --- | --- | --- | --- | --- |
 | [Etcd](https://github.com/rystsov/perseus/tree/master/etcd) | 2s | 2s | 2s | 3.2.13 |
+| [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) | 28s | 28s | 1s | v3.6.1 |
 | [Gryadka](https://github.com/rystsov/perseus/tree/master/gryadka) | 0s | 0s | 8s | gryadka: 1.61.8<br/> redis: 4.0.1 |
 | [CockroachDB](https://github.com/rystsov/perseus/tree/master/cockroachdb) | 14s | 33s | 13s | v1.1.3 |
 | [Consul](https://github.com/rystsov/perseus/tree/master/consul) | 22s | 23s | 10s | v1.0.2 |
@@ -11,6 +12,6 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 
 **Complete unavailability:** all three nodes are unavailable to write/read
 
-**Unexpected unavailability:** more than one node are unavailable to write/read
+**Unexpected unavailability:** more than one node are unavailable to write/read (complete unavailability is a sub-type of complete unavailability)
 
 **Recovery time:** time between connectivity is restored and all three nodes are available to write/read
