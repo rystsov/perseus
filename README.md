@@ -2,7 +2,7 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 
 | Database | Complete unavailability | Unexpected unavailability | Recovery time | Version |
 | --- | --- | --- | --- | --- |
-| [Etcd](https://github.com/rystsov/perseus/tree/master/etcd) | 2s | 2s | 2s | 3.2.13 |
+| [Etcd](https://github.com/rystsov/perseus/tree/master/etcd) | 1s | 1s | 2s | 3.2.13 |
 | [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) | 28s | 28s | 1s | v3.6.1 |
 | [Gryadka](https://github.com/rystsov/perseus/tree/master/gryadka) | 0s | 0s | 8s | gryadka: 1.61.8<br/> redis: 4.0.1 |
 | [CockroachDB](https://github.com/rystsov/perseus/tree/master/cockroachdb) | 14s | 33s | 13s | v1.1.3 |
