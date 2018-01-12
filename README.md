@@ -21,3 +21,7 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 **Partial downtime on recovery:** Only one node is available on the 2-to-3 transition
 
 **Recovery time:** Time between connectivity is restored and all three nodes are available to write and read
+
+#### So, this is just a bunch of numbers based on the default parameters such as leader election timeout of various systems, isn't it?
+
+Kind of, but there are anyway lot of interesting patterns behind the numbers.

@@ -2,10 +2,9 @@ FROM ubuntu:17.10
 LABEL maintainer="Denis Rystsov <rystsov.denis@gmail.com>"
 RUN apt-get update -y
 RUN apt-get install -y wget supervisor iptables
-RUN apt-get install -y iputils-ping vim tmux less
-RUN apt-get install -y nodejs npm
-RUN npm install --global node-nightly
-RUN node-nightly
+RUN apt-get install -y iputils-ping vim tmux less curl
+RUN /bin/bash -c "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
+RUN apt-get install -y nodejs
 RUN mkdir -p /mongo
 WORKDIR /mongo
 RUN wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.1.tgz

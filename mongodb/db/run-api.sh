@@ -14,4 +14,4 @@ if [ -z "$mongo3" ] ; then exit 1 ; fi;
 
 /mongo/mongodb-linux-x86_64-3.6.1/bin/mongo --host mongo1 < /mongo/topology
 
-node-nightly /mongo/mongo-etcd/src/start.js > /mongo/logs/$me.api.log
+nodejs /mongo/mongo-etcd/src/start.js > /mongo/logs/$me.api.log

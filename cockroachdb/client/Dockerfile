@@ -1,10 +1,9 @@
 FROM ubuntu:17.10
 LABEL maintainer="Denis Rystsov <rystsov.denis@gmail.com>"
 RUN apt-get update -y
-RUN apt-get install -y wget iputils-ping vim tmux less
-RUN apt-get install -y nodejs npm
-RUN npm install --global node-nightly
-RUN node-nightly
+RUN apt-get install -y wget iputils-ping vim tmux less curl
+RUN /bin/bash -c "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
+RUN apt-get install -y nodejs
 RUN mkdir -p /roach
 WORKDIR /roach
 RUN wget https://binaries.cockroachdb.com/cockroach-latest.linux-amd64.tgz
