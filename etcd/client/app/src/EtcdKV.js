@@ -18,8 +18,8 @@ class EtcdKV {
     async create(key, val) {
         return create(this.url, key, val)
     }
-    async update(key, ver, val) {
-        return update(this.url, key, ver, val);
+    async update(key, val) {
+        return update(this.url, key, val);
     }
 }
 
