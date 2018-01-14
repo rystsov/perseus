@@ -1,7 +1,7 @@
 const fs = require("fs");
-const {EtcdKV} = require("./EtcdKV");
+const {RemoteTesterClient} = require("./RemoteTesterClient");
 
-const {ReadIncWriteTest} = require('perseus-base');
+const {TestAggregator} = require("./TestAggregator");
 
 let period = 1000;
 if (process.argv.length == 3) {
@@ -11,10 +11,10 @@ if (process.argv.length == 3) {
 const nodes = [ ];
 
 for (const [host, port] of [["mongo1", 2379],["mongo2", 2379],["mongo3", 2379]]) {
-    nodes.push(new EtcdKV(host, host + ":" + port));
+    nodes.push(new RemoteTesterClient(host, port));
 }
 
-const test = new ReadIncWriteTest(nodes, period);
+const test = new TestAggregator(nodes, period);
 
 (async () => {
     try {

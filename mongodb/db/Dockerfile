@@ -11,13 +11,13 @@ RUN wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.1.tgz
 RUN tar -xzvf mongodb-linux-x86_64-3.6.1.tgz
 RUN rm mongodb-linux-x86_64-3.6.1.tgz
 COPY run-mongo.sh /mongo/run-mongo.sh
-COPY run-api.sh /mongo/run-api.sh
+COPY run-tester.sh /mongo/run-tester.sh
 COPY topology /mongo/topology
 COPY isolate.sh /mongo/isolate.sh
 COPY rejoin.sh /mongo/rejoin.sh
 COPY mongo.conf /etc/supervisor/conf.d/mongo.conf
-COPY mongo-etcd /mongo/mongo-etcd
-WORKDIR /mongo/mongo-etcd
+COPY remote-tester /mongo/remote-tester
+WORKDIR /mongo/remote-tester
 RUN npm install
 WORKDIR /mongo
 CMD /usr/bin/supervisord -n

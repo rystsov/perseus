@@ -1,7 +1,7 @@
 const {SlidingWindow} = require('./SlidingWindow');
 const moment = require("moment");
 
-class ReadIncWriteTest {
+class TestAggregator {
     constructor(nodes, period) {
         this.nodes = nodes;
         this.cps = new SlidingWindow();
@@ -41,23 +41,29 @@ class ReadIncWriteTest {
         }
     }
     async startClientThread(node, key) {
+        await node.start(key);
         while (this.isActive) {
             try {
-                const read = await node.read(key);
-                if (read==null) {
-                    await node.create(key, "0");
-                } else {
-                    await node.update(key, parseInt(read) + 1);
+                await new Promise((resolve, reject) => {
+                    setTimeout(() => resolve(true), this.period / 2);
+                });
+                const stat = await node.stat();
+                const now = time_us();
+                
+                for (let i =0; i<stat.success; i++) {
+                    this.cps.enqueue(now, node.id);
                 }
-                this.cps.enqueue(time_us(), node.id);
+                for (let i =0; i<stat.failures; i++) {
+                    this.cps.enqueue(now, node.id + ":err");
+                }
             } catch (e) {  
-                this.cps.enqueue(time_us(), node.id + ":err");
+                console.info(e);
             }
         }
     }
 }
 
-exports.ReadIncWriteTest = ReadIncWriteTest;
+exports.TestAggregator = TestAggregator;
 
 function time_us() {
     const [s, ns] = process.hrtime();

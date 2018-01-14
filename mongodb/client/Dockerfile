@@ -8,7 +8,6 @@ RUN mkdir -p /mongo
 WORKDIR /mongo
 COPY test.sh /mongo/test.sh
 COPY app /mongo/app
-COPY lib /mongo/lib
 WORKDIR /mongo/app
 RUN npm install
 WORKDIR /mongo

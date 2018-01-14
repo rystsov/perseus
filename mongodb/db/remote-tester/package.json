@@ -1,10 +1,12 @@
 {
-  "name": "perseus-base",
+  "name": "perseus-mongodb",
   "version": "1.0.0",
-  "description": "Perseus is a set of scripts to test how distributed storages behave when a leader is separated from the peers but maintains connection to the clients",
-  "main": "src/index.js",
+  "description": "Perseus is a set of scripts to test how Gryadka behaves when a leader is separated from the peer but maintain connection to the clients",
+  "main": "index.js",
   "dependencies": {
-    "avkrash-queue": "0.3.0",
+    "express": "4.14.0",
+    "body-parser": "1.15.2",
+    "mongodb": "3.0.1",
     "moment": "2.20.1"
   },
   "scripts": {
@@ -15,6 +17,7 @@
     "url": "https://github.com/rystsov/perseus.git"
   },
   "keywords": [
+    "gryadka",
     "raft"
   ],
   "author": "Denis Rystsov",
