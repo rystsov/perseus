@@ -9,8 +9,8 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 | [Gryadka](https://github.com/rystsov/perseus/tree/master/gryadka) | 0s | 0s | 0s | 0s | 0s | 8s | gryadka: 1.61.8<br/> redis: 4.0.1 |
 | [CockroachDB](https://github.com/rystsov/perseus/tree/master/cockroachdb) | 7s | 19s | 26s | 7s | 0s | 13s | 1.1.3 |
 | [Consul](https://github.com/rystsov/perseus/tree/master/consul) | 14s | 1s | 15s | 8s | 0s | 10s | 1.0.2 |
-| [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) (1) | 15s | 1s | 16s | 82s | 8s | 114s | PD: 1.1.0<br/>TiKV: 1.0.1<br/>TiDB: 1.1.0 |
-| [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) (2) | &#8734; | 0 | N/A | &#8734; | 0 | N/A | PD: 1.1.0<br/>TiKV: 1.0.1<br/>TiDB: 1.1.0 |
+| [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) (1) | 15s | 1s | 16s | 82s | 8s | 114s | PD: 1.1.0<br/>KV: 1.0.1<br/>DB: 1.1.0 |
+| [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) (2) | &#8734; | 0 | N/A | &#8734; | 0 | N/A | same |
 | [RethinkDB](https://github.com/rystsov/perseus/tree/master/rethinkdb) | 17s | 0s | 17s | 0s | 0s | 21s | 2.3.6 |
 
 **Downtime on isolation:** Complete unavailability (all three nodes are unavailable to write/read) on a transition from steady three nodes to steady two nodes caused by isolation of the third
