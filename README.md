@@ -28,3 +28,16 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 ### So, this is just a bunch of numbers based on the default parameters such as leader election timeout of various systems, isn't it?
 
 Kind of, but there are anyway lot of interesting patterns behind the numbers.
+
+### Why there are three records for MongoDB?
+
+I didn't managed to achieved stable results with MongoDB. Sometimes it behaved like any other leader-based system: an isolation of leader led to a templorary downtime and once the connection is restored the returned leader work. Sometimes it had issues:
+
+  1. the downtime lasted almost two mintues and once it finished the RPS dropped from 282 before the isolation starter to less than one
+  2. a client on an isolated node couldn't connect to the cluster even after connection was restored
+
+I fired bugs for every issue [1](https://jira.mongodb.org/browse/SERVER-32703) and [2](https://jira.mongodb.org/browse/SERVER-32699).
+
+### Why there are two records for TiDB?
+
+https://github.com/pingcap/tidb/issues/2676
