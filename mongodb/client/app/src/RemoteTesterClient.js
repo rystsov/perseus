@@ -14,6 +14,10 @@ class RemoteTesterClient {
                     url: url
                 }, 
                 (err, res, body) => {
+                    if (err) {
+                        reject(new Error(`Error :-(: ${err} on ${url}`));
+                        return;
+                    }
                     if (res.statusCode == 200) {
                         resolve(true);
                         return;
@@ -32,6 +36,10 @@ class RemoteTesterClient {
                     url: this.url + "/stat/"
                 }, 
                 (err, res, body) => {
+                    if (err) {
+                        reject(new Error(`Error :-(: ${err} on ${url}`));
+                        return;
+                    }
                     if (res.statusCode == 200) {
                         resolve(JSON.parse(body));
                         return;
