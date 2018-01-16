@@ -33,20 +33,15 @@ class RemoteTesterServer {
             while (true) {
                 const id = this.gen++;
                 try {
-                    console.info(`${moment().format("YYYY/MM/DD hh:mm:ss")}\treading(${id})`)
                     let value = await this.kv.read(key);
                     if (value==null) {
-                        console.info(`${moment().format("YYYY/MM/DD hh:mm:ss")}\tcreating(${id})`)
                         await this.kv.create(key, "0");
                     } else {
-                        console.info(`${moment().format("YYYY/MM/DD hh:mm:ss")}\tupdating(${id})`)
                         await this.kv.update(key, parseInt(value) + 1);
                     }
-                    console.info(`${moment().format("YYYY/MM/DD hh:mm:ss")}\tok(${id})`)
                     this.info.success++;
                 } catch (e) {
                     this.info.failures++;
-                    console.info(`${moment().format("YYYY/MM/DD hh:mm:ss")}\terr(${id})`)
                     console.info(e);
                 }
             }
@@ -59,7 +54,6 @@ class RemoteTesterServer {
             success: 0,
             failures: 0
         };
-        console.info(moment().format("YYYY/MM/DD hh:mm:ss") + "\tstat");
         res.status(200).json(info);
     }
     
