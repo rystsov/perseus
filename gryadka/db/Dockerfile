@@ -12,8 +12,8 @@ COPY isolate.sh /gryadka/isolate.sh
 COPY rejoin.sh /gryadka/rejoin.sh
 COPY redis.conf /gryadka/redis.conf
 COPY run-redis.sh /gryadka/run-redis.sh
-COPY gryadka-etcd /gryadka/gryadka-etcd
-WORKDIR /gryadka/gryadka-etcd
+COPY remote-tester /gryadka/remote-tester
+WORKDIR /gryadka/remote-tester
 RUN npm install
 WORKDIR /gryadka
 COPY cluster.json /gryadka/cluster.json

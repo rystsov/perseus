@@ -67,7 +67,7 @@ class RemoteTesterServer {
         this.server = this.app.listen(this.port);
     }
 
-    close() {
+    stop() {
         this.server.close();
     }
 }

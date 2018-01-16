@@ -1,4 +1,4 @@
 #!/bin/bash
 
-date | tee /gryadka/logs/client1.log
-nodejs --harmony app/src/test.js $@ 2>&1 | tee -a /gryadka/logs/client1.log
+date | tee /mongo/logs/client1.log
+nodejs app/src/test.js $@ 2>&1 | tee -a /mongo/logs/client1.log

@@ -8,7 +8,6 @@ RUN mkdir -p /gryadka
 WORKDIR /gryadka
 COPY test.sh /gryadka/test.sh
 COPY app /gryadka/app
-COPY lib /gryadka/lib
 WORKDIR /gryadka/app
 RUN npm install
 WORKDIR /gryadka
