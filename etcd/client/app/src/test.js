@@ -1,12 +1,5 @@
-const fs = require("fs");
 const {EtcdKV} = require("./EtcdKV");
-
 const {ReadIncWriteTest} = require('perseus-base');
-
-let period = 1000;
-if (process.argv.length == 3) {
-    period = parseInt(process.argv[2]);
-}
 
 const nodes = [ ];
 
@@ -14,7 +7,7 @@ for (const [host, port] of [["etcd1", 2379],["etcd2", 2379],["etcd3", 2379]]) {
     nodes.push(new EtcdKV(host, host + ":" + port));
 }
 
-const test = new ReadIncWriteTest(nodes, period);
+const test = new ReadIncWriteTest(nodes, 1000);
 
 (async () => {
     try {

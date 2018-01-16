@@ -1,15 +1,8 @@
-const fs = require("fs");
 const {MysqlKV} = require("./MysqlKV");
 const {ResettablePool} = require("./ResettablePool");
-
 const {ReadIncWriteTest} = require('perseus-base');
 
-let period = 1000;
-if (process.argv.length == 3) {
-    period = parseInt(process.argv[2]);
-}
-
-const nodes = [ ];
+const nodes = [];
 
 for (const [host, port] of [["tidb1", 4000],["tidb2", 4000],["tidb3", 4000]]) {
     nodes.push(new MysqlKV(host, new ResettablePool({
@@ -20,7 +13,7 @@ for (const [host, port] of [["tidb1", 4000],["tidb2", 4000],["tidb3", 4000]]) {
     }, host + ":" + port)));
 }
 
-const test = new ReadIncWriteTest(nodes, period);
+const test = new ReadIncWriteTest(nodes, 1000);
 
 (async () => {
     try {

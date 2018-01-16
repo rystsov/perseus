@@ -1,13 +1,6 @@
-const fs = require("fs");
 const {ResettablePool} = require('./ResettablePool');
 const {RoachKV} = require('./RoachKV');
-
 const {ReadIncWriteTest} = require('perseus-base');
-
-let period = 1000;
-if (process.argv.length == 3) {
-    period = parseInt(process.argv[2]);
-}
 
 const nodes = [ ];
 
@@ -20,7 +13,7 @@ for (const [host, port] of [["roach1", 26257],["roach2", 26257],["roach3", 26257
     })));
 }
 
-const test = new ReadIncWriteTest(nodes, period);
+const test = new ReadIncWriteTest(nodes, 1000);
 
 (async () => {
     try {
