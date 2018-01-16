@@ -29,6 +29,8 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 
 Kind of, but there are anyway lot of interesting patterns behind the numbers.
 
+Some systems have downtime on recovery, and some don't, TiDB has partial downtime on recovery and others don't. [Gryadka](https://github.com/gryadka/js) doesn't even have downtime on isolation, so testing "defaults" helps to understand the fundamental properties of the replication algorithms each system uses.
+
 ### Why there are three records for MongoDB?
 
 I didn't manage to achieve stable results with MongoDB. Sometimes it behaved like any other leader-based system: isolation of a leader led to a temporary cluster-wide downtime and then to two steady working node, once a connection was restored all three nodes were working as usual. Sometimes it had issues:
