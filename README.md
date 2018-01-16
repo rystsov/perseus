@@ -31,13 +31,17 @@ Kind of, but there are anyway lot of interesting patterns behind the numbers.
 
 ### Why there are three records for MongoDB?
 
-I didn't managed to achieved stable results with MongoDB. Sometimes it behaved like any other leader-based system: an isolation of leader led to a templorary downtime and once the connection is restored the returned leader work. Sometimes it had issues:
+I didn't manage to achieve stable results with MongoDB. Sometimes it behaved like any other leader-based system: isolation of a leader led to a temporary cluster-wide downtime and then to two steady working node, once a connection was restored all three nodes were working as usual. Sometimes it had issues:
 
-  1. the downtime lasted almost two mintues and once it finished the RPS dropped from 282 before the isolation starter to less than one
-  2. a client on an isolated node couldn't connect to the cluster even after connection was restored
+  1. The downtime lasted almost two minutes and once it finished the RPS dropped from 282 before the isolation starter to less than one.
+  2. A client on an isolated node couldn't connect to a cluster even after a connection was restored.
 
-I fired bugs for every issue [1](https://jira.mongodb.org/browse/SERVER-32703) and [2](https://jira.mongodb.org/browse/SERVER-32699).
+I fired a bug for every issue [1](https://jira.mongodb.org/browse/SERVER-32703) and [2](https://jira.mongodb.org/browse/SERVER-32699).
 
 ### Why there are two records for TiDB?
 
-https://github.com/pingcap/tidb/issues/2676
+When TiDB starts it works in a "warm-up" mode, however from a client perspective, it's indistinguishable from "normal" mode, so there are two records.
+
+If a node became isolated during the "warm-up" mode, then the whole cluster became unavailable. Moreover, it doesn't recover even when a connection is restored. I fired a corresponding bug: https://github.com/pingcap/tidb/issues/2676.
+
+N.B. When TiDB is a "warm-up" mode, the replication factor is one, so it's possible to lose acknowledged data in case of death of a single node.
