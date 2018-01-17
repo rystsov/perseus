@@ -31,7 +31,7 @@ A summary of `logs/client1.log` (v3.6.1 - 025d4f4fe61efd1fb6f0005be20cb45a004093
 76	0	51	34	1	0	0	2018/01/11 07:31:44
 77	21	41	32	1	0	0	2018/01/11 07:31:45</pre>
 
-The first column is the number of second since the begining of the experiment, the following last three columns represent the number of increments per each node of the cluster per second, the next triplet is number of errors per second and the last is time.
+The first column is the number of second since the begining of the experiment, the following three columns represent the number of increments per each node of the cluster per second, the next triplet is number of errors per second and the last is time.
 
 The all zero row means that all connections hang.
 

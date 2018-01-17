@@ -31,7 +31,7 @@ A summary of `logs/client1.log` (gryadka: 1.61.8, redis: 4.0.1):
 49	155	516	710	0	0	0	2018/01/16 09:03:29
 50	381	460	428	0	0	0	2018/01/16 09:03:30</pre>
 
-The first column is the number of second since the begining of the experiment, the following last three columns represent the number of increments per each node of the cluster per second, the next triplet is number of errors per second and the last is time.
+The first column is the number of second since the begining of the experiment, the following three columns represent the number of increments per each node of the cluster per second, the next triplet is number of errors per second and the last is time.
 
 The all zero row means that all connections hang.
 

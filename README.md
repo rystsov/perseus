@@ -8,7 +8,7 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 | [Consul](https://github.com/rystsov/perseus/tree/master/consul) | 14s | 1s | 15s | 8s | 0s | 10s | 1.0.2 |
 | [RethinkDB](https://github.com/rystsov/perseus/tree/master/rethinkdb) | 17s | 0s | 17s | 0s | 0s | 21s | 2.3.6 |
 | [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) (1) | 29s | 0s | 29s | 0s | 0s | 1s | 3.6.1 |
-| [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) (2) | 117s | 0s | 117s | 0s | 0s | 38s | 3.6.1 |
+| [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) (2) | 117s | 0s | 117s | 0s | 0s | N/A | 3.6.1 |
 | [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) (3) | 29s | 0s | 29s | 0s | 0s | N/A | 3.6.1 |
 | [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) (1) | 15s | 1s | 16s | 82s | 8s | 114s | PD: 1.1.0<br/>KV: 1.0.1<br/>DB: 1.1.0 |
 | [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) (2) | &#8734; | 0 | N/A | &#8734; | 0 | N/A | same |
@@ -24,6 +24,27 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 **Partial downtime on recovery:** Only one node is available on the 2-to-3 transition
 
 **Recovery time:** Time between connectivity is restored and all three nodes are available to write and read
+
+### What were tested?
+
+All the testing systems have something similar. They are distributed consistent databases (key-value storages) which tolerates up to `n` failure of `2n+1` nodes. 
+
+This testing suite uses a three nodes configuration with a fourth node acting as a client. The client spawns three threads (coroutines). Each thread opens a connection to one of the three DB's node and in loop reads, increments and writes a value back.
+
+Once in a second it dumps an aggregated statistic in the following form:
+
+<pre>#legend: time|gryadka1|gryadka2|gryadka3|gryadka1:err|gryadka2:err|gryadka3:err
+1    128    175    166    0    0    0    2018/01/16 09:02:41
+2    288    337    386    0    0    0    2018/01/16 09:02:42
+...
+18    419    490    439    0    0    0    2018/01/16 09:02:58
+19    447    465    511    0    0    0    2018/01/16 09:02:59</pre>
+
+    The first column is the number of seconds since the beginning of the experiment; the following three columns represent the number of increments per each node of the cluster per second, the next triplet is the number of errors per second, and the last one is time.
+
+In case of MongoDB and Gryadka you can't control to which node a client connects and need to specify addresses of all nodes in a connection string, so each DB's replica has a colocated client (read-modify-write loop) while the fourth node was only responsible for aggregation of statistics and dumping it every second.
+
+During a test, I isolated one of the DB's nodes from it peers and observed how it affected the outcome. Thanks to Docker Compose the tests are reproducible just with a couple of commands, navigate to a DB's subfolder to see instructions.
 
 ### So, this is just a bunch of numbers based on the default parameters such as leader election timeout of various systems, isn't it?
 

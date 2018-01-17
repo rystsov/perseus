@@ -41,7 +41,7 @@ A summary of `logs/client1.log` (2.3.6~0zesty):
 113	148	172	154	0	0	0	2018/01/08 04:54:59
 114	166	164	173	0	0	0	2018/01/08 04:55:00</pre>
 
-The first column is the number of second since the begining of the experiment, the following last three columns represent the number of increments per each node of the cluster per second, the next triplet is number of errors per second and the last is time.
+The first column is the number of second since the begining of the experiment, the following three columns represent the number of increments per each node of the cluster per second, the next triplet is number of errors per second and the last is time.
 
 The all zero row means that all connections hang.
 
