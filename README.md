@@ -68,3 +68,7 @@ When TiDB starts it works in a "warm-up" mode, however from a client perspective
 If a node became isolated during the "warm-up" mode, then the whole cluster became unavailable. Moreover, it doesn't recover even when a connection is restored. I fired a corresponding bug: https://github.com/pingcap/tidb/issues/2676.
 
 N.B. When TiDB is a "warm-up" mode, the replication factor is one, so it's possible to lose acknowledged data in case of death of a single node.
+
+### What's Gryadka?
+
+[Gryadka](https://github.com/gryadka/js) is an experimental key/value storage. I created it as a demonstration that Paxos isn't hard as its reputation. Be careful! It isn't production ready, the best way to use it is to read sources (less than 500 lines of code) and write your implementation.
