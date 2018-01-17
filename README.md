@@ -34,11 +34,11 @@ This testing suite uses a three nodes configuration with a fourth node acting as
 Once in a second it dumps an aggregated statistic in the following form:
 
 <pre>#legend: time|gryadka1|gryadka2|gryadka3|gryadka1:err|gryadka2:err|gryadka3:err
-1    128    175    166    0    0    0    2018/01/16 09:02:41
-2    288    337    386    0    0    0    2018/01/16 09:02:42
+1	128	175	166	0	0	0	2018/01/16 09:02:41
+2	288	337	386	0	0	0	2018/01/16 09:02:42
 ...
-18    419    490    439    0    0    0    2018/01/16 09:02:58
-19    447    465    511    0    0    0    2018/01/16 09:02:59</pre>
+18	419	490	439	0	0	0	2018/01/16 09:02:58
+19	447	465	511	0	0	0	2018/01/16 09:02:59</pre>
 
 > The first column is the number of seconds since the beginning of the experiment; the following three columns represent the number of increments per each node of the cluster per second, the next triplet is the number of errors per second, and the last one is time.
 
