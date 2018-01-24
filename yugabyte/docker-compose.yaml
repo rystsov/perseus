@@ -1,0 +1,32 @@
+version: '3'
+services:
+  yuga1:
+    build: db
+    privileged: true
+    container_name: yuga1
+    hostname: yuga1
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/yuga/logs
+  yuga2:
+    build: db
+    privileged: true
+    container_name: yuga2
+    hostname: yuga2
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/yuga/logs
+  yuga3:
+    build: db
+    privileged: true
+    container_name: yuga3
+    hostname: yuga3
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/yuga/logs
+networks:
+  perseus:
+    driver: bridge

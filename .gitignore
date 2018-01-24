@@ -5,3 +5,4 @@ gryadka/logs
 rethinkdb/logs
 consul/logs
 mongodb/logs
+yugabyte/logs
