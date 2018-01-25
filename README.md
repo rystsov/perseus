@@ -11,7 +11,8 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 | [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) (2) | 117s | 0s | 117s | 0s | 0s | N/A | 3.6.1 |
 | [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) (3) | 29s | 0s | 29s | 0s | 0s | N/A | 3.6.1 |
 | [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) (1) | 15s | 1s | 16s | 82s | 8s | 114s | PD: 1.1.0<br/>KV: 1.0.1<br/>DB: 1.1.0 |
-| [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) (2) | &#8734; | 0 | N/A | &#8734; | 0 | N/A | same |
+| [TiDB](https://github.com/rystsov/perseus/tree/master/tidb) (2) | &#8734; (>235s) | 0 | N/A | &#8734; (>89s) | 0 | N/A | same |
+| [YugaByte](https://github.com/rystsov/perseus/tree/master/yugabyte) | &#8734; (>366s) | 0 | N/A | 51s | 0 | 51s | 0.9.1.0 |
 
 **Downtime on isolation:** Complete unavailability (all three nodes are unavailable to write/read) on a transition from steady three nodes to steady two nodes caused by isolation of the third
 
@@ -68,6 +69,10 @@ When TiDB starts it works in a "warm-up" mode, however from a client perspective
 If a node became isolated during the "warm-up" mode, then the whole cluster became unavailable. Moreover, it doesn't recover even when a connection is restored. I fired a corresponding bug: https://github.com/pingcap/tidb/issues/2676.
 
 N.B. When TiDB is a "warm-up" mode, the replication factor is one, so it's possible to lose acknowledged data in case of death of a single node.
+
+### What's wrong with YugaByte?
+
+https://github.com/YugaByte/yugabyte-db/issues/19
 
 ### What's Gryadka?
 
