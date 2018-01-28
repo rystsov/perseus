@@ -7,6 +7,7 @@ Perseus is a set of scripts to investigate a distributed database's responsivene
 | [CockroachDB](https://github.com/rystsov/perseus/tree/master/cockroachdb) | 7s | 19s | 26s | 7s | 0s | 13s | 1.1.3 |
 | [Consul](https://github.com/rystsov/perseus/tree/master/consul) | 14s | 1s | 15s | 8s | 0s | 10s | 1.0.2 |
 | [RethinkDB](https://github.com/rystsov/perseus/tree/master/rethinkdb) | 17s | 0s | 17s | 0s | 0s | 21s | 2.3.6 |
+| [Riak](https://github.com/rystsov/perseus/tree/master/riak) | 8s | >121s | N/A | 1s | 6s | 18s | 2.2.3 |
 | [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) (1) | 29s | 0s | 29s | 0s | 0s | 1s | 3.6.1 |
 | [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) (2) | 117s | 0s | 117s | 0s | 0s | N/A | 3.6.1 |
 | [MongoDB](https://github.com/rystsov/perseus/tree/master/mongodb) (3) | 29s | 0s | 29s | 0s | 0s | N/A | 3.6.1 |

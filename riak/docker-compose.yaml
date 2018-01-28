@@ -1,0 +1,35 @@
+version: '3'
+services:
+  riak1:
+    build: db
+    privileged: true
+    container_name: riak1
+    hostname: riak1
+    tmpfs: /riak/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/riak/logs
+  riak2:
+    build: db
+    privileged: true
+    container_name: riak2
+    hostname: riak2
+    tmpfs: /riak/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/riak/logs
+  riak3:
+    build: db
+    privileged: true
+    container_name: riak3
+    hostname: riak3
+    tmpfs: /riak/mem
+    networks:
+      - perseus
+    volumes:
+      - ./logs:/riak/logs
+networks:
+  perseus:
+    driver: bridge
