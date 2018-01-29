@@ -1,12 +1,5 @@
 const request = require("request");
 
-function ConflictError() {
-  this.name = 'ConflictError';
-  this.stack = (new Error()).stack;
-}
-ConflictError.prototype = Object.create(Error.prototype);
-ConflictError.prototype.constructor = ConflictError;
-
 class EtcdKV {
     constructor(id, hostPort) {
         this.url = "http://" + hostPort + "/v2/keys";
@@ -72,7 +65,7 @@ function create(url, key, val) {
                     return;
                 }
                 if (res.statusCode == 412) {
-                    reject(new ConflictError())
+                    reject(new Error("Conflict"));
                     return;
                 }
                 reject(new Error("Unexpected return code: " + res.statusCode));
@@ -102,7 +95,7 @@ function update(url, key, val) {
                     return;
                 }
                 if (res.statusCode == 412) {
-                    reject(new ConflictError())
+                    reject(new Error("Conflict"));
                     return;
                 }
                 reject(new Error("Unexpected return code: " + res.statusCode));
@@ -112,4 +105,3 @@ function update(url, key, val) {
 }
 
 exports.EtcdKV = EtcdKV;
-exports.ConflictError = ConflictError;

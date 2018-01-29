@@ -1,12 +1,5 @@
 const request = require("request");
 
-function ConflictError() {
-  this.name = 'ConflictError';
-  this.stack = (new Error()).stack;
-}
-ConflictError.prototype = Object.create(Error.prototype);
-ConflictError.prototype.constructor = ConflictError;
-
 class ConsulKV {
     constructor(id, hostPort) {
         this.url = "http://" + hostPort + "/v1/kv";
@@ -75,4 +68,3 @@ function update(url, key, val) {
 }
 
 exports.ConsulKV = ConsulKV;
-exports.ConflictError = ConflictError;
