@@ -23,5 +23,6 @@ sed -i "s|nodename = riak@127.0.0.1|nodename = riak@$myip|" /etc/riak/riak.conf
 sed -i "s|platform_log_dir = /var/log/riak|platform_log_dir = /riak/logs/$me|" /etc/riak/riak.conf
 sed -i "s|platform_data_dir = /var/lib/riak|platform_data_dir = /riak/mem|" /etc/riak/riak.conf
 sed -i "s|## strong_consistency = on|strong_consistency = on|" /etc/riak/riak.conf
+sed -i "s|}].|},{riak_ensemble, [{tree_validation, false}]}].|" /etc/riak/advanced.config
 
 riak console
